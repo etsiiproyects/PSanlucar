@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #404040;
+    color: white;
+}
+
+nav {
+    background-color: orange;
+    height: 51px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav li:first-child {
+    float: left;
+}
+
+nav li {
+    display: inline-block;
+    float: right;
+}
+
+nav li a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    padding: 16px 38px;
+}
+
+nav li a:hover {
+    background-color: darkorange;
+}
+
+div.error {
+    color: red;
+    border: 2px solid red;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.toggle {
+    display: none;
+    height: auto;
+    background: #fff;
+    color: #001F3F;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.wrap {
+    display: block;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.toggle p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.toggle button {
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 40px;
+    display: inline-block;
+    border: 5px solid #001F3F;
+    transition: 0.3s all ease;
+}
+
+.toggle button:hover {
+    border: 5px solid #0074D9;
+    color: #0074D9;
+}
+
+.btn-toggle {
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    background: #FFDC00;
+    text-align: center;
+}
+
+.btn-toggle:hover {
+    text-decoration: none;
+}
+
+.active {
+    display: flex;
+}
+
+.activetog {
+    display: flex;
+}

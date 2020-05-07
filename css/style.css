@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #404040;
+    color: white;
+}
+
+nav {
+    background-color: orange;
+    height: 51px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav li:first-child {
+    float: left;
+}
+
+nav li {
+    display: inline-block;
+    float: right;
+}
+
+nav li a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    padding: 16px 38px;
+}
+
+nav li a:hover {
+    background-color: darkorange;
+}
+
+div.error {
+    color: red;
+    border: 2px solid red;
+}
+
+.iniciosesion {
+    margin: 120px auto;
+    display: block;
+    width: max-content;
+    padding: 40px 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+form {
+    margin: 20px auto;
+    padding-bottom: 30px;
+    color: black;
+}
+
+.img-login {
+    margin: auto 225px 10px;
+    width: 150px;
+}
+
+.img-registro {
+    width: 150px;
+    margin: auto 275px 10px;
+}
+
+.input-group {
+    margin: 12px 0;
+}
+
+label {
+    margin-right: 12px;
+    font-size: 19px;
+}
+
+.input-group input {
+    width: 320px;
+    height: 22px;
+    padding: 2px 10px;
+    font-size: 15px;
+    float: right;
+}
+
+form>input:last-child {
+    display: block;
+    width: 60%;
+    padding: 8px 44px;
+    float: right;
+    background-color: #fb7e37;
+    border: none;
+    color: white;
+}
+
+form>input:last-child:hover {
+    opacity: .7;
+}
