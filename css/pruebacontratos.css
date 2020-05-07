@@ -40,6 +40,10 @@ nav li a:hover {
     background-color: darkorange;
 }
 
+.pie {
+    margin-top: 10px;
+}
+
 div.error {
     color: red;
     border: 2px solid red;
