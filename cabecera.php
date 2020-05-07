@@ -6,7 +6,6 @@ if(!isset($_SESSION["login"])){
         <ul>
             <li><a href="../Psanlucar/index.php"><strong>Home</strong></a></li>
 			<li><a href="../Psanlucar/clientes/registroWeb.php">Registrate</a></li>
-			<li><a href="../Psanlucar/clientes/registroWeb.php">Registrate</a></li>
             <li><a href="../Psanlucar/clientes/login.php">Iniciar Sesion</a></li>
         </ul>
     </nav>
@@ -23,7 +22,7 @@ if(!isset($_SESSION["login"])){
         </ul>
     </nav>
 	<?php }else{    ?>
-        
+
 
         <nav>
         <ul>
@@ -31,7 +30,7 @@ if(!isset($_SESSION["login"])){
             <li><a href="../Psanlucar/index.php"><strong>Home</strong></a></li>
             <li><a href="../Psanlucar/desconectar.php">Cerrar sesión</a></li>
             <li><a href="../Psanlucar/perfil.php">Usuario</a></li>
-			
+
         </ul>
     </nav>
 
