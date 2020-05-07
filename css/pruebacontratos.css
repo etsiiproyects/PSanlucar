@@ -54,7 +54,12 @@ a:hover {
     text-decoration: underline;
 }
 
+.contrato a {
+    margin: 10px 10px 0px 10px;
+}
+
 .toggle {
+    margin: 0px 10px 0px 10px;
     display: none;
     height: auto;
     background: #fff;

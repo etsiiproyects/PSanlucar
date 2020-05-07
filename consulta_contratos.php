@@ -41,7 +41,7 @@
 			foreach($filas as $fila) {
 		?>
 		<div class="contrato">	
-        <a href="#" id="btn-toggle" class="btn-toggle"><b> CONTRATO <?php echo $fila["OID_CONTRATO"]; ?></b></a>
+        <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $fila["OID_CONTRATO"]; ?></b></a>
             <div class="toggle">
                 <div class="wrap">
                     <p>Inicio del contrato: <b><?php echo $fila["INICIOALQUILER"]; ?></b></p>
