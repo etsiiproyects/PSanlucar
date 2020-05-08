@@ -2,7 +2,7 @@
 
 if(!isset($_SESSION["login"])){
 	?>
-	<nav>
+	<nav class="naveg">
         <ul>
             <li><a href="Psanlucar/index.php"><strong>Home</strong></a></li>
 			<li><a href="Psanlucar/clientes/registroWeb.php">Registrate</a></li>
@@ -12,7 +12,7 @@ if(!isset($_SESSION["login"])){
 	<?php
 	} else if($_SESSION['login']=='Admin1' || $_SESSION['login']=='Admin2') {
 		?>
-	<nav>
+	<nav class="naveg">
         <ul>
             <li><a href="index.php"><strong>Home</strong></a></li>
 			<li><a href="desconectar.php">Cerrar sesión</a></li>
@@ -24,7 +24,7 @@ if(!isset($_SESSION["login"])){
 	<?php }else{    ?>
 
 
-        <nav>
+        <nav class="naveg">
         <ul>
             <li><a href="consulta_inmuebles.php">Inmuebles</a></li>
             <li><a href="index.php"><strong>Home</strong></a></li>

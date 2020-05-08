@@ -1,0 +1,28 @@
+.pag {
+    background-color: #7E7E7E;
+    padding: 20px;
+}
+
+.pag .enlaces {
+    display: block;
+    letter-spacing: 2px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.pag form {
+    letter-spacing: 2px;
+}
+
+.pag a,
+span {
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+.pag input:last-of-type {
+    width: 100px;
+    background-color: #A4A4A4;
+    border-radius: 15px;
+    border: 0px;
+}
