@@ -4,9 +4,9 @@ if(!isset($_SESSION["login"])){
 	?>
 	<nav class="naveg">
         <ul>
-            <li><a href="Psanlucar/index.php"><strong>Home</strong></a></li>
-			<li><a href="Psanlucar/clientes/registroWeb.php">Registrate</a></li>
-            <li><a href="Psanlucar/clientes/login.php">Iniciar Sesion</a></li>
+            <li><a href="index.php"><strong>Home</strong></a></li>
+			<li><a href="clientes/registroWeb.php">Registrate</a></li>
+            <li><a href="clientes/login.php">Iniciar Sesion</a></li>
         </ul>
     </nav>
 	<?php
