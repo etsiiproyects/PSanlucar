@@ -5,7 +5,7 @@
 	require_once("gestionarInmuebles.php");
 	
 	if(!isset($_SESSION['login'])) {
-		header("Location: ./clientes/login.php");
+		header("Location: loginEmpleados.php");
 	} else {
 		if(isset($_SESSION["inmueble"])) {
 			$inmueble = $_SESSION["inmueble"];
@@ -36,7 +36,7 @@
 <section class="contenido">
 	<?php if($_SESSION["login"] == "Admin1" || $_SESSION["login"] == "Admin2"){ ?>
 		<div class="inserta">
-			<h2> INSERTAR INMUEBLE </h2>
+			<a href="registroInmueble.php"><h2> INMUEBLE </h2></a>
 		</div>
 	<?php } ?>
 

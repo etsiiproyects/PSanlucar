@@ -37,7 +37,7 @@
 		?>
 			<h1>Hola <?php echo $nuevoUsuario["nombre"]; ?>, gracias por registrarte</h1>
 			<div >	
-				Pulsa <a href="index.php">aquí</a> para acceder a la gestión de biblioteca.
+				Pulsa <a href="login.php">aquí</a> para acceder al inicio de sesión.
 			</div>
 		<?php } else { ?>
 			<h1>El usuario ya existe en la base de datos.</h1>
