@@ -13,7 +13,7 @@ create table inmuebles
     (   id_inmueble varchar2(10)     not null,          --Declaro nombre de la variable, su tipo y si puede ser null
         direccion varchar2(50)  not null,
         habitaciones integer,
-        tipo varchar2(13) check (tipo in ('aislado','plurifamiliar','comercial'))   not null,   --definimos que es un tipo enumerado de los 3 casos posibles
+        tipo varchar2(13) check (tipo in ('AISLADO','PLURIFAMILIAR','COMERCIAL'))   not null,   --definimos que es un tipo enumerado de los 3 casos posibles
         primary key (id_inmueble));     -- designa la clave primaria
         
 CREATE SEQUENCE SEC_EMPLEADOS_OID
