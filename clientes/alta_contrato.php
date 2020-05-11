@@ -10,7 +10,6 @@
 		$nuevoContrato = $_SESSION["formulario"];
 		$_SESSION["formulario"] = null;
 		$_SESSION["errores"] = null;
-		// Header("Location: login.php");
 	}
 	else 
 		Header("Location: formularioContratos.php");	

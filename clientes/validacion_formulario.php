@@ -7,7 +7,7 @@
 		$nuevoUsuario["nombre"] = $_REQUEST["nombre"];
 		$nuevoUsuario["apellidos"] = $_REQUEST["apellidos"];
 		$nuevoUsuario["email"] = $_REQUEST["email"];
-		// $nuevoUsuario["fechaNacimiento"] = $_REQUEST["fechaNacimiento"];
+		$nuevoUsuario["fechaNacimiento"] = $_REQUEST["fechaNacimiento"];
 		$nuevoUsuario["nick"] = $_REQUEST["nick"];
 		$nuevoUsuario["contraseña"] = $_REQUEST["contraseña"];
 		$nuevoUsuario["confirmar"] = $_REQUEST["confirmar"];
@@ -46,7 +46,6 @@
 		}else if(!filter_var($nuevoUsuario["email"], FILTER_VALIDATE_EMAIL)){
 			$errores[] = $error . "<p>El email es incorrecto: " . $nuevoUsuario["email"]. "</p>";
 		}
-		
 		
 		// Validación de la fecha de nacimiento
 		

@@ -25,7 +25,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Registro</title>
+	<title>Registro contrato</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 </head>
@@ -40,16 +40,11 @@
     		echo "</div>";
   		}
 	?>
-	<div class="contratos">
+	<div class="iniciosesion">
 
 		<a href="../index.php"><img class="img-registro" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
 		<form id="registro" method="get" action="validacionContratos.php" onsubmit="return validateForm()">
-
-				<legend>
-					Datos del contrato
-				</legend>
-				<br />
 
 		  		<label for="inicioAlquiler">Inicio del alquiler: </label>
 				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $formulario['inicioAlquiler'];?>" required />
@@ -70,8 +65,6 @@
 				<label for="nif"><em>*</em>NIF: </label>
 				<input class="input-group" id="nif" name="nif" type="text" placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $formulario['nif'];?>" required />
 				<br />
-				
-			<!-- </fieldset>  -->
 			<br>
 			<input class="boton" type="submit" value="Confirmar" />
 		</form>

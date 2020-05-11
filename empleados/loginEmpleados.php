@@ -17,7 +17,7 @@
 			$login["pass"] = $pass;
 		}
 		else {
-			$_SESSION['login'] = $nombre;
+			$_SESSION["login"] = $nombre;
 			Header("Location: consulta_inmuebles.php");
 		}
 	}
