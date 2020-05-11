@@ -55,6 +55,20 @@ div.error {
     justify-content: center;
 }
 
+.inserta:hover {
+    background-color: white;
+    border: 2px solid darkorange;
+}
+
+.inserta a {
+    text-decoration: none;
+    color: white;
+}
+
+.inserta:hover a {
+    color: darkorange;
+}
+
 .inmuebles {
     padding-top: 10px;
     margin: 0;
