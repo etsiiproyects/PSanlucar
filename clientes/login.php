@@ -12,7 +12,7 @@
 		$funct = consultarUsuario($conexion,$email,$pass);
 		cerrarConexionBD($conexion);
 		if(!$funct){
-			$login["usuario"] = $email;
+			$login["email"] = $email;
 			$login["pass"] = $pass;
 		}
 		else{
