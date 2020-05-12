@@ -7,7 +7,7 @@
 		$formulario['apellidos'] = "";
 		$formulario['fechaNacimiento'] = "";
 		$formulario['email'] = "";
-		$formulario['contraseña'] = "";
+		$formulario['pass'] = "";
 		$formulario['confirmar'] = "";
 		$formulario['nick'] = "";
 

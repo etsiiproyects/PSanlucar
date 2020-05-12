@@ -7,7 +7,7 @@ function alta_usuario($conexion,$usuario) {
 	$pass = $usuario["pass"];
     // $fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["fechaNacimiento"]));
 	if(!consultarUsuario($conexion, $email, $pass)) {
-		$consulta = 'CALL INSERTA_USUARIO(:nombre,:apellidos,:email,:pass,:nick)';
+		$consulta = 'CALL INSERTAR_USUARIO(:nombre,:apellidos,:email,:pass,:nick)';
 		$stmt = $conexion->prepare($consulta);
 	// $stmt->bindParam(':nif',$usuario["nif"]);
 		$stmt->bindParam(':nombre',$usuario["nombre"]);
