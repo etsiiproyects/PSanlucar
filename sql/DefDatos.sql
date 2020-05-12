@@ -1,8 +1,9 @@
 
 -----------------------------------------Drops
-DROP SEQUENCE sec_ofertas;
+DROP SEQUENCE SEC_OFERTAS_OID;
 DROP SEQUENCE SEC_EMPLEADOS_OID;
 DROP TABLE USUARIOS;
+DROP TABLE OFERTAS;
 DROP TABLE INMUEBLES;
 DROP TABLE EMPLEADO;
 
@@ -14,10 +15,10 @@ CREATE TABLE EMPLEADO (
 	PRIMARY KEY (OID_EMPLEADO) );
 
 create table inmuebles (
-    id_inmueble varchar2(10)     not null,          -
+    id_inmueble varchar2(10)   not null,
     direccion varchar2(50)  not null,
     habitaciones integer,
-    tipo varchar2(13) check (tipo in ('AISLADO','PLURIFAMILIAR','COMERCIAL'))   not null,
+    tipo varchar2(13) check (tipo in ('aislado','plurifamiliar','comercial'))   not null,
     primary key (id_inmueble));
 
 create table ofertas (
@@ -41,7 +42,7 @@ create table usuarios (
 CREATE SEQUENCE SEC_EMPLEADOS_OID
 START WITH 1 INCREMENT BY 1 NOMAXVALUE;
 
-CREATE SEQUENCE sec_ofertas_oid
+CREATE SEQUENCE SEC_OFERTAS_OID
 START WITH 1 INCREMENT BY 1 NOMAXVALUE;
 
 -----------------------------------------Triggers OIDs
@@ -81,14 +82,14 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE Inserta_Usuario
+CREATE OR REPLACE PROCEDURE Insertar_Usuario
 	(w_nombre IN usuarios.nombre%TYPE,
 	w_apellidos IN usuarios.apellidos%TYPE,
 	w_email IN usuarios.email%TYPE,
 	w_pass IN usuarios.pass%TYPE,
 	w_nick IN usuarios.nick%TYPE) IS
 BEGIN
-INSERT INTO usuarios(nombre, apellidos, email, contrase�a, nick) VALUES (w_nombre,w_apellidos,w_email,w_contrase�a,w_nick);
+INSERT INTO usuarios(nombre, apellidos, email, pass, nick) VALUES (w_nombre,w_apellidos,w_email,w_pass,w_nick);
 END;
 /
 
@@ -97,7 +98,7 @@ CREATE OR REPLACE PROCEDURE insertar_oferta
 	w_fechaI IN ofertas.fechaInicio%TYPE,
 	w_idInmueble IN ofertas.id_inmueble%TYPE) IS
 BEGIN
- INSERT INTO ofertas(precio,fechaInicio,fechaFin,tipo,id_inmueble) VALUES (w_precio,w_fechaI,w_fechaF,w_tipo,w_idInmueble);
+ INSERT INTO ofertas(precio,fechaInicio,id_inmueble) VALUES (w_precio,w_fechaI,w_idInmueble);
 END;
 /
 
@@ -122,7 +123,7 @@ begin
 end;
 /
 
-CREATE OR REPLACE PROCEDURE eliminar_oferta (b_oid IN ofertas.oid_o%TYPE) IS
+CREATE OR REPLACE PROCEDURE quitar_oferta (b_oid IN ofertas.oid_o%TYPE) IS
 BEGIN
     DELETE FROM ofertas WHERE b_oid=oid_o;
 END;
