@@ -58,7 +58,7 @@
 		if(!isset($nuevoUsuario["pass"]) || strlen($nuevoUsuario["pass"])<8){
 			$errores [] = "<p>Contraseña no válida: debe tener al menos 8 caracteres</p>";
 		}else if(!preg_match("/[a-z]+/", $nuevoUsuario["pass"]) ||
-			!preg_match("/[A-Z]+/", $nuevoUsuario["contraseña"]) || !preg_match("/[0-9]+/", $nuevoUsuario["contraseña"])){
+			!preg_match("/[A-Z]+/", $nuevoUsuario["pass"]) || !preg_match("/[0-9]+/", $nuevoUsuario["pass"])){
 			$errores[] = "<p>Contraseña no válida: debe contener letras mayúsculas y minúsculas y dígitos</p>";
 		}else if($nuevoUsuario["pass"] != $nuevoUsuario["confirmar"]){
 			$errores[] = "<p>La confirmación de contraseña no coincide con la contraseña</p>";
