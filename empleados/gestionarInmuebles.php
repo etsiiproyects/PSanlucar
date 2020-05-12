@@ -1,10 +1,4 @@
 <?php
-  /*
-     * #===========================================================#
-     * #	Este fichero contiene las funciones de gestión
-     * #	de libros de la capa de acceso a datos
-     * #==========================================================#
-     */
 	function consultarTodosInmuebles($conexion) {
 		$consulta = "SELECT id_inmueble, direccion, habitaciones, tipo FROM INMUEBLES";
     	return $conexion->query($consulta);
@@ -49,7 +43,7 @@
 			$stmt=$conexion->prepare('CALL QUITAR_INMUEBLE(:IdInmueble)');
 			$stmt->bindParam(':IdInmueble', $IdInmueble);
 			$stmt->execute();
-			return"";
+			return 0;
 		}catch(PDOException $e) {
 			return $e->getMessage();
 		}

@@ -28,7 +28,7 @@ function alta_usuario($conexion,$usuario) {
 }
 
 function consultarUsuario($conexion,$email, $pass) {
- 	$consulta = "SELECT COUNT(*) AS TOTAL FROM USUARIOS WHERE EMAIL=:email AND CONTRASEÑA=:pass";
+ 	$consulta = "SELECT COUNT(*) AS TOTAL FROM USUARIOS WHERE EMAIL=:email AND PASS=:pass";
 	$stmt = $conexion->prepare($consulta);
 	$stmt->bindParam(':email',$email);
 	$stmt->bindParam(':pass',$pass);
