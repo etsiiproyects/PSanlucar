@@ -47,7 +47,7 @@
 		<a href="../index.php"><img class="img-login" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>
-			<input type="text" name="usuario" id="usuario" value = "<?php echo $login['usuario'];?>" /></div>
+			<input type="text" name="usuario" id="usuario" /></div>
 			<div class="input-group"><label for="pass">Contraseña: </label>
 			<input type="password" name="pass" id="pass" /></div>
 			<input class="boton" type="submit" name="submit" value="Iniciar Sesion" />

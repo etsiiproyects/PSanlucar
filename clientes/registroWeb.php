@@ -47,16 +47,7 @@
 		<a href="../index.php"><img class="img-registro" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
 		<form id="registro" method="get" action="validacion_formulario.php" onsubmit="return validateForm()">
-<!--
-			<fieldset>
-				<legend>
-					Datos personales
-				</legend>
-
-				<label for="nif"><em>*</em>NIF: </label>
-				<input class="input-group" id="nif" name="nif" type="text" placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $formulario['nif'];?>" required />
-				<br />
-		  		-->
+			
 				<label for="nombre">Nombre: </label>
 				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
 				<br />
@@ -72,42 +63,6 @@
 				<label for="fechaNacimiento">Fecha de nacimiento: </label>
 				<input class="input-group" type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $formulario['fechaNacimiento'];?>" required />
 				<br />
-<!--
-				<label for="tipo">Tipo de inmueble deseado: </label>
-				<label>Comercial</label>
-					<input name="tipo" type="checkbox" value="COMERCIAL" />
-				<label>Plurifamiliar</label>
-					<input name="tipo" type="checkbox" value="PLURIFAMILIAR"  />
-				<label>Aislado</label>
-					<input name="tipo" type="checkbox" value="AISLADO" />
-			</fieldset>
-
-			<fieldset>
-				<legend>Dirección</legend>
-				<label for="calle">Calle/Avenida: </label>
-				<input class="input-group" id="calle" name="calle" type="text" size="60" value="<?php echo $formulario['calle'];?>" />
-				<br />
-
-				<label for="provincia">Provincia: </label>
-				<input list="opcionesProvincias" name="provincia" id="provincia" value="<?php echo $formulario['provincia'];?>"/>
-				<datalist id="opcionesProvincias">
-					<option value="Cádiz">Cádiz</option>
-					<option value="Sevilla">Sevilla</option>
-					<option value="Málaga">Málaga</option>
-					<option value="Huelva">Huelva</option>
-					<option value="Jaén">Jaén</option>
-					<option value="Córdoba">Córdoba</option>
-					<option value="Almería">Almería</option>
-					<option value="Granada">Granada</option>
-					<option value="Otra">Otra</option>
-				</datalist>
-				<br />
-			</fieldset>
-
-			<fieldset>
-
-				<legend>Datos de usuario</legend> 	-->
-
 
 				<label for="nick">Nombre de usuario: </label>
 				<input class="input-group" id="nick" name="nick" type="text" size="30" required value="<?php echo $formulario['nick'];?>" />
@@ -120,7 +75,6 @@
 				<label for="confirmar">Confirmar contraseña: </label>
 				<input class="input-group" type="password" name="confirmar" id="confirmar" placeholder="Confirmación de contraseña" required="" />
 				<br />
-			<!-- </fieldset>  -->
 			<br>
 			<input class="boton" type="submit" value="Confirmar" />
 		</form>
