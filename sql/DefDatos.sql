@@ -128,3 +128,15 @@ BEGIN
     DELETE FROM ofertas WHERE b_oid=oid_o;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE consultar_empleado (b_nombre IN empleado.nombre%TYPE,
+b_pass IN empleado.pass%TYPE) IS
+BEGIN
+   SELECT COUNT(*) FROM EMPLEADO WHERE NOMBRE=b_nombre AND PASS=b_pass;
+END;
+/
+
+begin
+consultar_empleado('Admin1', '123456As');
+end;
+/
