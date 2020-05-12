@@ -1,6 +1,7 @@
 begin
 insertar_empleado('Admin1','123456As');
 insertar_empleado('Admin2','123456Sa');
+insertar_empleado('Admin3','Sa1234As');
 quitar_empleado(2);
 
 Insertar_Usuario('Pablo', 'Gonzalez Rodriguez', 'pablom@gmail.com' ,'AsDf1234','moncalvillo3');
