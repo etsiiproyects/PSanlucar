@@ -4,7 +4,7 @@ function alta_usuario($conexion,$usuario) {
 	try{
 	$resultado = true;
 	$email = $usuario["email"];
-	$pass = $usuario["contraseña"];
+	$pass = $usuario["pass"];
     // $fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["fechaNacimiento"]));
 	if(!consultarUsuario($conexion, $email, $pass)) {
 		$consulta = 'CALL INSERTA_USUARIO(:nombre,:apellidos,:email,:pass,:nick)';
@@ -14,7 +14,7 @@ function alta_usuario($conexion,$usuario) {
 		$stmt->bindParam(':apellidos',$usuario["apellidos"]);
 		// $stmt->bindParam(':fecha',$fechaConFormatoOracle);
 		$stmt->bindParam(':email',$usuario["email"]);
-		$stmt->bindParam(':pass',$usuario["contraseña"]);
+		$stmt->bindParam(':pass',$usuario["pass"]);
         $stmt->bindParam(':nick',$usuario["nick"]);
 		$stmt->execute();
 	}else
@@ -24,7 +24,7 @@ function alta_usuario($conexion,$usuario) {
 	catch(PDOException $e){
 		echo "error: ".$e->GetMessage();
 	}
-	
+
 }
 
 function consultarUsuario($conexion,$email, $pass) {
