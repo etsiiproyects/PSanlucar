@@ -15,7 +15,7 @@ function alta_usuario($conexion,$usuario) {
 		// $stmt->bindParam(':fecha',$fechaConFormatoOracle);
 		$stmt->bindParam(':email',$usuario["email"]);
 		$stmt->bindParam(':pass',$usuario["pass"]);
-        $stmt->bindParam(':nick',$usuario["nick"]);
+   $stmt->bindParam(':nick',$usuario["nick"]);
 		$stmt->execute();
 	}else
 		$resultado=false;
