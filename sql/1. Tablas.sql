@@ -40,7 +40,7 @@ create table ofertas
         fechainicio date    not null,
         id_inmueble varchar2(10)    not null,
         primary key (oid_o),
-        foreign key (id_inmueble) references inmuebles);        -- designa la clave ajena
+        foreign key (id_inmueble) references inmuebles on delete cascade);        -- designa la clave ajena
         
 create table demandantes
     (   nif char(9)     not null,
@@ -102,7 +102,7 @@ create table revisiones (
     id_inmueble varchar2(10)    not null,
     oid_mantenedor integer  not null,
     primary key(oid_r),
-    foreign key(id_inmueble) references inmuebles,
+    foreign key(id_inmueble) references inmuebles on delete cascade,
     foreign key(oid_mantenedor) references mantenedores);
 
 create table autonomos (
@@ -136,7 +136,7 @@ create table quejas (
     descripcion varchar2(200)   not null,
     id_inmueble varchar2(10),
     nif_demandante char(9),
-    foreign key (id_inmueble) references inmuebles,
+    foreign key (id_inmueble) references inmuebles on delete cascade,
     foreign key (nif_demandante) references demandantes);
     
         
