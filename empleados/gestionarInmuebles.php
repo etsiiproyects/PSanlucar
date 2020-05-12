@@ -1,8 +1,8 @@
 <?php
   /*
      * #===========================================================#
-     * #	Este fichero contiene las funciones de gestión     			 
-     * #	de libros de la capa de acceso a datos 		
+     * #	Este fichero contiene las funciones de gestión
+     * #	de libros de la capa de acceso a datos
      * #==========================================================#
      */
 	function consultarTodosInmuebles($conexion) {
@@ -14,7 +14,7 @@
   		$consulta = "SELECT * FROM CONTRATOS";
   		return $conexion->query($consulta);
 	}
-	
+
 	function consultarInmueble($conexion, $identificador) {
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM INMUEBLES WHERE ID_INMUEBLE=:identificador";
 		$stmt = $conexion->prepare($consulta);
@@ -22,7 +22,7 @@
 		$stmt->execute();
 		return $stmt->fetchColumn();
 	}
-	
+
 	function alta_inmueble($conexion, $inmueble) {
 		try {
 			$resultado = true;
@@ -41,6 +41,17 @@
 			return $resultado;
 		} catch(PDOException $e) {
 			echo "error: " .$e->GetMessage();
+		}
+	}
+
+	function quitar_inmueble($conexion, $idInmueble) {
+		try{
+			$stmt=$conexion->prepare('CALL QUITAR_INMUEBLE(:IdInmueble)');
+			$stmt->bindParam(':IdInmueble', $IdInmueble);
+			$stmt->execute();
+			return"";
+		}catch(PDOException $e) {
+			return $e->getMessage();
 		}
 	}
 
