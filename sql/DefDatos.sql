@@ -33,7 +33,7 @@ create table usuarios (
     apellidos varchar2(100)  not null,
     --  fecha date not null,
     email varchar2(50) not null,
-    contrase�a varchar2(50) not null,
+    pass varchar2(50) not null,
     nick varchar2(20),
     primary key (nick)
     );
@@ -85,7 +85,7 @@ CREATE OR REPLACE PROCEDURE Inserta_Usuario
 	(w_nombre IN usuarios.nombre%TYPE,
 	w_apellidos IN usuarios.apellidos%TYPE,
 	w_email IN usuarios.email%TYPE,
-	w_contrase�a IN usuarios.contrase�a%TYPE,
+	w_pass IN usuarios.pass%TYPE,
 	w_nick IN usuarios.nick%TYPE) IS
 BEGIN
 INSERT INTO usuarios(nombre, apellidos, email, contrase�a, nick) VALUES (w_nombre,w_apellidos,w_email,w_contrase�a,w_nick);
