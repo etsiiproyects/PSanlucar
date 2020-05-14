@@ -11,7 +11,7 @@
 		$conexion = crearConexionBD();
 		$funct = consultarUsuario($conexion,$email,$pass);
 		cerrarConexionBD($conexion);
-		if(!$funct){
+		if($funct>0){
 			$login["usuario"] = $email;
 			$login["pass"] = $pass;
 		}

@@ -12,7 +12,7 @@
 		$conexion = crearConexionBD();
 		$funct = consultarEmpleado($conexion,$nombre,$pass);
 		cerrarConexionBD($conexion);
-		if(!$funct) {
+		if($funct>0) {
 			$login["usuario"] = $nombre;
 			$login["pass"] = $pass;
 		}
