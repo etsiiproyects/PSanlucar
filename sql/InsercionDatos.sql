@@ -9,6 +9,7 @@ Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwert
 Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', 'romero');
 Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', 'valdes');
 Quitar_Usuario('morales');
+Quitar_Usuario('valdes');
 
 insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'aislado');
 insertar_inmueble('02.1A','C/ Cristobal Colon',2, 'plurifamiliar');
@@ -21,6 +22,7 @@ insertar_inmueble('03.1C','C/ San Bartolome',1,'plurifamiliar');
 insertar_inmueble('03.1D','C/ San Bartolome',2,'plurifamiliar');
 insertar_inmueble('04.1B','C/ Zambullon',2,'plurifamiliar');
 quitar_inmueble('03.1D');
+
 
 Insertar_oferta(600, sysdate,'01.00');
 Insertar_oferta(375, sysdate,'02.1A');

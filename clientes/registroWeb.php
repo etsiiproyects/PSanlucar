@@ -7,7 +7,7 @@
 		$formulario['apellidos'] = "";
 		$formulario['fechaNacimiento'] = "";
 		$formulario['email'] = "";
-		$formulario['contraseña'] = "";
+		$formulario['pass'] = "";
 		$formulario['confirmar'] = "";
 		$formulario['nick'] = "";
 
@@ -69,7 +69,7 @@
 				<br />
 
 				<label for="pass">Contraseña: </label>
-				<input class="input-group" type="password" name="contraseña" id="contraseña" placeholder="Mínimo 8 caracteres" required="" />
+				<input class="input-group" type="password" name="pass" id="contraseña" placeholder="Mínimo 8 caracteres" required="" />
 				<br />
 
 				<label for="confirmar">Confirmar contraseña: </label>
