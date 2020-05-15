@@ -1,7 +1,11 @@
 function validateForm() {
+	var noValidation = document.getElementById("#altaUsuario").novalidate;
+	
     var error1 = validateControl1();
+    $("campo1").setCustomValidity(error1);
     var erorr2 = validateControl2();
-    return (erro.length == 0) && (error2.length == 0);
+    $("campo2").setCustomValidity(error2);
+    return (error1.length == 0) && (error2.length == 0);
 }
 
 function validateControl1() {
