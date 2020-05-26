@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	include_once("../gestionBD.php");
+	include_once("gestionBD.php");
  	include_once("gestionUsuarios.php");
 	
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
@@ -33,7 +33,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Registro</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@
 	?>
 	<div class="iniciosesion">
 
-		<a href="../index.php"><img class="img-registro" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
 		<form id="registro" method="get" action="validacion_formulario.php" onsubmit="return validateForm()">
 			
@@ -96,7 +96,7 @@
 		</form>
 	</div>
 
-	<?php include_once("../footer.php") ?>
+	<?php include_once("footer.php") ?>
 
 </body>
 </html>

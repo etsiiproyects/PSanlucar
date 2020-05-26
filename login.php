@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-  	include_once("../gestionBD.php");
+  	include_once("gestionBD.php");
  	include_once("gestionUsuarios.php");
 
 	if (isset($_POST['submit'])){
@@ -18,7 +18,7 @@
 		}
 		else{
 			$_SESSION["login"] = $email;
-			Header("Location: ../index.php");
+			Header("Location: index.php");
 		}
 	}
 ?>
@@ -27,7 +27,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Promociones SanLucar: Login</title>
 </head>
@@ -48,7 +48,7 @@
 	?>
 
 	<div class="iniciosesion">
-		<a href="../index.php"><img class="img-login" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form action="login.php" method="post">
 			<div class="input-group"><label for="email">Email: </label>
 			<input type="text" name="email" id="email" /></div>
@@ -58,7 +58,7 @@
 		</form>
 
 		<p>¿No estás registrado? <a href="registroWeb.php">¡Registrate!</a></p>
-		<p><a href="../empleados/loginEmpleados.php"> Empleados </a></p>
+		<p><a href="loginEmpleados.php"> Empleados </a></p>
 	</div>
 </main>
 </body>

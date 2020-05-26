@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-  	include_once("../gestionBD.php");
+  	include_once("gestionBD.php");
  	include_once("gestionarEmpleados.php");
 
 
@@ -27,7 +27,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Login Empleados</title>
 </head>
@@ -44,7 +44,7 @@
 		?>
 	
 	<div class="iniciosesion">
-		<a href="../index.php"><img class="img-login" src="../images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>
 			<input type="text" name="usuario" id="usuario" /></div>

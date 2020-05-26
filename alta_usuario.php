@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require_once("../gestionBD.php");
+	require_once("gestionBD.php");
 	require_once("gestionUsuarios.php");
 		
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
@@ -27,7 +27,7 @@
 
 <body>
 	<?php
-		include_once("../cabecera.php");
+		include_once("cabecera.php");
 	?>
 
 	<main>
@@ -49,7 +49,7 @@
 	</main>
 
 	<?php
-		include_once("../footer.php");
+		include_once("footer.php");
 	?>
 </body>
 </html>

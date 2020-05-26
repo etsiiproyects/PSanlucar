@@ -1,12 +1,12 @@
 <?php
 	session_start();
 
-	require_once("../gestionBD.php");
+	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
-	require_once("../paginacion_consulta.php");
+	require_once("paginacion_consulta.php");
 	
 	if(!isset($_SESSION['login'])) {
-		header("Location: ./clientes/login.php");
+		header("Location: login.php");
 	} else {
 		if(isset($_SESSION["inmueble"])) {
 			$inmueble = $_SESSION["inmueble"];
@@ -45,7 +45,8 @@
 	$_SESSION["paginacion"] = $paginacion;
 
 	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
-
+	echo "Numero de filas" . count($filas);
+	echo "Numero" . count($query);
 	
 	//$filas = consultarTodosInmuebles($conexion);
 	cerrarConexionBD($conexion);
@@ -57,14 +58,14 @@
 <head>
   <meta charset="utf-8">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
-  <link rel="stylesheet" type="text/css" href="../css/prueba.css">
-  <link rel="stylesheet" type="text/css" href="../css/paginacion.css">
+  <link rel="stylesheet" type="text/css" href="css/prueba.css">
+  <link rel="stylesheet" type="text/css" href="css/paginacion.css">
 </head>
 
 <body>
 
 <?php
-	include_once("../cabecera.php");
+	include_once("cabecera.php");
 ?>
 
 	<nav class="pag">
@@ -104,10 +105,10 @@
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<form method="post" action="../controlador.php">
+		<form method="post" action="controlador.php">
 		<div class="inmueble">
 			<div class="nameBx">
-				<img src="../images/ritual.jpg" width="300px">
+				<img src="images/ritual.jpg" width="300px">
 			</div>
 			<div class="infoBx">	
 				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
@@ -147,7 +148,7 @@
 
 
 <?php
-	include_once("../footer.php");
+	include_once("footer.php");
 ?>
 
 </body>

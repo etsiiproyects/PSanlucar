@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require_once("../gestionBD.php");
+	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
 	
 	if(!isset($_SESSION['login'])) {
@@ -25,13 +25,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
-  <link rel="stylesheet" type="text/css" href="../css/pruebacontratos.css">
+  <link rel="stylesheet" type="text/css" href="css/pruebacontratos.css">
 </head>
 
 <body>
 
 <?php
-	include_once("../cabecera.php");
+	include_once("cabecera.php");
 ?>
 	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
 <section class="contenido">
@@ -58,7 +58,7 @@
 
 
 <?php
-	include_once("../footer.php");
+	include_once("footer.php");
 ?>
 
 <script>
@@ -78,9 +78,6 @@ for(var i = 0; i<botones.length; i++){
 	
 	console.log("funciona");
   };
-
-  
-
 </script>
 
 </body>

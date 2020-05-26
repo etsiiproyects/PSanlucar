@@ -2,7 +2,7 @@
 	session_start();
 
   	include_once("gestionBD.php");
- 	include_once("clientes/gestionUsuarios.php");
+ 	include_once("gestionUsuarios.php");
 
 
 	if (isset($_POST['submit'])){
