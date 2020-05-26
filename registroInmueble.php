@@ -1,18 +1,18 @@
 <?php
 	session_start();
-	
+
 	if(!isset($_SESSION['formulario'])) {
 		$formulario['id_inmueble'] = "";
 		$formulario['direccion'] = "";
 		$formulario['habitaciones'] = "";
 		$formulario['tipo'] = "AISLADO";
-		
+
 		$_SESSION['formulario'] = $formulario;
-		
+
 	} else {
 		$formulario = $_SESSION['formulario'];
 	}
-	
+
 	if (isset($_SESSION["errores"])) {
 		$errores = $_SESSION["errores"];
 	}
@@ -54,13 +54,13 @@
 
 				<label>Tipo inmueble:</label>
 				<label>
-					<input name="tipo" type="radio" value="AISLADO" <?php if($formulario['tipo']=='AISLADO') echo ' checked ';?>/>
+					<input name="tipo" type="radio" value="AISLADO" <?php if($formulario['tipo']=='aislado') echo ' checked ';?>/>
 					Aislado</label>
 				<label>
-					<input name="tipo" type="radio" value="PLURIFAMILIAR" <?php if($formulario['tipo']=='PLURIFAMILIAR') echo ' checked ';?>/>
+					<input name="tipo" type="radio" value="PLURIFAMILIAR" <?php if($formulario['tipo']=='plurifamiliar') echo ' checked ';?>/>
 					Plurifamiliar</label>
 				<label>
-					<input name="tipo" type="radio" value="COMERCIAL" <?php if($formulario['tipo']=='COMERCIAL') echo ' checked ';?>/>
+					<input name="tipo" type="radio" value="COMERCIAL" <?php if($formulario['tipo']=='comercial') echo ' checked ';?>/>
 					Comercial</label>
 				<br />
 
