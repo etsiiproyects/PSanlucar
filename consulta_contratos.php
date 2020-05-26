@@ -3,8 +3,8 @@
 
 	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
-	
-	if(!isset($_SESSION['login'])) {
+
+	if(!isset($_SESSION['loginEmpleado'])) {
 		header("Location: loginEmpleados.php");
 	} else {
 		if(isset($_SESSION["contrato"])) {
@@ -12,11 +12,11 @@
 			unset($_SESSION["contrato"]);
 		}
 	}
-	
+
 	$conexion = crearConexionBD();
 	$filas = consultarTodosContratos($conexion);
 	cerrarConexionBD($conexion);
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<div class="contrato">	
+		<div class="contrato">
         <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $fila["OID_CONTRATO"]; ?></b></a>
             <div class="toggle">
                 <div class="wrap">
@@ -70,12 +70,12 @@ for(var i = 0; i<botones.length; i++){
 	let toggle = toggles[i];
 	console.log(typeof(boton));
 	boton.addEventListener('click', (e) => {
-		
+
 		console.log(toggle);
 		toggle.classList.toggle("active");
 	});
 
-	
+
 	console.log("funciona");
   };
 </script>

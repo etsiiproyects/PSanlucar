@@ -4,8 +4,8 @@
 	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
 	require_once("paginacion_consulta.php");
-	
-	if(!isset($_SESSION['login'])) {
+
+	if(!isset($_SESSION['login']) && !isset($_SESSION['login'])) {
 		header("Location: login.php");
 	} else {
 		if(isset($_SESSION["inmueble"])) {
@@ -16,7 +16,7 @@
 
 	if (isset($_SESSION["paginacion"]))
 		$paginacion = $_SESSION["paginacion"];
-	
+
 	$pagina_seleccionada = isset($_GET["PAG_NUM"]) ? (int)$_GET["PAG_NUM"] : (isset($paginacion) ? (int)$paginacion["PAG_NUM"] : 1);
 	$pag_tam = isset($_GET["PAG_TAM"]) ? (int)$_GET["PAG_TAM"] : (isset($paginacion) ? (int)$paginacion["PAG_TAM"] : 5);
 
@@ -27,7 +27,7 @@
 	unset($_SESSION["paginacion"]);
 
 	$conexion = crearConexionBD();
-	
+
 	$query = 'SELECT * FROM INMUEBLES';
 
 	// Se comprueba que el tamaño de página, página seleccionada y total de registros son conformes.
@@ -47,10 +47,10 @@
 	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
 	echo "Numero de filas" . count($filas);
 	echo "Numero" . count($query);
-	
+
 	//$filas = consultarTodosInmuebles($conexion);
 	cerrarConexionBD($conexion);
-	
+
 ?>
 
 <!DOCTYPE html>
@@ -92,15 +92,15 @@
 	</nav>
 	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
 <section class="contenido">
-	<?php if($_SESSION["login"] == "Admin1" || $_SESSION["login"] == "Admin2"){ ?>
+	<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 		<div class="inserta">
 			<h2><a href="registroInmueble.php"> INSERTAR INMUEBLE </a></h2>
 		</div>
 	<?php } ?>
-	
+
 
 	<h1>Lista de Inmuebles: </h1>
-	
+
 	<div class="inmuebles">
 		<?php
 			foreach($filas as $fila) {
@@ -110,7 +110,7 @@
 			<div class="nameBx">
 				<img src="images/ritual.jpg" width="300px">
 			</div>
-			<div class="infoBx">	
+			<div class="infoBx">
 				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
 				<h2>Inmueble: <b><?php echo $fila["ID_INMUEBLE"]; ?></b></h2>
 				<input id="DIRECCION" name="DIRECCION" type="hidden" value="<?php echo $fila["DIRECCION"]; ?>"/>
@@ -120,7 +120,7 @@
 				<input id="TIPO" name="TIPO" type="hidden" value="<?php echo $fila["TIPO"]; ?>"/>
 				<p>Tipo de inmueble: <b><?php echo $fila["TIPO"]; ?></b></p>
 
-				<?php if($_SESSION["login"] == "Admin1" || $_SESSION["login"] == "Admin2"){ ?>
+				<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 
 					<?php if (isset($inmueble) and ($inmueble["ID_INMUEBLE"] == $fila["ID_INMUEBLE"])) { ?>
 						<button id="grabar" name="grabar" type="submit" >
@@ -134,7 +134,7 @@
 						<button id="borrar" name="borrar" type="submit">
 							Borrar
 						</button>
-					
+
 					<?php } ?>
 					</form>
 			</div>

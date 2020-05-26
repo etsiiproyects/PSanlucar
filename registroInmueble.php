@@ -1,18 +1,18 @@
 <?php
 	session_start();
-	
+	if(!isset($_SESSION['loginEmpleado'])) header("Location: loginEmpleados.php");
 	if(!isset($_SESSION['formulario'])) {
 		$formulario['id_inmueble'] = "";
 		$formulario['direccion'] = "";
 		$formulario['habitaciones'] = "";
 		$formulario['tipo'] = "AISLADO";
-		
+
 		$_SESSION['formulario'] = $formulario;
-		
+
 	} else {
 		$formulario = $_SESSION['formulario'];
 	}
-	
+
 	if (isset($_SESSION["errores"])) {
 		$errores = $_SESSION["errores"];
 	}

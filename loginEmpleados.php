@@ -17,7 +17,7 @@
 			$login["pass"] = $pass;
 		}
 		else {
-			$_SESSION["login"] = $nombre;
+			$_SESSION["loginEmpleado"] = $nombre;
 			Header("Location: consulta_inmuebles.php");
 		}
 	}
@@ -34,7 +34,7 @@
 
 <body>
 	<main>
-		
+
 		<?php
 			if (isset($login)) {
 		    	echo "<div class=\"error\">";
@@ -42,7 +42,7 @@
 	    		echo "</div>";
 	  		}
 		?>
-	
+
 	<div class="iniciosesion">
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
