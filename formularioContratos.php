@@ -27,12 +27,20 @@
 	<meta charset="UTF-8" />
 	<title>Registro contrato</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="js/validacionContrato.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+	<script> 
+	$(document).ready(function() {
+			$("#contratoAlta").on("submit", function() {
+				return validateContrato();
+			});
+		});
+	</script>
 		<?php
-		// Mostrar los erroes de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) {
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
@@ -44,7 +52,7 @@
 
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
-		<form id="registro" method="get" action="validacionContratos.php" onsubmit="return validateForm()">
+		<form id="contratoAlta" method="get" action="validacionContratos.php">
 
 		  		<label for="inicioAlquiler">Inicio del alquiler: </label>
 				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $formulario['inicioAlquiler'];?>" required />

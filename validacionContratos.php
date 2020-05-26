@@ -37,7 +37,7 @@
 			// Validación del NIF 
 		if($nuevoContrato["nif"]==""){
 			$errores[] = "<p> El NIF no puede estar vacio</p>";
-		}else if(!preg_match("/^[0-9]{8}[A-Z]$/", $nuevoUsuario["nif"])){
+		}else if(preg_match("/^[0-9]{8}[A-Z]$/", $nuevoUsuario["nif"])){
 			$errores[] = "<p>El NIF debe contener 8 numeros y una letra</p>";
 		}
 		

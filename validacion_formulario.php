@@ -49,11 +49,6 @@
 
 		// Validación de la fecha de nacimiento
 
-		//Validacion usuario
-		if(strlen($nuevoUsuario["nick"])>15){
-			$errores[] = "<p>El nombre de usuario es demasiado largo. Maximo 15 caracteres.</p>";
-		}
-
 		// Validación de la contraseña
 		if(!isset($nuevoUsuario["pass"]) || strlen($nuevoUsuario["pass"])<8){
 			$errores [] = "<p>Contraseña no válida: debe tener al menos 8 caracteres</p>";

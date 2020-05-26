@@ -1,10 +1,10 @@
 <?php
 
 	function consultarContrato($conexion, $contrato)  {
-		$dni = $contrato["dni"];
-		$consulta = "SELECT COUNT(*) AS TOTAL FROM CONTRATOS WHERE DNI=:dni";
-		$stmt = $conexion->prepara($consulta);
-		$stmt->bindParam(':dni', $dni);
+		$nif = $contrato["NIF"];
+		$consulta = "SELECT COUNT(*) AS TOTAL FROM CONTRATOS WHERE NIF=:nif";
+		$stmt = $conexion->prepare($consulta);
+		$stmt->bindParam(':nif', $nif);
 		$stmt->execute();
 		return $stmt->fetchColumn();
 	}
