@@ -1,8 +1,4 @@
 <?php
-	function consultarTodosInmuebles($conexion) {
-		$consulta = "SELECT id_inmueble, direccion, habitaciones, tipo FROM INMUEBLES";
-    	return $conexion->query($consulta);
-	}
 
 	function consultarTodosContratos($conexion) {
   		$consulta = "SELECT * FROM CONTRATOS";
@@ -17,26 +13,28 @@
 		return $stmt->fetchColumn();
 	}
 
+	function consultarTodosInmuebles($conexion) {
+		$consulta = "SELECT * FROM INMUEBLES";
+    	return $conexion->query($consulta);
+	}
+
 	function alta_inmueble($conexion, $inmueble) {
 		try {
-			$resultado = true;
-			$identificador = $inmueble["id_inmueble"];
-			if(!consultarInmueble($conexion, $identificador)) {
-				$consulta = 'CALL INSERTAR_INMUEBLE(:id_inmueble, :direccion, :habitaciones, :tipo)';
-				$stmt = $conexion->prepare($consulta);
-				$stmt->bindParam(':id_inmueble', $inmueble["id_inmueble"]);
-				$stmt->bindParam(':direccion', $inmueble["direccion"]);
-				$stmt->bindParam(':habitaciones', $inmueble["habitaciones"]);
-				$stmt->bindParam(':tipo', $inmueble["tipo"]);
-				$stmt->execute();
-			} else {
-				$resultado = false;
-			}
-			return $resultado;
-		} catch(PDOException $e) {
-			echo "error: " .$e->GetMessage();
+			$consulta='CALL insertar_inmueble(:id_inmueble, :direccion, :habitaciones, :tipo)';
+			$stmt=$conexion->prepare($consulta);
+			$stmt->bindParam(':id_inmueble', $inmueble["id_inmueble"]);
+			$stmt->bindParam(':direccion', $inmueble["direccion"]);
+			$stmt->bindParam(':habitaciones', $inmueble["habitaciones"]);
+			$stmt->bindParam(':tipo', $inmueble["tipo"]);
+
+			$stmt->execute();
+			return true;
+		}catch(PDOException $e) {
+			return false;
 		}
 	}
+
+
 
 	function quitar_inmueble($conexion, $idInmueble) {
 		try{

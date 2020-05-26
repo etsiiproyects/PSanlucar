@@ -7,6 +7,7 @@
 		$formulario['finalAlquiler'] = "";
 		$formulario['pagoMensual'] = "";
 		$formulario['fianza'] = "";
+		$formulario['oid'] = "";
 		$formulario['nif'] = "";
 	
 		$_SESSION['formulario'] = $formulario;
@@ -68,6 +69,10 @@
 				
 				<label for="fianza">Importe de la fianza: </label>
 				<input class="input-group" id="fianza" name="fianza" type="text" size="5" value="<?php echo $formulario['fianza'];?>" required />
+				<br />
+
+				<label for="oid">OID: </label>
+				<input class="input-group" id="oid" name="oid" type="text" size="5" value="<?php echo $formulario['oid'];?>" required />
 				<br />
 				
 				<label for="nif"><em>*</em>NIF: </label>

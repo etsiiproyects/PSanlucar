@@ -5,7 +5,7 @@
 	require_once("gestionarInmuebles.php");
 	require_once("paginacion_consulta.php");
 
-	if(!isset($_SESSION['login']) && !isset($_SESSION['login'])) {
+	if(!isset($_SESSION['login']) && !isset($_SESSION['loginEmpleado'])) {
 		header("Location: login.php");
 	} else {
 		if(isset($_SESSION["inmueble"])) {
@@ -45,8 +45,6 @@
 	$_SESSION["paginacion"] = $paginacion;
 
 	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
-	echo "Numero de filas" . count($filas);
-	echo "Numero" . count($query);
 
 	//$filas = consultarTodosInmuebles($conexion);
 	cerrarConexionBD($conexion);

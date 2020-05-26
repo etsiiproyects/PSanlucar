@@ -1,7 +1,7 @@
 <?php
 
 	function consultarContrato($conexion, $contrato)  {
-		$nif = $contrato["NIF"];
+		$nif = $contrato["nif"];
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM CONTRATOS WHERE NIF=:nif";
 		$stmt = $conexion->prepare($consulta);
 		$stmt->bindParam(':nif', $nif);
@@ -14,12 +14,13 @@
 		try {
 			$resultado = true;
 			if(!consultarContrato($conexion, $contrato)) {
-				$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :nif)';
+				$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid, :nif)';
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':inicio', $contrato["inicioAlquiler"]);
 				$stmt->bindParam(':final', $contrato["finalAlquiler"]);
 				$stmt->bindParam(':pago', $contrato["pagoMensual"]);
 				$stmt->bindParam(':fianza', $contrato["fianza"]);
+				$stmt->bindParam(':oid', $contrato["oid"]);
 				$stmt->bindParam(':nif', $contrato["nif"]);
 				$stmt->execute();
 			} else {
