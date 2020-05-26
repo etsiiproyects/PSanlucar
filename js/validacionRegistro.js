@@ -65,7 +65,7 @@ function passwordConfirmation() {
     var confirmation = passconfirm.value;
 
     if (pwd != confirmation) {
-        var error = "Please enter matching passwords!";
+        var error = "Fernando eres un subnormal";
     } else {
         var error = "";
     }
