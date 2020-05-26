@@ -30,6 +30,17 @@
 			echo "error: " . $e->GetMessage();
 		}
 	}
+	
+	function quitar_contrato($conexion, $oidContrato){
+		try{
+			$smt=$conexion -> prepare('CALL QUITAR_CONTRATO(:oidContrato)');
+			$stmt->bindParam(':oidContrato', $oidContrato);
+			$stmt->execute();
+			return 0;
+		}catch(PDOException $e) {
+			return $e->getMessage();
+		}
+	}
 
 
 ?>

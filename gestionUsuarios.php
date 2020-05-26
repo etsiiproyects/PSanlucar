@@ -35,4 +35,16 @@ function consultarUsuario($conexion,$email, $pass) {
 	$stmt->execute();
 	return $stmt->fetchColumn();
 }
+
+function quitar_usuario($conexion, $nick){
+	try{
+			$stmt=$conexion->prepare('CALL QUITAR_USUARIO(:nick)');
+			$stmt->bindParam(':nick', $nick);
+			$stmt->execute();
+			return 0;
+		}catch(PDOException $e) {
+			return $e->getMessage();
+		}
+}
+
 ?>
