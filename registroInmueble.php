@@ -54,7 +54,7 @@
 
 				<label>Tipo inmueble:</label>
 				<label>
-					<input name="tipo" type="radio" value="AISLADO" <?php if($formulario['tipo']=='ALUMNO') echo ' checked ';?>/>
+					<input name="tipo" type="radio" value="AISLADO" <?php if($formulario['tipo']=='AISLADO') echo ' checked ';?>/>
 					Aislado</label>
 				<label>
 					<input name="tipo" type="radio" value="PLURIFAMILIAR" <?php if($formulario['tipo']=='PLURIFAMILIAR') echo ' checked ';?>/>
