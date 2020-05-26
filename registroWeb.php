@@ -40,12 +40,24 @@
 </head>
 
 <body>
-	<script>
+<script>
 		// Inicialización de elementos y eventos cuando el documento se carga completamente
 		$(document).ready(function() {
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
+			
+			// EJERCICIO 2: Manejador de evento para copiar automáticamente el email como nick del usuario
+			$("#email").on("input", function(){
+				$("#nick").val($(this).val());
+			});
+
+			// EJERCICIO 3: Manejador de evento del color de la contraseña
+			$("#pass").on("keyup", function() {
+				// Calculo el color
+				passwordColor();
+			});
+
 		});
 	</script>
 	
@@ -62,7 +74,7 @@
 
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
-		<form id="registro" method="get" action="validacion_formulario.php" onsubmit="return validateForm()">
+		<form id="registro" method="get" action="validacion_formulario.php">
 			
 				<label for="nombre">Nombre: </label>
 				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
@@ -85,11 +97,11 @@
 				<br />
 
 				<label for="pass">Contraseña: </label>
-				<input class="input-group" type="password" name="pass" id="contraseña" placeholder="Mínimo 8 caracteres" required="" />
+				<input class="input-group" type="password" name="pass" id="pass" placeholder="Mínimo 8 caracteres" required oninput="passwordValidation(); " />
 				<br />
 
 				<label for="confirmar">Confirmar contraseña: </label>
-				<input class="input-group" type="password" name="confirmar" id="confirmar" placeholder="Confirmación de contraseña" required="" />
+				<input class="input-group" type="password" name="confirmar" id="confirmar" placeholder="Confirmación de contraseña" oninput="passwordConfirmation();" required />
 				<br />
 			<br>
 			<input class="boton" type="submit" value="Confirmar" />

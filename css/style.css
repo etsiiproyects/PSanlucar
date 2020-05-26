@@ -100,3 +100,19 @@ form>input:last-child {
 form>input:last-child:hover {
     opacity: .7;
 }
+
+.strongpass {
+    border-color: green;
+}
+
+.middlepass {
+    border-color: yellow;
+}
+
+.weakpass {
+    border-color: red;
+}
+
+.nanpass {
+    border-color: lightyellow;
+}

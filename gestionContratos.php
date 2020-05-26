@@ -3,7 +3,7 @@
 	function consultarContrato($conexion, $contrato)  {
 		$dni = $contrato["dni"];
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM CONTRATOS WHERE DNI=:dni";
-		$stmt = $conexion->prepara($consulta);
+		$stmt = $conexion->prepare($consulta);
 		$stmt->bindParam(':dni', $dni);
 		$stmt->execute();
 		return $stmt->fetchColumn();
