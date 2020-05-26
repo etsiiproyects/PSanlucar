@@ -47,7 +47,7 @@
                     <p>Inicio del contrato: <b><?php echo $fila["INICIOALQUILER"]; ?></b></p>
                     <p>Fin del contrato: <b><?php echo $fila["FINALQUILER"]; ?></b></p>
                     <p>Pago mensual: <b><?php echo $fila["PAGOMENSUAL"]; ?></b></p>
-                    <p>NIF cliente: <b><?php echo $fila["NIF_DEMANDANTE"]; ?></b></p>
+                    <p>NIF cliente: <b><?php echo $fila["NIF"]; ?></b></p>
                     <button> Eliminar </button>
                 </div>
             </div>
