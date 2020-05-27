@@ -34,10 +34,10 @@
 	
 	function quitar_contrato($conexion, $oidContrato){
 		try{
-			$smt=$conexion -> prepare('CALL QUITAR_CONTRATO(:oidContrato)');
-			$stmt->bindParam(':oidContrato', $oidContrato);
+			$stmt=$conexion -> prepare('CALL QUITAR_CONTRATO(:OID_CONTRATO)');
+			$stmt->bindParam(':OID_CONTRATO', $oidContrato);
 			$stmt->execute();
-			return 0;
+			return "";
 		}catch(PDOException $e) {
 			return $e->getMessage();
 		}

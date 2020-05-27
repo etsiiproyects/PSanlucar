@@ -129,9 +129,10 @@
 							Modificar
 						</button>
 						<?php } ?>
-						<button id="borrar" name="borrar" type="submit">
-							Borrar
-						</button>
+						<form method="post" action="controlador.php">
+							<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>" />
+							<button id="borrar" name="borrar" type="submit">Borrar</button>
+						</form>
 
 					<?php } ?>
 					</form>

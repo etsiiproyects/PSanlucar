@@ -38,10 +38,10 @@
 
 	function quitar_inmueble($conexion, $idInmueble) {
 		try{
-			$stmt=$conexion->prepare('CALL QUITAR_INMUEBLE(:IdInmueble)');
-			$stmt->bindParam(':IdInmueble', $IdInmueble);
+			$stmt=$conexion->prepare('CALL QUITAR_INMUEBLE(:ID_INMUEBLE)');
+			$stmt->bindParam(':ID_INMUEBLE', $idInmueble);
 			$stmt->execute();
-			return 0;
+			return "";
 		}catch(PDOException $e) {
 			return $e->getMessage();
 		}
