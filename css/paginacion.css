@@ -27,8 +27,6 @@ span {
     border: 0px;
 }
 
-.pagC {
-    background-color: #7E7E7E;
-    padding: 20px;
-    visibility: hidden;
+#freePaginacion {
+    display: none;
 }

@@ -30,7 +30,7 @@
 	if (isset($_SESSION["paginacionC"]))
 		$paginacionC = $_SESSION["paginacionC"];
 
-	$pagina_seleccionadaC = isset($_GET["PAG_NUMC"]) ? (int)$_GET["C"] : (isset($paginacionC) ? (int)$paginacionC["PAG_NUMC"] : 1);
+	$pagina_seleccionadaC = isset($_GET["PAG_NUMC"]) ? (int)$_GET["PAG_NUMC"] : (isset($paginacionC) ? (int)$paginacionC["PAG_NUMC"] : 1);
 	$pag_tamC = isset($_GET["PAG_TAMC"]) ? (int)$_GET["PAG_TAMC"] : (isset($paginacionC) ? (int)$paginacionC["PAG_TAMC"] : 5);
 
 	if ($pagina_seleccionadaC < 1) 		$pagina_seleccionadaC = 1;
@@ -63,7 +63,7 @@
 
 	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
 
-	$queryC= 'SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM OFERTAS NATURAL JOIN DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER);'
+	$queryC= 'SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM OFERTAS NATURAL JOIN DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER)';
 
 	$total_registrosC = total_consulta($conexion, $queryC);
 	$total_paginasC = (int)($total_registrosC / $pag_tamC);
@@ -77,7 +77,7 @@
 	$paginacionC["PAG_TAMC"] = $pag_tamC;
 	$_SESSION["paginacionC"] = $paginacionC;
 
-	$filasC = consulta_paginadaC($conexion, $queryC, $pagina_seleccionadaC, $pag_tamC);
+	$filasC = consulta_paginada($conexion, $queryC, $pagina_seleccionadaC, $pag_tamC);
 
 	//$filas = consultarTodosInmuebles($conexion);
 	cerrarConexionBD($conexion);
@@ -99,7 +99,7 @@
 	include_once("cabecera.php");
 ?>
 
-	<nav class="pag">
+	<nav class="pag" id="paginacion">
 		<div id="enlaces">
 			<?php
 				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
@@ -122,7 +122,7 @@
 
 	</nav>
 
-	<nav class="pagC">
+	<nav class="pag" id="freePaginacion">
 		<div id="enlaces">
 			<?php
 				for( $paginaC = 1; $paginaC <= $total_paginasC; $paginaC++ )
@@ -199,9 +199,9 @@
 		<?php } ?>
 	</div>
 
-	<div id="freeInmuebles" class="inmueblesC">
+	<div id="freeInmuebles" class="inmuebles">
 		<?php
-			foreach($filasC as $filaC) {
+			foreach($filasC as $fila) {
 		?>
 		<form method="post" action="controlador.php">
 		<div class="inmueble">
@@ -209,18 +209,18 @@
 				<img src="images/ritual.jpg" width="300px">
 			</div>
 			<div class="infoBx">
-				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $filaC["ID_INMUEBLE"]; ?>"/>
+				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
 				<h2>Inmueble: <b><?php echo $fila["ID_INMUEBLE"]; ?></b></h2>
-				<input id="DIRECCION" name="DIRECCION" type="hidden" value="<?php echo $filaC["DIRECCION"]; ?>"/>
+				<input id="DIRECCION" name="DIRECCION" type="hidden" value="<?php echo $fila["DIRECCION"]; ?>"/>
 				<p>Direccion: <b><?php echo $fila["DIRECCION"]; ?></b></p>
-				<input id="HABITACIONES" name="HABITACIONES" type="hidden" value="<?php echo $filaC["HABITACIONES"]; ?>"/>
-				<p>Numero de habitaciones: <b><?php echo $filaC["HABITACIONES"]; ?></b></p>
-				<input id="TIPO" name="TIPO" type="hidden" value="<?php echo $filaC["TIPO"]; ?>"/>
-				<p>Tipo de inmueble: <b><?php echo $filaC["TIPO"]; ?></b></p>
+				<input id="HABITACIONES" name="HABITACIONES" type="hidden" value="<?php echo $fila["HABITACIONES"]; ?>"/>
+				<p>Numero de habitaciones: <b><?php echo $fila["HABITACIONES"]; ?></b></p>
+				<input id="TIPO" name="TIPO" type="hidden" value="<?php echo $fila["TIPO"]; ?>"/>
+				<p>Tipo de inmueble: <b><?php echo $fila["TIPO"]; ?></b></p>
 
 				<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 
-					<?php if (isset($inmueble) and ($inmueble["ID_INMUEBLE"] == $filaC["ID_INMUEBLE"])) { ?>
+					<?php if (isset($inmueble) and ($inmueble["ID_INMUEBLE"] == $fila["ID_INMUEBLE"])) { ?>
 						<button id="grabar" name="grabar" type="submit" >
 							Guardar
 						</button>
@@ -230,7 +230,7 @@
 						</button>
 						<?php } ?>
 						<form method="post" action="controlador.php">
-							<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $filaC["ID_INMUEBLE"]; ?>" />
+							<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>" />
 							<button id="borrar" name="borrar" type="submit">Borrar</button>
 						</form>
 
@@ -252,14 +252,29 @@
 
 <script type="text/javascript">
 
-	let all=document.getElementById("inmuebles");
-	let free=document.getElementById("freeInmuebles");
-	 function visibility(){
-		 if(all.style.visibility=="visible"){
-			 all.style.visibility=="hidden";
-			 free.style.visibility=="visible";
+	
+
+	function visibility(){
+
+		let all=document.getElementById("inmuebles");
+		let free=document.getElementById("freeInmuebles");
+		let pag=document.getElementById("paginacion");
+		let freeP=document.getElementById("freePaginacion");
+
+		console.log(all);
+		console.log(free);
+		 if(all.style.display=="flex"){
+			pag.style.display="none";
+			 freeP.style.display="block";
+			 all.style.display="none";
+			 free.style.display="flex";
 			 return;
 		 }
+		pag.style.display="block";
+		freeP.style.display="none";
+		all.style.display="flex";
+		free.style.display="none";
+		return;
 	 }
 	funci
 </script>
