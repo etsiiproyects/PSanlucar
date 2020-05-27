@@ -154,3 +154,15 @@ div.error {
     color: black;
     font-size: 2vw;
 }
+
+.inmueblesC {
+    padding-top: 10px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    transform-style: preserve-3d;
+    visibility: hidden;
+}
