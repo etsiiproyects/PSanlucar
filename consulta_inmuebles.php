@@ -26,6 +26,22 @@
 	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
 	unset($_SESSION["paginacion"]);
 
+
+	if (isset($_SESSION["paginacionC"]))
+		$paginacionC = $_SESSION["paginacionC"];
+
+	$pagina_seleccionadaC = isset($_GET["PAG_NUMC"]) ? (int)$_GET["C"] : (isset($paginacionC) ? (int)$paginacionC["PAG_NUMC"] : 1);
+	$pag_tamC = isset($_GET["PAG_TAMC"]) ? (int)$_GET["PAG_TAMC"] : (isset($paginacionC) ? (int)$paginacionC["PAG_TAMC"] : 5);
+
+	if ($pagina_seleccionadaC < 1) 		$pagina_seleccionadaC = 1;
+	if ($pag_tamC < 1) 		$pag_tamC = 5;
+
+	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
+	unset($_SESSION["paginacionC"]);
+
+
+
+
 	$conexion = crearConexionBD();
 
 	$query = 'SELECT * FROM INMUEBLES';
@@ -57,8 +73,8 @@
 	if ($pagina_seleccionadaC > $total_paginasC)		$pagina_seleccionadaC = $total_paginasC;
 
 	// Generamos los valores de sesión para página e intervalo para volver a ella después de una operación
-	$paginacionC["PAG_NUM"] = $pagina_seleccionadaC;
-	$paginacionC["PAG_TAM"] = $pag_tamC;
+	$paginacionC["PAG_NUMC"] = $pagina_seleccionadaC;
+	$paginacionC["PAG_TAMC"] = $pag_tamC;
 	$_SESSION["paginacionC"] = $paginacionC;
 
 	$filasC = consulta_paginadaC($conexion, $queryC, $pagina_seleccionadaC, $pag_tamC);
