@@ -265,14 +265,14 @@
 		console.log(all);
 		console.log(free);
 		 if(all.style.display=="flex"){
-			 boton.value="Mostras todos los Inmuebles";
+			 boton.innerText="Mostras todos los Inmuebles";
 			 pag.style.display="none";
 			 freeP.style.display="block";
 			 all.style.display="none";
 			 free.style.display="flex";
 			 return;
 		 }
-		boton.value="Mostras inmuebles libres";
+		boton.innerText="Mostras inmuebles libres";
 		pag.style.display="block";
 		freeP.style.display="none";
 		all.style.display="flex";
