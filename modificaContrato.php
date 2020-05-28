@@ -28,7 +28,7 @@
 
 	<div class="iniciosesion">
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
-		<form id="registro" method="get" action="accion_modificar_contrato.php">
+		<form id="registro" method="get" action="validacionModificaContrato.php">
 			<input type="text" name="oid" value=""<?php echo $contrato['OID_CONTRATO'] ?>"" hidden>
 			<label for="INICIOALQUILER">Inicio alquiler: </label>
 			<input class="input-group" id="INICIOALQUILER" name="INICIOALQUILER" type="date" />
