@@ -2,7 +2,7 @@
 	session_start();
 
 	require_once("gestionBD.php");
-	require_once("gestionarInmuebles.php");
+	require_once("gestionContratos.php");
 
 	if(!isset($_SESSION['loginEmpleado'])) {
 		header("Location: loginEmpleados.php");

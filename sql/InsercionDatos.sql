@@ -9,7 +9,7 @@ Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwert
 Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', 'romero');
 Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', 'valdes');
 Quitar_Usuario('morales');
-Quitar_Usuario('valdes');
+Quitar_Usuario('romero');
 
 insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'aislado');
 insertar_inmueble('02.1A','C/ Cristobal Colon',2, 'plurifamiliar');

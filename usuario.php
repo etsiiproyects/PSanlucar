@@ -3,7 +3,7 @@
 
   	include_once("gestionBD.php");
  	include_once("gestionUsuarios.php");
-    include_once("gestionarInmuebles.php");
+    include_once("gestionContratos.php");
 
 
 	if(!isset($_SESSION['login'])) {
