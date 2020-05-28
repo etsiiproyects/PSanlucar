@@ -279,7 +279,7 @@
 		free.style.display="none";
 		return;
 	 }
-	funci
+
 </script>
 
 </body>
