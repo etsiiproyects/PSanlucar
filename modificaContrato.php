@@ -20,7 +20,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Promociones Sanlucar: Modificar contrato</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 </head>
 
@@ -31,11 +31,14 @@
 		<form id="registro" method="get" action="accion_modificar_contrato.php"></form>
 		<label for="INICIOALQUILER">Inicio alquiler: </label>
 		<input class="input-group" id="INICIOALQUILER" name="INICIOALQUILER" type="date" />
-		<?php $inicio= $contrato['INICIOALQUILER'] ?>
+		<?php
+		$inicio= $contrato['INICIOALQUILER'];
+		$fin=$contrato['FINALQUILER'];
+		 ?>
 
 		<br />
 		<label for="FINALQUILER">Fin alquiler: </label>
-		<input class="input-group" id="FINALQUILER" name="FINALQUILER" type="text" value="<?php echo $contrato['FINALQUILER'] ?>" />
+		<input class="input-group" id="FINALQUILER" name="FINALQUILER" type="date" value="<?php echo $contrato['FINALQUILER'] ?>" />
 		<br />
 		<label for="PAGOMENSUAL">Pago mensual: </label>
 		<input class="input-group" id="PAGOMENSUAL" name="PAGOMENSUAL" type="text" value="<?php echo $contrato['PAGOMENSUAL'] ?>" />
@@ -47,14 +50,19 @@
 	</div>
 
 	<script>
-		$(document).ready(function() {
-			let ia1 = "<?php $inicio ?>";
-			console.log(ia1);
-			ia1.split("/");
+		window.onload= function() {
+			var ia1 = '<?php echo $inicio; ?>';
+			var array=ia1.split("/");
 			let ia = document.getElementById("INICIOALQUILER");
-			let fecha="20" + ia1[2] + "-" + ia1[1] + "-" + ia1[0];
+			let fecha="20" + array[2] + "-" + array[1] + "-" + array[0];
 			ia.value = fecha;
-		})
+
+			var fa1 = '<?php echo $fin; ?>';
+			var array1=fa1.split("/");
+			let fa = document.getElementById("FINALQUILER");
+			let fecha1="20" + array1[2] + "-" + array1[1] + "-" + array1[0];
+			fa.value = fecha1;
+		};
 	</script>
 
 </body>
