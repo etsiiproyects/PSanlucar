@@ -154,7 +154,7 @@
 
 
 	<h1>Lista de Inmuebles: </h1>
-	<button type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
+	<button  id="boton" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
 
 	<div id="inmuebles" class="inmuebles">
 		<?php
@@ -252,7 +252,7 @@
 
 <script type="text/javascript">
 
-	
+
 
 	function visibility(){
 
@@ -260,16 +260,19 @@
 		let free=document.getElementById("freeInmuebles");
 		let pag=document.getElementById("paginacion");
 		let freeP=document.getElementById("freePaginacion");
+		let boton =doument.getElementById("boton");
 
 		console.log(all);
 		console.log(free);
 		 if(all.style.display=="flex"){
-			pag.style.display="none";
+			 boton.value="Mostras todos los Inmuebles";
+			 pag.style.display="none";
 			 freeP.style.display="block";
 			 all.style.display="none";
 			 free.style.display="flex";
 			 return;
 		 }
+		boton.value="Mostras inmuebles libres";
 		pag.style.display="block";
 		freeP.style.display="none";
 		all.style.display="flex";
