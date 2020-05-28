@@ -36,6 +36,15 @@ function consultarUsuario($conexion,$email, $pass) {
 	return $stmt->fetchColumn();
 }
 
+function consultarDatosUsuario($conexion,$email, $pass){
+	$consulta = "SELECT NOMBRE, APELLIDOS, EMAIL, NICK FROM USUARIOS WHERE EMAIL=:email AND PASS=:pass";
+	$stmt = $conexion->prepare($consulta);
+	$stmt->bindParam(':email',$email);
+	$stmt->bindParam(':pass',$pass);
+	$stmt->execute();
+	return $stmt->fetch();
+}
+
 function quitar_usuario($conexion, $nick){
 	try{
 			$stmt=$conexion->prepare('CALL QUITAR_USUARIO(:nick)');

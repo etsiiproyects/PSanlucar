@@ -8,7 +8,20 @@
 		$stmt->execute();
 		return $stmt->fetchColumn();
 	}
+
+	function consultarTodosContratos($conexion) {
+		$consulta = "SELECT * FROM CONTRATOS";
+		return $conexion->query($consulta);
+  	}
 	
+
+	function consultarContratosUsuario($conexion, $nif){
+		$consulta = "SELECT * FROM CONTRATO WHERE NIF=:nif";
+		$stmt = $conexion->prepare($consulta);
+		$stmt->bindParam(':nif', $nif);
+		$stmt->execute();
+		return $stmt->fetch();
+	}
 	
 	function alta_contrato($conexion, $contrato) {
 		try {

@@ -1,9 +1,6 @@
 <?php
 
-	function consultarTodosContratos($conexion) {
-  		$consulta = "SELECT * FROM CONTRATOS";
-  		return $conexion->query($consulta);
-	}
+	
 
 	function consultarInmueble($conexion, $identificador) {
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM INMUEBLES WHERE ID_INMUEBLE=:identificador";

@@ -17,7 +17,9 @@
 			$login["pass"] = $pass;
 		}
 		else{
-			$_SESSION["login"] = $email;
+			$login["usuario"] = $email;
+			$login["pass"] = $pass;
+			$_SESSION["login"] = $login;
 			Header("Location: index.php");
 		}
 	}

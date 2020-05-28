@@ -30,7 +30,7 @@ create table ofertas (
     fechaInicio date    not null,
     id_inmueble varchar2(10)    not null,
     primary key (oid_o),
-    foreign key (id_inmueble) references inmuebles);
+    foreign key (id_inmueble) references inmuebles ON DELETE CASCADE);
 
 create table usuarios (
     nombre varchar2(30) not null,
@@ -64,7 +64,7 @@ CREATE TABLE CONTRATOS (
     OID_D INTEGER NOT NULL,
     NIF CHAR(9) NOT NULL,
     PRIMARY KEY (OID_CONTRATO),
-    FOREIGN KEY (OID_D) REFERENCES DEMANDAS);
+    FOREIGN KEY (OID_D) REFERENCES DEMANDAS ON DELETE CASCADE);
 
 -----------------------------------------Secuencias
 CREATE SEQUENCE SEC_EMPLEADOS_OID
