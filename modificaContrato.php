@@ -31,8 +31,7 @@
 		<form id="registro" method="get" action="accion_modificar_contrato.php"></form>
 		<label for="INICIOALQUILER">Inicio alquiler: </label>
 		<input class="input-group" id="INICIOALQUILER" name="INICIOALQUILER" type="date" />
-		<p id="ia1" ><?php echo $contrato['INICIOALQUILER'] ?></p>
-		<p id="ia2"></p>
+		<?php $inicio= $contrato['INICIOALQUILER'] ?>
 
 		<br />
 		<label for="FINALQUILER">Fin alquiler: </label>
@@ -49,10 +48,10 @@
 
 	<script>
 		$(document).ready(function() {
-			let ia1 = document.getElementById("ia1").innerText.split("/");
+			let ia1 = "<?php $inicio ?>";
+			ia1.split("/");
 			let ia = document.getElementById("INICIOALQUILER");
 			let fecha="20" + ia1[2] + "-" + ia1[1] + "-" + ia1[0];
-			ia2.innetHTML=fecha;
 			ia.value = fecha;
 		})
 	</script>
