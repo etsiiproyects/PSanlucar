@@ -19,7 +19,7 @@
 		else {
 			$login["usuario"] = $nombre;
 			$login["pass"] = $pass;
-			
+
 		}
 	}
 ?>
@@ -45,7 +45,7 @@
 		?>
 
 	<div class="iniciosesion">
-	
+
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>

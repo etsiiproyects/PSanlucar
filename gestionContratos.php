@@ -13,7 +13,7 @@
 		$consulta = "SELECT * FROM CONTRATOS";
 		return $conexion->query($consulta);
   	}
-	
+
 
 	function consultarContratosUsuario($conexion, $nif){
 		$consulta = "SELECT * FROM CONTRATO WHERE NIF=:nif";
@@ -22,7 +22,7 @@
 		$stmt->execute();
 		return $stmt->fetch();
 	}
-	
+
 	function alta_contrato($conexion, $contrato) {
 		try {
 			$resultado = true;
@@ -44,13 +44,32 @@
 			echo "error: " . $e->GetMessage();
 		}
 	}
-	
+
 	function quitar_contrato($conexion, $oidContrato){
 		try{
 			$stmt=$conexion -> prepare('CALL QUITAR_CONTRATO(:OID_CONTRATO)');
 			$stmt->bindParam(':OID_CONTRATO', $oidContrato);
 			$stmt->execute();
 			return "";
+		}catch(PDOException $e) {
+			return $e->getMessage();
+		}
+	}
+
+
+	function modificar_contrato($conexion, $contrato){
+
+		$fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
+		$fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
+		try{
+			$stmt=$conexion ->prepare('CALL MODIFICAR_CONTRATO(:oidContrato, :inicio, :final, :pago, :nif)');
+			$stmt->bindParam(':oidContrato', $contrato["oid"]);
+			$stmt->bindParam(':inicio', $fechaInicio);
+			$stmt->bindParam(':final', $fechaFin);
+			$stmt->bindParam(':pago', $contrato["pagoMensual"]);
+			$stmt->bindParam(':nif', $contrato["nif"]);
+			$stmt->execute();
+			return"";
 		}catch(PDOException $e) {
 			return $e->getMessage();
 		}

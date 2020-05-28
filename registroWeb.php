@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	include_once("gestionBD.php");
  
 	if (!isset($_SESSION['formulario'])) {
@@ -18,7 +18,7 @@
 		
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
-	
+
 	$conexion = crearConexionBD();
 ?>
 
@@ -40,7 +40,7 @@
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
-			
+
 			// EJERCICIO 2: Manejador de evento para copiar automáticamente el email como nick del usuario
 			$("#email").on("input", function(){
 				$("#nick").val($(this).val());
@@ -53,7 +53,7 @@
 			});
 		});
 	</script>
-	
+
 		<?php
 		// Mostrar los erroes de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) {
@@ -68,7 +68,7 @@
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
 		<form id="registro" method="get" action="validacion_formulario.php">
-			
+
 				<label for="nombre">Nombre: </label>
 				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
 				<br />

@@ -38,7 +38,7 @@
     <h2> Descripcion: </h2>
     <p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
 	</section>
-	
+
 <?php include_once("footer.php") ?>
 
 </body>
