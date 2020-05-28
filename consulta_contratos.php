@@ -48,6 +48,7 @@
                     <p>Fin del contrato: <b><?php echo $fila["FINALQUILER"]; ?></b></p>
                     <p>Pago mensual: <b><?php echo $fila["PAGOMENSUAL"]; ?></b></p>
                     <p>NIF cliente: <b><?php echo $fila["NIF"]; ?></b></p>
+                    <button id="editar" name="editar" type="submit">Modificar</button>
                     <form method="post" action="controladorContrato.php">
                     	<input id="OID_CONTRATO" name="OID_CONTRATO" type="hidden" value="<?php echo $fila["OID_CONTRATO"]; ?>" />
                     	<button id="borrar" name="borrar" type="submit"> Eliminar </button>
