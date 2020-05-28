@@ -1,10 +1,11 @@
 
 <?php
 	session_start();
-
+	$excepcion="";
+	if(isset($_SESSION["excepcion"])){
 	$excepcion = $_SESSION["excepcion"];
 	unset($_SESSION["excepcion"]);
-
+	}
 	if (isset ($_SESSION["destino"])) {
 		$destino = $_SESSION["destino"];
 		unset($_SESSION["destino"]);
@@ -16,7 +17,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/excepcion.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Promociones Sanlucar: ¡Se ha producido un problema!</title>
 </head>
@@ -26,14 +27,13 @@
 	include_once("cabecera.php");
 ?>
 
-?>
-
+<div class="excepcion">
 	<div>
 		<h2>Ups!</h2>
 		<?php if ($destino<>"") { ?>
 		<p>Ocurrió un problema durante el procesado de los datos. Pulse <a href="<?php echo $destino ?>">aquí</a> para volver a la página principal.</p>
 		<?php } else { ?>
-		<p>Ocurrió un problema para acceder a la base de datos. </p>
+		<p>Ocurrió un problema para acceder a la base de datos.  </p>
 		<?php } ?>
 	</div>
 
@@ -41,6 +41,7 @@
 		<?php echo "Información relativa al problema: $excepcion;" ?>
 	</div>
 
+</div>
 <?php
 	include_once("footer.php");
 ?>

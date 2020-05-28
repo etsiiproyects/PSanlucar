@@ -21,6 +21,7 @@ create table INMUEBLES (
     ID_INMUEBLE VARCHAR2(10)   NOT NULL,
     DIRECCION VARCHAR2(50) NOT NULL,
     HABITACIONES INTEGER,
+    IMG VARCHAR2(300),
     TIPO VARCHAR2(13) CHECK (TIPO in ('aislado','plurifamiliar','comercial'))   NOT NULL,
     PRIMARY key (ID_INMUEBLE));
 
@@ -129,9 +130,10 @@ CREATE OR REPLACE PROCEDURE INSERTAR_INMUEBLE
   (P_ID IN inmuebles.id_inmueble%TYPE,
    P_DIR IN inmuebles.direccion%TYPE,
    P_HAB IN inmuebles.habitaciones%TYPE,
+   P_IMG IN inmuebles.img%TYPE,
    P_TIPO IN inmuebles.tipo%TYPE) IS
 BEGIN
-  INSERT INTO inmuebles(id_inmueble,direccion,habitaciones,tipo) VALUES (P_ID,P_DIR,P_HAB,P_TIPO);
+  INSERT INTO inmuebles(id_inmueble,direccion,habitaciones, img, tipo) VALUES (P_ID,P_DIR,P_HAB,P_IMG,P_TIPO);
 END;
 /
 

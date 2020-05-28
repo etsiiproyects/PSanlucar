@@ -89,7 +89,7 @@
 <head>
   <meta charset="utf-8">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
-  <link rel="stylesheet" type="text/css" href="css/prueba.css">
+  <link rel="stylesheet" type="text/css" href="css/inmuebles.css">
   <link rel="stylesheet" type="text/css" href="css/paginacion.css">
 </head>
 
@@ -163,7 +163,8 @@
 		<form method="post" action="controlador.php">
 		<div class="inmueble">
 			<div class="nameBx">
-				<img src="images/ritual.jpg" width="300px">
+				<input id="IMG" name="IMG" type="hidden" value="<?php echo $fila["IMG"]; ?>"/>
+				<img src="<?php echo $fila["IMG"]; ?>" width="300px">
 			</div>
 			<div class="infoBx">
 				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
