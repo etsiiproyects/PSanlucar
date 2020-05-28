@@ -89,7 +89,7 @@
 <head>
   <meta charset="utf-8">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
-  <link rel="stylesheet" type="text/css" href="css/prueba.css">
+  <link rel="stylesheet" type="text/css" href="css/inmuebles.css">
   <link rel="stylesheet" type="text/css" href="css/paginacion.css">
 </head>
 

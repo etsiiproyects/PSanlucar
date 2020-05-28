@@ -24,7 +24,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promociones Sanlucar: Lista de contratos</title>
-  <link rel="stylesheet" type="text/css" href="css/pruebacontratos.css">
+  <link rel="stylesheet" type="text/css" href="css/contratos.css">
 </head>
 
 <body>
