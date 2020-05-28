@@ -91,9 +91,13 @@
   <title>Promociones Sanlucar: Lista de inmuebles</title>
   <link rel="stylesheet" type="text/css" href="css/inmuebles.css">
   <link rel="stylesheet" type="text/css" href="css/paginacion.css">
+  <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="js/inmuebles.js" type="text/javascript"></script>
 </head>
 
 <body>
+
+
 
 <?php
 	include_once("cabecera.php");
@@ -160,7 +164,7 @@
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<form method="post" action="controlador.php">
+		<form id="formInmueble" name="formInm" method="post" action="controlador.php">
 		<div class="inmueble">
 			<div class="nameBx">
 				<input id="IMG" name="IMG" type="hidden" value="<?php echo $fila["IMG"]; ?>"/>
@@ -187,13 +191,16 @@
 							Modificar
 						</button>
 						<?php } ?>
-						<form method="post" action="controlador.php">
-							<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>" />
-							<button id="borrar" name="borrar" type="submit">Borrar</button>
-						</form>
+						<input id="borrar" name="borrar" type="hidden" value=""/>
+						<button type="button" onclick="alertaBorrar()" >
+							Borrar
+						</button>
+						
+
 
 					<?php } ?>
-					</form>
+				
+				</form>
 			</div>
 		</div>
 		</form>
@@ -207,7 +214,8 @@
 		<form method="post" action="controlador.php">
 		<div class="inmueble">
 			<div class="nameBx">
-				<img src="images/ritual.jpg" width="300px">
+				<input id="IMG" name="IMG" type="hidden" value="<?php echo $fila["IMG"]; ?>"/>
+				<img src="<?php echo $fila["IMG"]; ?>" width="300px">
 			</div>
 			<div class="infoBx">
 				<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
@@ -226,14 +234,14 @@
 							Guardar
 						</button>
 						<?php } else { ?>
-						<button id="editar" name="editar" type="submit" >
+						<button id="editar" name="editar" type="submit">
 							Modificar
 						</button>
 						<?php } ?>
-						<form method="post" action="controlador.php">
-							<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>" />
-							<button id="borrar" name="borrar" type="submit">Borrar</button>
-						</form>
+						<input id="borrar" name="borrar" type="hidden" value=""/>
+						<button type="button" onclick="alertaBorrar()" >
+							Borrar
+						</button>
 
 					<?php } ?>
 					</form>
