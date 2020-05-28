@@ -260,7 +260,7 @@
 		let free=document.getElementById("freeInmuebles");
 		let pag=document.getElementById("paginacion");
 		let freeP=document.getElementById("freePaginacion");
-		let boton =doument.getElementById("boton");
+		let boton =document.getElementById("boton");
 
 		console.log(all);
 		console.log(free);
