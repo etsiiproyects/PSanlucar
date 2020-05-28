@@ -39,13 +39,13 @@
 
 			<br />
 			<label for="FINALQUILER">Fin alquiler: </label>
-			<input class="input-group" id="FINALQUILER" name="FINALQUILER" type="date" value="<?php echo $contrato['FINALQUILER'] ?>" />
+			<input class="input-group" id="FINALQUILER" name="finalquiler" type="date" value="<?php echo $contrato['FINALQUILER'] ?>" />
 			<br />
 			<label for="PAGOMENSUAL">Pago mensual: </label>
-			<input class="input-group" id="PAGOMENSUAL" name="PAGOMENSUAL" type="text" value="<?php echo $contrato['PAGOMENSUAL'] ?>" />
+			<input class="input-group" id="PAGOMENSUAL" name="pagoMensual" type="text" value="<?php echo $contrato['PAGOMENSUAL'] ?>" />
 			<br />
 			<label for="NIF">NIF: </label>
-			<input class="input-group" id="NIF" name="NIF" type="text" value="<?php echo $contrato['NIF'] ?>" />
+			<input class="input-group" id="NIF" name="nif" type="text" value="<?php echo $contrato['NIF'] ?>" />
 			<br />
 			<input class="boton" type="submit" value="Confirmar cambios" />
 		</form>

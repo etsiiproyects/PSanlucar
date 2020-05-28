@@ -58,13 +58,15 @@
 
 
 	function modificar_contrato($conexion, $contrato){
+
+		$fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
+		$fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
 		try{
-			$stmt=$conexion ->prepare('CALL MODIFICAR_CONTRATO(:OidContrato, :inicio, :final, :pago, :fianza, :oid, :nif)');
-			$stmt->bindParam(':inicio', $contrato["inicioAlquiler"]);
-			$stmt->bindParam(':final', $contrato["finalAlquiler"]);
+			$stmt=$conexion ->prepare('CALL MODIFICAR_CONTRATO(:oidContrato, :inicio, :final, :pago, :nif)');
+			$stmt->bindParam(':oidContrato', $contrato["oid"]);
+			$stmt->bindParam(':inicio', $fechaInicio);
+			$stmt->bindParam(':final', $fechaFin);
 			$stmt->bindParam(':pago', $contrato["pagoMensual"]);
-			$stmt->bindParam(':fianza', $contrato["fianza"]);
-			$stmt->bindParam(':oid', $contrato["oid"]);
 			$stmt->bindParam(':nif', $contrato["nif"]);
 			$stmt->execute();
 			return"";
