@@ -55,8 +55,14 @@ div.error {
     justify-content: center;
 }
 
-.inserta:hover {
+.contenido a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenido a:hover .inserta {
     background-color: white;
+    color: darkorange;
     border: 2px solid darkorange;
 }
 

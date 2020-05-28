@@ -5,31 +5,13 @@ function validateForm() {
 
         var error1 = nameValidation();
 
-        //var error2 = passwordConfirmation();
+        var error2 = URLValidation();
 
         //var error3 = fechaValidation();
 
-        return (error1.length == 0);
+        return (error1.length == 0) && (error2.length == 0);
     } else
         return true;
-}
-
-function fechaValidation() {
-
-
-    var fecha = document.getElementById("fechaNacimiento").value;
-    var fechaS = fecha.split("-");
-
-    var date = new Date(fechaS[0], fechaS[1] - 1, fechaS[2]);
-    var fechaMin = new Date();
-    fechaMin.setFullYear(fechaMin.getFullYear - 21);
-
-    if (date > fechaMin) var error = "You must be over 21 years old.";
-    if (fecha) var error = "";
-
-    fecha.setCustomValidity(error);
-
-    return error;
 }
 
 function nameValidation() {
@@ -38,10 +20,11 @@ function nameValidation() {
     var valid = true;
 
 
-    valid = valid && (nombre.length == 4);
+    valid = valid && (nombre.length == 5);
 
 
-    var isValid = new RegExp("^\\d{2}\.\\d{2}|\\d[A-Z]");
+    var isValid = /^[0-9]{2}\.[0-9][A-Z0-9]/;
+
     valid = valid && (isValid.test(nombre));
 
 
@@ -50,6 +33,25 @@ function nameValidation() {
     } else {
         var error = "";
     }
-    password.setCustomValidity(error);
+    name.setCustomValidity(error);
+    return error;
+}
+
+function URLValidation() {
+    var name = document.getElementById("img");
+    var nombre = name.value;
+    var valid = true;
+
+
+    var isValid = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+
+    valid = valid && (isValid.test(nombre));
+
+    if (!valid) {
+        var error = "URL no validá.";
+    } else {
+        var error = "";
+    }
+    name.setCustomValidity(error);
     return error;
 }

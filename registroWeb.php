@@ -2,9 +2,7 @@
 	session_start();
 	
 	include_once("gestionBD.php");
- 	include_once("gestionUsuarios.php");
-	
-	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
+ 
 	if (!isset($_SESSION['formulario'])) {
 		$formulario['nombre'] = "";
 		$formulario['apellidos'] = "";
@@ -15,13 +13,9 @@
 		$formulario['nick'] = "";
 
 		$_SESSION['formulario'] = $formulario;
-	}
-	// Si ya existían valores, los cogemos para inicializar el formulario
-	else
+	}else
 		$formulario = $_SESSION['formulario'];
-
-
-	// Si hay errores de validación, hay que mostrarlos y marcar los campos (El estilo viene dado y ya se explicará)
+		
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
 	
@@ -33,7 +27,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Registro</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>

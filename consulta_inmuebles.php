@@ -151,9 +151,9 @@
 	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
 <section class="contenido">
 	<?php if(isset($_SESSION['loginEmpleado'])){ ?>
-		<div class="inserta">
-			<h2><a href="registroInmueble.php"> INSERTAR INMUEBLE </a></h2>
-		</div>
+		<a href="registroInmueble.php"><div class="inserta">
+			<h2> INSERTAR INMUEBLE </h2>
+		</div></a>
 	<?php } ?>
 
 

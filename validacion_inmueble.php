@@ -1,18 +1,18 @@
 <?php
 	session_start();
 	
-	if(isset($_SESSION["formulario"])) {
+	if(isset($_SESSION["inmueble"])) {
 		$nuevoInmueble["id_inmueble"] = $_REQUEST["id_inmueble"];
 		$nuevoInmueble["direccion"] = $_REQUEST["direccion"];
 		$nuevoInmueble["tipo"] = $_REQUEST["tipo"];
+		$nuevoInmueble["img"] = $_REQUEST["img"];
 		$nuevoInmueble["habitaciones"] = $_REQUEST["habitaciones"];
 	} else {
-		Header("Location: registroInmueble.php");
+		Header("Location: excepcion.php");
 	}
 	
-	$_SESSION["formulario"] = $nuevoInmueble;
-	Header('Location: alta_inmueble.php');
-	//$errores = validarDatosInmueble($nuevoInmueble);
+	$_SESSION["inmueble"] = $nuevoInmueble;
+	$errores = validarDatosInmueble($conexion, $nuevoInmueble);
 	
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
