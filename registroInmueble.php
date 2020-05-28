@@ -26,7 +26,7 @@
          <meta charset="utf-8">
          <title>Gestion Promociones Sanlucar: Alta Inmueble</title>
          <script src="js/validacion_cliente_alta_inmueble.js" type="text/javascript"></script>
-         <link rel="stylesheet" type="text/css" href="css/style.css" />
+         <link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
      </head>
      <body>

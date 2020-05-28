@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	
+
 	include_once("gestionBD.php");
  	include_once("gestionUsuarios.php");
-	
+
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
 	if (!isset($_SESSION['formulario'])) {
 		$formulario['nombre'] = "";
@@ -24,7 +24,7 @@
 	// Si hay errores de validación, hay que mostrarlos y marcar los campos (El estilo viene dado y ya se explicará)
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
-	
+
 	$conexion = crearConexionBD();
 ?>
 
@@ -33,7 +33,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Registro</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>
@@ -46,7 +46,7 @@
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
-			
+
 			// EJERCICIO 2: Manejador de evento para copiar automáticamente el email como nick del usuario
 			$("#email").on("input", function(){
 				$("#nick").val($(this).val());
@@ -59,7 +59,7 @@
 			});
 		});
 	</script>
-	
+
 		<?php
 		// Mostrar los erroes de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) {
@@ -74,7 +74,7 @@
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
 		<form id="registro" method="get" action="validacion_formulario.php">
-			
+
 				<label for="nombre">Nombre: </label>
 				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
 				<br />

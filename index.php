@@ -28,7 +28,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Promociones Sanlucar Web</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/excepcion.css">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     <h2> Descripcion: </h2>
     <p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
 	</section>
-	
+
 <?php include_once("footer.php") ?>
 
 </body>

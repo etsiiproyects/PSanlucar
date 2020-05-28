@@ -19,7 +19,7 @@
 		else {
 			$login["usuario"] = $nombre;
 			$login["pass"] = $pass;
-			
+
 		}
 	}
 ?>
@@ -28,7 +28,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/formularios.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Login Empleados</title>
 </head>
@@ -45,7 +45,7 @@
 		?>
 
 	<div class="iniciosesion">
-	
+
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>
