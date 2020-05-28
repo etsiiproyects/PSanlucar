@@ -1,14 +1,14 @@
 <?php
 
 	session_start();
-	
+
 	if(isset($_REQUEST["OID_CONTRATO"])) {
 		$contrato["INICIOALQUILER"] = $_REQUEST["INICIOALQUILER"];
 		$contrato["FINALQUILER"] = $_REQUEST["FINALQUILER"];
 		$contrato["PAGOMENSUAL"] = $_REQUEST["PAGOMENSUAL"];
 		$contrato["NIF"] = $_REQUEST["NIF"];
 		$contrato["OID_CONTRATO"] = $_REQUEST["OID_CONTRATO"];
-		
+
 		$_SESSION["contrato"] = $contrato;
 	}
 	else header("Location: consulta_contratos.php");
@@ -25,14 +25,14 @@
 </head>
 
 <body>
-	
+
 	<div class="iniciosesion">
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form id="registro" method="get" action="accion_modificar_contrato.php"></form>
 		<label for="INICIOALQUILER">Inicio alquiler: </label>
 		<input class="input-group" id="INICIOALQUILER" name="INICIOALQUILER" type="date" />
-		<p id="ia1" ><?php echo $contrato['INICIOALQUILER'] ?></p>
-		
+		<?php $inicio= $contrato['INICIOALQUILER'] ?>
+
 		<br />
 		<label for="FINALQUILER">Fin alquiler: </label>
 		<input class="input-group" id="FINALQUILER" name="FINALQUILER" type="text" value="<?php echo $contrato['FINALQUILER'] ?>" />
@@ -45,14 +45,16 @@
 		<br />
 		<input class="boton" type="submit" value="Confirmar cambios" />
 	</div>
-	
+
 	<script>
 		$(document).ready(function() {
-			let ia1 = document.getElementById("ia1").innerText.split("/");
+			let ia1 = "<?php $inicio ?>";
+			console.log(ia1);
+			ia1.split("/");
 			let ia = document.getElementById("INICIOALQUILER");
 			let fecha="20" + ia1[2] + "-" + ia1[1] + "-" + ia1[0];
 			ia.value = fecha;
 		})
 	</script>
-	
+
 </body>
