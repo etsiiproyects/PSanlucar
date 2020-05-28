@@ -49,6 +49,7 @@
 	<script>
 		$(document).ready(function() {
 			let ia1 = "<?php $inicio ?>";
+			console.log(ia1);
 			ia1.split("/");
 			let ia = document.getElementById("INICIOALQUILER");
 			let fecha="20" + ia1[2] + "-" + ia1[1] + "-" + ia1[0];
