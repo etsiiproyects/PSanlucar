@@ -15,12 +15,12 @@
 		if($funct>0){
 			$login["usuario"] = $email;
 			$login["pass"] = $pass;
+			$_SESSION["login"] = $login;
+			Header("Location: index.php");
 		}
 		else{
 			$login["usuario"] = $email;
 			$login["pass"] = $pass;
-			$_SESSION["login"] = $login;
-			Header("Location: index.php");
 		}
 	}
 ?>

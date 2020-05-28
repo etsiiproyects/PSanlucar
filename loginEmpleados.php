@@ -13,12 +13,13 @@
 		$funct = consultarEmpleado($conexion,$nombre,$pass);
 		cerrarConexionBD($conexion);
 		if($funct>0) {
-			$login["usuario"] = $nombre;
-			$login["pass"] = $pass;
-		}
-		else {
 			$_SESSION["loginEmpleado"] = $nombre;
 			Header("Location: consulta_inmuebles.php");
+		}
+		else {
+			$login["usuario"] = $nombre;
+			$login["pass"] = $pass;
+			
 		}
 	}
 ?>
@@ -44,6 +45,7 @@
 		?>
 
 	<div class="iniciosesion">
+	
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>
@@ -52,6 +54,7 @@
 			<input type="password" name="pass" id="pass" /></div>
 			<input class="boton" type="submit" name="submit" value="Iniciar Sesion" />
 		</form>
+
 	</div>
 </body>
 </html>

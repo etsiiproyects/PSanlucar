@@ -57,7 +57,6 @@
 				// Calculo el color
 				passwordColor();
 			});
-
 		});
 	</script>
 	

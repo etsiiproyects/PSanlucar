@@ -11,16 +11,16 @@ Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12'
 Quitar_Usuario('morales');
 Quitar_Usuario('romero');
 
-insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'aislado');
-insertar_inmueble('02.1A','C/ Cristobal Colon',2, 'plurifamiliar');
-insertar_inmueble('02.1B','C/ Cristobal Colon',2,'plurifamiliar');
-insertar_inmueble('03.00','C/ San Bartolome',0,'comercial');
-insertar_inmueble('03.0A','C/ San Bartolome',2,'plurifamiliar');
-insertar_inmueble('03.1A','C/ San Bartolome',1,'plurifamiliar');
-insertar_inmueble('03.1B','C/ San Bartolome',1,'plurifamiliar');
-insertar_inmueble('03.1C','C/ San Bartolome',1,'plurifamiliar');
-insertar_inmueble('03.1D','C/ San Bartolome',2,'plurifamiliar');
-insertar_inmueble('04.1B','C/ Zambullon',2,'plurifamiliar');
+insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'https://i.imgur.com/sCxrLFG.jpg', 'aislado');
+insertar_inmueble('02.1A','C/ Cristobal Colon',2, 'https://i.imgur.com/UJfas3B.jpg', 'plurifamiliar');
+insertar_inmueble('02.1B','C/ Cristobal Colon',2, 'https://i.imgur.com/b0PR69t.jpg','plurifamiliar');
+insertar_inmueble('03.00','C/ San Bartolome',0, 'https://i.imgur.com/ZoE5dWy.jpg','comercial');
+insertar_inmueble('03.0A','C/ San Bartolome',2, 'https://i.imgur.com/JkISzCS.jpg','plurifamiliar');
+insertar_inmueble('03.1A','C/ San Bartolome',1, 'https://i.imgur.com/ZvUlPj3.jpg','plurifamiliar');
+insertar_inmueble('03.1B','C/ San Bartolome',1, 'https://i.imgur.com/Gdqkog2.jpg','plurifamiliar');
+insertar_inmueble('03.1C','C/ San Bartolome',1, 'https://i.imgur.com/9oqIdYF.jpg','plurifamiliar');
+insertar_inmueble('03.1D','C/ San Bartolome',2, 'https://i.imgur.com/wyQW7rf.jpg','plurifamiliar');
+insertar_inmueble('04.1B','C/ Zambullon',2, 'https://i.imgur.com/XGTkakZ.jpg','plurifamiliar');
 quitar_inmueble('03.1D');
 
 Insertar_oferta(600, sysdate,'01.00');

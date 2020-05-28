@@ -16,7 +16,6 @@
 	$conexion = crearConexionBD();
 	$filas = consultarTodosContratos($conexion);
 	cerrarConexionBD($conexion);
-
 ?>
 
 <!DOCTYPE html>
