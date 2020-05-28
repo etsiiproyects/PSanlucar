@@ -30,22 +30,22 @@
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form id="registro" method="get" action="validacionModificaContrato.php">
 			<input type="text" name="oid" value=""<?php echo $contrato['OID_CONTRATO'] ?>"" hidden>
-			<label for="INICIOALQUILER">Inicio alquiler: </label>
-			<input class="input-group" id="INICIOALQUILER" name="INICIOALQUILER" type="date" />
+			<label for="inicioAlquiler">Inicio alquiler: </label>
+			<input class="input-group" id="inicioAlquiler" name="inicioAlquiler" type="date" />
 			<?php
 			$inicio= $contrato['INICIOALQUILER'];
 			$fin=$contrato['FINALQUILER'];
 			 ?>
 
 			<br />
-			<label for="FINALQUILER">Fin alquiler: </label>
-			<input class="input-group" id="FINALQUILER" name="finalquiler" type="date" value="<?php echo $contrato['FINALQUILER'] ?>" />
+			<label for="finAlquiler">Fin alquiler: </label>
+			<input class="input-group" id="finAlquiler" name="finAlquiler" type="date" value="<?php echo $contrato['FINALQUILER'] ?>" />
 			<br />
-			<label for="PAGOMENSUAL">Pago mensual: </label>
-			<input class="input-group" id="PAGOMENSUAL" name="pagoMensual" type="text" value="<?php echo $contrato['PAGOMENSUAL'] ?>" />
+			<label for="pagoMensual">Pago mensual: </label>
+			<input class="input-group" id="pagoMensual" name="pagoMensual" type="text" value="<?php echo $contrato['PAGOMENSUAL'] ?>" />
 			<br />
-			<label for="NIF">NIF: </label>
-			<input class="input-group" id="NIF" name="nif" type="text" value="<?php echo $contrato['NIF'] ?>" />
+			<label for="nif">NIF: </label>
+			<input class="input-group" id="nif" name="nif" type="text" value="<?php echo $contrato['NIF'] ?>" />
 			<br />
 			<input class="boton" type="submit" value="Confirmar cambios" />
 		</form>
@@ -55,13 +55,13 @@
 		window.onload= function() {
 			var ia1 = '<?php echo $inicio; ?>';
 			var array=ia1.split("/");
-			let ia = document.getElementById("INICIOALQUILER");
+			let ia = document.getElementById("inicioAlquiler");
 			let fecha="20" + array[2] + "-" + array[1] + "-" + array[0];
 			ia.value = fecha;
 
 			var fa1 = '<?php echo $fin; ?>';
 			var array1=fa1.split("/");
-			let fa = document.getElementById("FINALQUILER");
+			let fa = document.getElementById("finAlquiler");
 			let fecha1="20" + array1[2] + "-" + array1[1] + "-" + array1[0];
 			fa.value = fecha1;
 		};
