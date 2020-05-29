@@ -5,6 +5,7 @@ body {
     background-color: #404040;
     color: white;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 div.error {
@@ -14,7 +15,7 @@ div.error {
 
 .inserta {
     margin: 1%;
-    background-color: darkorange;
+    background-color: #ff7e34;
     width: 98%;
     position: relative;
     display: flex;
@@ -28,8 +29,8 @@ div.error {
 
 .contenido a:hover .inserta {
     background-color: white;
-    color: darkorange;
-    border: 2px solid darkorange;
+    color: #ff7e34;
+    border: 2px solid #ff7e34;
 }
 
 .inserta a {
@@ -37,8 +38,19 @@ div.error {
     color: white;
 }
 
+#boton {
+    background-color: #ff7e34;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin: 10px 10px;
+    float: right;
+}
+
 .inserta:hover a {
-    color: darkorange;
+    color: #ff7e34;
 }
 
 .inmuebles {
@@ -123,7 +135,7 @@ div.error {
     transition-delay: 0.2s;
     border-radius: 15px;
     color: black;
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 #freeInmuebles {

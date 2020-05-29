@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-    background-color: orange;
+    background-color: #ff7e34;
     height: 51px;
 }
 
@@ -37,7 +37,7 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: darkorange;
+    background-color: #ff7e34;
 }
 
 div.error {
@@ -114,7 +114,7 @@ div.error {
     font-weight: bold;
     color: #000;
     display: block;
-    background: #FFDC00;
+    background: #ff7e34;
     text-align: center;
 }
 

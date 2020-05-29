@@ -63,7 +63,7 @@
 
 	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
 
-	$queryC= 'SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM OFERTAS NATURAL JOIN DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER)';
+	$queryC= 'SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER)';
 
 	$total_registrosC = total_consulta($conexion, $queryC);
 	$total_paginasC = (int)($total_registrosC / $pag_tamC);
@@ -159,9 +159,10 @@
 		</div></a>
 	<?php } ?>
 
+	<button  id="boton" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
 
 	<h1>Lista de Inmuebles: </h1>
-	<button  id="boton" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
+	
 
 	<div id="inmuebles" class="inmuebles">
 		<?php
