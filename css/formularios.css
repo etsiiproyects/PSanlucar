@@ -5,41 +5,6 @@ body {
     color: black;
 }
 
-nav {
-    background-color: orange;
-    height: 51px;
-}
-
-strong {
-    font-weight: 700;
-}
-
-nav ul {
-    margin: 0;
-}
-
-nav li:first-child {
-    float: left;
-}
-
-nav li {
-    display: inline-block;
-    float: right;
-}
-
-nav li a {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
-    color: white;
-    padding: 16px 38px;
-}
-
-nav li a:hover {
-    background-color: darkorange;
-}
-
 div.error {
     color: red;
     border: 2px solid red;

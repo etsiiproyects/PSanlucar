@@ -27,7 +27,7 @@
 	include_once("cabecera.php");
 ?>
 
-<div class="excepcion">
+<div class="bloque">
 	<div>
 		<h2>Ups!</h2>
 		<?php if ($destino<>"") { ?>

@@ -25,6 +25,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promociones Sanlucar: Lista de contratos</title>
   <link rel="stylesheet" type="text/css" href="css/contratos.css">
+  <link rel="stylesheet" type="text/css" href="css/menuNav.css">
+  <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script src="js/responsive.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -88,6 +91,8 @@ for(var i = 0; i<botones.length; i++){
 
 	console.log("funciona");
   };
+
+  navSlide();
 </script>
 
 </body>

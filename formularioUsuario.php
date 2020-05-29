@@ -28,6 +28,9 @@
 	<meta charset="UTF-8" />
 	<title>Registro</title>
 	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>
@@ -65,9 +68,9 @@
 	?>
 	<div class="iniciosesion">
 
-		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 
-		<form id="registro" method="get" action="validacion_formulario.php">
+		<form class="formLR" id="registro" method="get" action="validacion_formulario.php">
 
 				<label for="nombre">Nombre: </label>
 				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
@@ -101,7 +104,6 @@
 		</form>
 	</div>
 
-	<?php include_once("footer.php") ?>
 
 </body>
 </html>

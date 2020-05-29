@@ -1,44 +1,10 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: #404040;
     color: white;
-}
-
-.naveg {
-    background-color: orange;
-    height: 60px;
-}
-
-.naveg ul {
-    margin: 0;
-}
-
-.naveg li:first-child {
-    float: left;
-}
-
-.naveg li {
-    display: inline-block;
-    float: right;
-}
-
-.naveg li a {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
-    color: white;
-    padding: 16px 38px;
-}
-
-.naveg li a:hover {
-    background-color: darkorange;
-}
-
-div.error {
-    color: red;
-    border: 2px solid red;
+    box-sizing: border-box;
 }
 
 div.error {
@@ -162,4 +128,18 @@ div.error {
 
 #freeInmuebles {
     display: none;
+}
+
+.botonInm {
+    width: 30%;
+    border: 0;
+    background-color: #E5A717;
+    color: black;
+    height: 10%;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.botonInm:hover {
+    opacity: 0.7;
 }

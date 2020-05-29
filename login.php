@@ -29,7 +29,10 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Promociones SanLucar: Login</title>
 </head>
@@ -49,9 +52,10 @@
 	}
 	?>
 
+	<div class="contenidoF">
 	<div class="iniciosesion">
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
-		<form action="login.php" method="post">
+		<form class="formLR" action="login.php" method="post">
 			<div class="input-group"><label for="email">Email: </label>
 			<input type="text" name="email" id="email" /></div>
 			<div class="input-group"><label for="pass">Contraseña: </label>
@@ -59,8 +63,9 @@
 			<input class="boton" type="submit" name="submit" value="Iniciar Sesion" />
 		</form>
 
-		<p>¿No estás registrado? <a href="registroWeb.php">¡Registrate!</a></p>
+		<p>¿No estás registrado? <a href="formularioUsuario.php">¡Registrate!</a></p>
 		<p><a href="loginEmpleados.php"> Empleados </a></p>
+	</div>
 	</div>
 </main>
 </body>

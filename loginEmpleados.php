@@ -28,7 +28,10 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
   <title>Login Empleados</title>
 </head>
@@ -43,11 +46,11 @@
 	    		echo "</div>";
 	  		}
 		?>
-
+	<div class="contenidoF">
 	<div class="iniciosesion">
 
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
-		<form method="post" action="loginEmpleados.php">
+		<form class="formLR" method="post" action="loginEmpleados.php">
 			<div class="input-group"><label for="usuario">Nombre: </label>
 			<input type="text" name="usuario" id="usuario" /></div>
 			<div class="input-group"><label for="pass">Contraseña: </label>
@@ -55,6 +58,7 @@
 			<input class="boton" type="submit" name="submit" value="Iniciar Sesion" />
 		</form>
 
+	</div>
 	</div>
 </body>
 </html>

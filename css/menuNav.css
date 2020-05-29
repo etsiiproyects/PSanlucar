@@ -1,0 +1,84 @@
+.menuNav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #222222;
+    overflow-x: hidden;
+}
+
+.logo {
+    padding: 10px;
+    margin: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    z-index: 100;
+}
+
+.nav-links a {
+    color: grey;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.burguer {
+    display: none;
+}
+
+.burguer div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 8px;
+}
+
+@media screen and (max-width:1024px) {
+    .nav-links {
+        width: 50%;
+    }
+    .nav-links a {
+        font-weight: bold;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+    .nav-links {
+        border-radius: 10px;
+        position: absolute;
+        right: 0px;
+        height: 60vh;
+        top: 60px;
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        overflow-x: hidden;
+    }
+    .nav-links li {
+        opacity: 1;
+    }
+    .burguer {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}

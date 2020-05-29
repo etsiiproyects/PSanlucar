@@ -88,15 +88,18 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
   <link rel="stylesheet" type="text/css" href="css/inmuebles.css">
   <link rel="stylesheet" type="text/css" href="css/paginacion.css">
+  <link rel="stylesheet" type="text/css" href="css/menuNav.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
   <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script src="js/inmuebles.js" type="text/javascript"></script>
+  <script src="js/responsive.js" type="text/javascript"></script>
 </head>
 
 <body>
-
 
 
 <?php
@@ -148,10 +151,10 @@
 		</form>
 
 	</nav>
-	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
+	
 <section class="contenido">
 	<?php if(isset($_SESSION['loginEmpleado'])){ ?>
-		<a href="registroInmueble.php"><div class="inserta">
+		<a href="formularioInmueble.php"><div class="inserta">
 			<h2> INSERTAR INMUEBLE </h2>
 		</div></a>
 	<?php } ?>
@@ -166,6 +169,7 @@
 		?>
 		<form id="formInmueble" name="formInm" method="post" action="controlador.php">
 		<div class="inmueble">
+		
 			<div class="nameBx">
 				<input id="IMG" name="IMG" type="hidden" value="<?php echo $fila["IMG"]; ?>"/>
 				<img src="<?php echo $fila["IMG"]; ?>" width="300px">
@@ -183,16 +187,16 @@
 				<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 
 					<?php if (isset($inmueble) and ($inmueble["ID_INMUEBLE"] == $fila["ID_INMUEBLE"])) { ?>
-						<button id="grabar" name="grabar" type="submit" >
+						<button class="botonInm" id="grabar" name="grabar" type="submit" >
 							Guardar
 						</button>
 						<?php } else { ?>
-						<button id="editar" name="editar" type="submit" >
+						<button class="botonInm" id="editar" name="editar" type="submit" >
 							Modificar
 						</button>
 						<?php } ?>
-						<input id="borrar" name="borrar" type="hidden" value=""/>
-						<button type="button" onclick="alertaBorrar()" >
+						<input  id="borrar" name="borrar" type="hidden" value=""/>
+						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Borrar
 						</button>
 						
@@ -202,6 +206,7 @@
 				
 				</form>
 			</div>
+		
 		</div>
 		</form>
 		<?php } ?>
@@ -261,33 +266,7 @@
 
 <script type="text/javascript">
 
-
-
-	function visibility(){
-
-		let all=document.getElementById("inmuebles");
-		let free=document.getElementById("freeInmuebles");
-		let pag=document.getElementById("paginacion");
-		let freeP=document.getElementById("freePaginacion");
-		let boton =document.getElementById("boton");
-
-		console.log(all);
-		console.log(free);
-		 if(all.style.display=="flex"){
-			 boton.innerText="Mostras todos los Inmuebles";
-			 pag.style.display="none";
-			 freeP.style.display="block";
-			 all.style.display="none";
-			 free.style.display="flex";
-			 return;
-		 }
-		boton.innerText="Mostras inmuebles libres";
-		pag.style.display="block";
-		freeP.style.display="none";
-		all.style.display="flex";
-		free.style.display="none";
-		return;
-	 }
+	navSlide();
 
 </script>
 
