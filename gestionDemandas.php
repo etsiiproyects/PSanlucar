@@ -26,7 +26,7 @@
 		try {
 			$resultado = true;
 			if(!consultarContrato($conexion, $demanda)) {
-				$consulta = 'CALL INSERTA_CONTRATO(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)';
+				$consulta = 'CALL INSERTA_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)';
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':preciomax', $demanda["precioMax"]);
 				$stmt->bindParam(':fechademanda', $demanda["fechaDemanda"]);
