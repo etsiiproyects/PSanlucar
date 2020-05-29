@@ -35,7 +35,6 @@
 <?php
 	include_once("cabecera.php");
 ?>
-	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
 <section class="contenido">
 	<h1>Lista de Contratos: </h1>
 	<div class="contratos">
@@ -50,7 +49,7 @@
                     <p>Fin del contrato: <b><?php echo $fila["FINALQUILER"]; ?></b></p>
                     <p>Pago mensual: <b><?php echo $fila["PAGOMENSUAL"]; ?></b></p>
                     <p>NIF cliente: <b><?php echo $fila["NIF"]; ?></b></p>
-                    <form method="post" action="modificaContrato.php">
+                    <form method="post" action="controlador.php">
                     	<input id="INICIOALQUILER" name="INICIOALQUILER" type="hidden" value="<?php echo $fila["INICIOALQUILER"]; ?>" />
                     	<input id="FINALQUILER" name="FINALQUILER" type="hidden" value="<?php echo $fila["FINALQUILER"]; ?>" />
                     	<input id="PAGOMENSUAL" name="PAGOMENSUAL" type="hidden" value="<?php echo $fila["PAGOMENSUAL"]; ?>" />

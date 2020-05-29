@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["formulario"])){
+    if(isset($_SESSION["contrato"])){
         $nuevoContrato["oid"]=$_REQUEST["oid"];
         $nuevoContrato["inicioAlquiler"] = $_REQUEST["inicioAlquiler"];
     		$nuevoContrato["finalAlquiler"] = $_REQUEST["finalAlquiler"];
@@ -9,7 +9,7 @@
     		$nuevoContrato["nif"] = $_REQUEST["nif"];
     }else Header("Location: modificaContrato.php");
 
-    $_SESSION["formulario"]=$nuevoContrato;
+    $_SESSION["contrato"]=$nuevoContrato;
     $errores = validarDatosContrato($nuevoContrato);
 
 	if (count($errores)>0) {
