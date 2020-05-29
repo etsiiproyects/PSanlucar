@@ -16,7 +16,7 @@
 
 
 	function consultarContratosUsuario($conexion, $nif){
-		$consulta = "SELECT * FROM CONTRATO WHERE NIF=:nif";
+		$consulta = "SELECT * FROM CONTRATO  NATURAL JOIN DEMANDAS NATURAL JOIN INMUEBLES WHERE NIF=:nif";
 		$stmt = $conexion->prepare($consulta);
 		$stmt->bindParam(':nif', $nif);
 		$stmt->execute();
@@ -27,14 +27,13 @@
 		try {
 			$resultado = true;
 			if(!consultarContrato($conexion, $contrato)) {
-				$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid, :nif)';
+				$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid)';
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':inicio', $contrato["inicioAlquiler"]);
 				$stmt->bindParam(':final', $contrato["finalAlquiler"]);
 				$stmt->bindParam(':pago', $contrato["pagoMensual"]);
 				$stmt->bindParam(':fianza', $contrato["fianza"]);
 				$stmt->bindParam(':oid', $contrato["oid"]);
-				$stmt->bindParam(':nif', $contrato["nif"]);
 				$stmt->execute();
 			} else {
 				$resultado = false;
