@@ -1,54 +1,46 @@
 <?php
     session_start();
 
-	
-	if (isset($_SESSION["formulario"])) {
-	
+
+	if (isset($_SESSION["contrato"])) {
+
 		$nuevoContrato["inicioAlquiler"] = $_REQUEST["inicioAlquiler"];
 		$nuevoContrato["finalAlquiler"] = $_REQUEST["finalAlquiler"];
 		$nuevoContrato["pagoMensual"] = $_REQUEST["pagoMensual"];
-		$nuevoContrato["fianza"] = $_REQUEST["fianza"];
-		$nuevoContrato["nif"] = $_REQUEST["nif"];
+    $nuevoContrato["fianza"] = $_REQUEST["fianza"];
+		$nuevoContrato["oid_demanda"] = $_REQUEST["oid_Demanda"];
 	}
-	else 
-		Header("Location: formularioContratos.php");
-	
-	
-	$_SESSION["formulario"] = $nuevoContrato;
+	else
+		Header("Location: formularioContrato.php");
 
-	
+
+	$_SESSION["contrato"] = $nuevoContrato;
+
+
 	$errores = validarDatosContrato($nuevoContrato);
-	
-	
+
+
 	if (count($errores)>0) {
-		
+
 		$_SESSION["errores"] = $errores;
-		Header('Location: formularioContratos.php');
+		Header('Location: formularioContrato.php');
 	} else
-		
+
 		Header('Location: alta_contrato.php');
-		
-	
-	
+
+
+
 	function validarDatosContrato($nuevoContrato){
 
-			
-		if($nuevoContrato["nif"]==""){
-			$errores[] = "<p> El NIF no puede estar vacio</p>";
-		}else if(preg_match("/^[0-9]{8}[A-Z]$/", $nuevoUsuario["nif"])){
-			$errores[] = "<p>El NIF debe contener 8 numeros y una letra</p>";
-		}
-		
-			
 		if($nuevoContrato["pagoMensual"]=="")
-			$errores[] = "<p> El pago mensual debe ser fijado</p>";		
+			$errores[] = "<p> El pago mensual debe ser fijado</p>";
 
-			
+
 		if($nuevoContrato["fianza"]=="")
 			$errores[] = "<p> La fianza debe ser fijada</p>";
-	
+
 		return $errores;
-		
+
 	}
-	
+
 ?>

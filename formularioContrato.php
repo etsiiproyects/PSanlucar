@@ -7,7 +7,6 @@
 		$contrato['finalAlquiler'] = "";
 		$contrato['pagoMensual'] = "";
 		$contrato['fianza'] = "";
-		$contrato['oid'] = "";
 		$contrato['oid_demanda'] = $_REQUEST["oid_demanda"];
 
 		$_SESSION['contrato'] = $contrato;
@@ -75,7 +74,7 @@
 				<br />
 
 				<label for="oid">OID: </label>
-				<input class="input-group" id="oid" name="oid" type="text" size="5" value="<?php echo $contrato['oid'];?>"  hidden required />
+				<input class="input-group" id="oid" name="oid_demanda" type="text" size="5" value="<?php echo $contrato['oid_demanda'];?>"  required />
 				<br />
 
 			<br>

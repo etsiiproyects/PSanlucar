@@ -14,8 +14,8 @@
 	else
 		Header("Location: formularioContratos.php");
 	$conexion = crearConexionBD();
-	if(alta_inmueble($conexion, $nuevoInmueble)){
-        Header("Location: consulta_inmuebles.php");
+	if(alta_contrato($conexion, $nuevoContrato)){
+        Header("Location: consulta_contratos.php");
     }else{
         $_SESSION["excepcion"] = "No se ha podido conectar con la base de datos";
         $_SESSION["destino"] = "formularioContrato.php";
