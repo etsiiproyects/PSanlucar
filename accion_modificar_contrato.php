@@ -7,6 +7,7 @@
 
         require_once("gestionBD.php");
         require_once("gestionContratos.php");
+		
         $conexion=crearConexionBD();
         $excepcion=modificar_contrato($conexion, $contrato);
         cerrarConexionBD($conexion);
