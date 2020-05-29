@@ -1,43 +1,9 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #404040;
-    color: white;
-}
-
-nav {
-    background-color: #ff7e34;
-    height: 51px;
-}
-
-strong {
-    font-weight: 700;
-}
-
-nav ul {
-    margin: 0;
-}
-
-nav li:first-child {
-    float: left;
-}
-
-nav li {
-    display: inline-block;
-    float: right;
-}
-
-nav li a {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 300;
-    text-decoration: none;
-    color: white;
-    padding: 16px 38px;
-}
-
-nav li a:hover {
-    background-color: #ff7e34;
+    background-color: #C0C0C0;
+    color: black;
+    justify-content: center;
 }
 
 .pie {
@@ -49,8 +15,16 @@ div.error {
     border: 2px solid red;
 }
 
+.bloque {
+    height: max-content;
+    width: 70vw;
+    margin: 3vh 15vw;
+    padding: 1vh 1vw;
+    background-color: #E1E1E1;
+}
+
 a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 

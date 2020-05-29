@@ -28,14 +28,17 @@ if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
             <a href="index.php"> <img width="100px" src="images/logo.png"> </a>
         </div>
         <ul class="nav-links">
-            <li class="nav">
-                <a href="desconectar.php"> Cerrar Sesion </a>
+            <li class="navL">
+                <a href="consulta_demandas.php"> Demandas </a>
             </li>
-            <li class="nav">
+            <li class="navL">
                 <a href="consulta_inmuebles.php"> Inmuebles </a>
             </li>
-            <li class="nav">
+            <li class="navL">
                 <a href="consulta_contratos.php"> Contratos </a>
+            </li>
+            <li class="navL">
+                <a href="desconectar.php"> Cerrar Sesion </a>
             </li>
         </ul>
         <div class="burguer">

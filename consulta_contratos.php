@@ -36,7 +36,7 @@
 <?php
 	include_once("cabecera.php");
 ?>
-<section class="contenido">
+<section class="bloque">
 	<h1>Lista de Contratos: </h1>
 	<div class="contratos">
 		<?php

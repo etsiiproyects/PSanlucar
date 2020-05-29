@@ -20,6 +20,10 @@
     z-index: 100;
 }
 
+.navL:hover {
+    opacity: 0.7;
+}
+
 .nav-links a {
     color: grey;
     text-decoration: none;
