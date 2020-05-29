@@ -57,7 +57,7 @@
 		<a href="index.php"><img class="img-login" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
 		<form class="formLR" action="login.php" method="post">
 			<div class="input-group"><label for="email">Email: </label>
-			<input type="text" name="email" id="email" /></div>
+			<input type="email" name="email" id="email" /></div>
 			<div class="input-group"><label for="pass">Contraseña: </label>
 			<input type="password" name="pass" id="pass" /></div>
 			<input class="boton" type="submit" name="submit" value="Iniciar Sesion" />

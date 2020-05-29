@@ -67,6 +67,7 @@ if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
+    </nav>
 
    <?php } ?>
 

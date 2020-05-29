@@ -167,7 +167,7 @@
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<form id="formInmueble" name="formInm" method="post" action="controlador.php">
+		<form id="formInmueble" name="formInm" method="get" action="controlador.php">
 		<div class="inmueble">
 		
 			<div class="nameBx">
@@ -186,15 +186,10 @@
 
 				<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 
-					<?php if (isset($inmueble) and ($inmueble["ID_INMUEBLE"] == $fila["ID_INMUEBLE"])) { ?>
-						<button class="botonInm" id="grabar" name="grabar" type="submit" >
-							Guardar
-						</button>
-						<?php } else { ?>
 						<button class="botonInm" id="editar" name="editar" type="submit" >
 							Modificar
 						</button>
-						<?php } ?>
+						
 						<input  id="borrar" name="borrar" type="hidden" value=""/>
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Borrar

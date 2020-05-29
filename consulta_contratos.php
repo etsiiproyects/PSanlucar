@@ -8,7 +8,7 @@
 		header("Location: loginEmpleados.php");
 	} else {
 		if(isset($_SESSION["contrato"])) {
-			$inmueble = $_SESSION["contrato"];
+			$contrato = $_SESSION["contrato"];
 			unset($_SESSION["contrato"]);
 		}
 	}
@@ -21,13 +21,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promociones Sanlucar: Lista de contratos</title>
-  <link rel="stylesheet" type="text/css" href="css/contratos.css">
-  <link rel="stylesheet" type="text/css" href="css/menuNav.css">
-  <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="js/responsive.js" type="text/javascript"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Promociones Sanlucar: Lista de contratos</title>
+  	<link rel="stylesheet" type="text/css" href="css/contratos.css">
+  	<link rel="stylesheet" type="text/css" href="css/menuNav.css">
+  	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+  	<script src="js/responsive.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -35,7 +36,6 @@
 <?php
 	include_once("cabecera.php");
 ?>
-	<!-- <img class="iinmueble"  src="../images/inmueble.png" width="400px"> -->
 <section class="contenido">
 	<h1>Lista de Contratos: </h1>
 	<div class="contratos">
@@ -50,17 +50,20 @@
                     <p>Fin del contrato: <b><?php echo $fila["FINALQUILER"]; ?></b></p>
                     <p>Pago mensual: <b><?php echo $fila["PAGOMENSUAL"]; ?></b></p>
                     <p>NIF cliente: <b><?php echo $fila["NIF"]; ?></b></p>
-                    <form method="post" action="modificaContrato.php">
+                    <form id="formContrato" method="post" action="controladorContrato.php">
                     	<input id="INICIOALQUILER" name="INICIOALQUILER" type="hidden" value="<?php echo $fila["INICIOALQUILER"]; ?>" />
                     	<input id="FINALQUILER" name="FINALQUILER" type="hidden" value="<?php echo $fila["FINALQUILER"]; ?>" />
                     	<input id="PAGOMENSUAL" name="PAGOMENSUAL" type="hidden" value="<?php echo $fila["PAGOMENSUAL"]; ?>" />
                     	<input id="NIF" name="NIF" type="hidden" value="<?php echo $fila["NIF"]; ?>" />
                     	<input id="OID_CONTRATO" name="OID_CONTRATO" type="hidden" value="<?php echo $fila["OID_CONTRATO"]; ?>" />
-                    	<button id="editar" name="editar" type="submit">Modificar</button>
-                    </form>
-                    <form method="post" action="controladorContrato.php">
-                    	<input id="OID_CONTRATO" name="OID_CONTRATO" type="hidden" value="<?php echo $fila["OID_CONTRATO"]; ?>" />
-                    	<button id="borrar" name="borrar" type="submit"> Eliminar </button>
+                    	<button class="botonInm" id="editar" name="editar" type="submit" >
+							Modificar
+						</button>
+						
+						<input  id="borrar" name="borrar" type="hidden" value=""/>
+						<button class="botonInm" type="button" onclick="alertaBorrar()" >
+							Borrar
+						</button>
                     </form>
                 </div>
             </div>
@@ -91,6 +94,14 @@ for(var i = 0; i<botones.length; i++){
 
 	console.log("funciona");
   };
+
+	function alertaBorrar() {
+
+		if (confirm('¿Estas seguro de borrar?')) {
+			document.getElementById("formContrato").submit()
+		}
+
+	}
 
   navSlide();
 </script>
