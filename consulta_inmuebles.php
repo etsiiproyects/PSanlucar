@@ -195,8 +195,6 @@
 							Borrar
 						</button>
 						
-
-
 					<?php } ?>
 				
 				</form>

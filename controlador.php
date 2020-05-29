@@ -13,7 +13,7 @@
 		
 		$_SESSION["inmueble"] = $inmueble;
 			
-		if (isset($_REQUEST["editar"])) Header("Location: modifcaInmueble.php"); 
+		if (isset($_REQUEST["editar"])) Header("Location: modificaInmueble.php"); 
 		else  if (isset($_REQUEST["borrar"]))  Header("Location: accion_borrar_inmueble.php"); 
 	}else {
 		Header("Location: consulta_inmuebles.php");	
