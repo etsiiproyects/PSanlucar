@@ -33,8 +33,8 @@
 			<label for="inicioAlquiler">Inicio alquiler: </label>
 			<input class="input-group" id="inicioAlquiler" name="inicioAlquiler" type="date" />
 			<?php
-			$inicio= $contrato['INICIOALQUILER'];
-			$fin=$contrato['FINALQUILER'];
+				$inicio= $contrato['INICIOALQUILER'];
+				$fin=$contrato['FINALQUILER'];
 			 ?>
 
 			<br />
