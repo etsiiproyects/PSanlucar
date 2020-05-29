@@ -20,6 +20,7 @@ insertar_inmueble('03.1B','C/ San Bartolome',1, 'https://i.imgur.com/Gdqkog2.jpg
 insertar_inmueble('03.1C','C/ San Bartolome',1, 'https://i.imgur.com/9oqIdYF.jpg','plurifamiliar');
 insertar_inmueble('03.1D','C/ San Bartolome',2, 'https://i.imgur.com/wyQW7rf.jpg','plurifamiliar');
 insertar_inmueble('04.1B','C/ Zambullon',2, 'https://i.imgur.com/XGTkakZ.jpg','plurifamiliar');
+modificar_inmueble('04.1B', 'C/ Zambullon', 4, 'https://i.imgur.com/XGTkakZ.jpg', 'plurifamiliar');
 quitar_inmueble('03.1D');
 
 INSERTAR_DEMANDA(650,'02/01/2020',1,'12345678A','01.00');

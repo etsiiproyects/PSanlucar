@@ -14,7 +14,7 @@
 
 	if (count($errores)>0) {
 		$_SESSION["errores"] = $errores;
-		Header('Location: formularioContratos.php');
+		Header('Location: modificaContrato.php');
 	} else
 		Header('Location: accion_modificar_contrato.php');
 

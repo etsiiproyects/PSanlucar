@@ -6,6 +6,8 @@
 		$contrato = $_SESSION["contrato"];
 	}
 	else header("Location: consulta_contratos.php");
+	
+	if (isset($_SESSION["errores"])) $errores = $_SESSION["errores"];
 
 ?>
 
@@ -19,6 +21,16 @@
 </head>
 
 <body>
+	
+	<?php
+		// Mostrar los erroes de validación (Si los hay)
+		if (isset($errores) && count($errores)>0) {
+	    	echo "<div id=\"div_errores\" class=\"error\">";
+			echo "<h4> Errores en el formulario:</h4>";
+    		foreach($errores as $error) echo $error;
+    		echo "</div>";
+  		}
+	?>
 
 	<div class="iniciosesion">
 		<a href="index.php"><img class="img-registro" src="images/logo1.PNG" alt="Promociones Sanlúcar" /></a>
