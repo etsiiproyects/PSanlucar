@@ -7,7 +7,6 @@ function validateContrato() {
 
         //var error2 = finAlquiler();
 
-        //var error3 = nif();
 
         return (error1.length == 0); // && (error2.length == 0) && (error3.length == 0);
     } else

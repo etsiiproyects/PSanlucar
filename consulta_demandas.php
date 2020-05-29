@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	require_once("gestionBD.php");
 	require_once("gestionDemandas.php");
 
@@ -45,7 +45,7 @@
 		<div class="contrato">
         <a href="#" class="btn-toggle"><b> DEMANDA <?php echo $fila["OID_DEMANDA"]; ?></b></a>
             <div class="toggle">
-                <div class="wrap">		
+                <div class="wrap">
 					<p>Precio maximo: <b><?php echo $fila["PRECIOMAX"]; ?></b></p>
                     <p>Fecha de la demanda: <b><?php echo $fila["FECHADEMANDA"]; ?></b></p>
                     <p>Numero de mascotas: <b><?php echo $fila["NUM_MASCOTA"]; ?></b></p>
@@ -68,12 +68,16 @@
 							Borrar
 						</button>
                     </form>
+					<form action="formularioContrato.php" method="post">
+						<input id="oid_demanda" name="oid_demanda" type="hidden" value="<?php echo $fila["OID_DEMANDA"]; ?>" hidden />
+						<button type="submit" name="submit">Crear Contrato</button>
+					</form>
                 </div>
             </div>
         </div>
 		<?php } ?>
 	</div>
-</section>						
+</section>
 
 
 <?php
