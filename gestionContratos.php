@@ -1,7 +1,7 @@
 <?php
 
 	function consultarContrato($conexion, $contrato)  {
-		$nif = $contrato["nif"];
+		$nif = $contrato["oid_contrato"];
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM CONTRATOS WHERE NIF=:nif";
 		$stmt = $conexion->prepare($consulta);
 		$stmt->bindParam(':nif', $nif);
@@ -24,21 +24,19 @@
 	}
 
 	function alta_contrato($conexion, $contrato) {
+		$fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
+        $fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
 		try {
-			$resultado = true;
-			if(!consultarContrato($conexion, $contrato)) {
-				$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid)';
-				$stmt = $conexion->prepare($consulta);
-				$stmt->bindParam(':inicio', $contrato["inicioAlquiler"]);
-				$stmt->bindParam(':final', $contrato["finalAlquiler"]);
-				$stmt->bindParam(':pago', $contrato["pagoMensual"]);
-				$stmt->bindParam(':fianza', $contrato["fianza"]);
-				$stmt->bindParam(':oid', $contrato["oid"]);
-				$stmt->execute();
-			} else {
-				$resultado = false;
-			}
-			return $resultado;
+			
+			$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid)';
+			$stmt = $conexion->prepare($consulta);
+			$stmt->bindParam(':inicio', $fechaInicio);
+			$stmt->bindParam(':final', $fechaFin);
+			$stmt->bindParam(':pago', $contrato["pagoMensual"]);
+			$stmt->bindParam(':fianza', $contrato["fianza"]);
+			$stmt->bindParam(':oid', $contrato["oid_demanda"]);
+			$stmt->execute();
+			return true;
 		} catch(PDOException $e) {
 			echo "error: " . $e->GetMessage();
 		}

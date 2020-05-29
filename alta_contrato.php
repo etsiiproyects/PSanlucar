@@ -8,13 +8,14 @@
 	// Se recupera la variable de sesión y se anula
 	if (isset($_SESSION["contrato"])) {
 		$nuevoContrato = $_SESSION["contrato"];
-		$_SESSION["contrato"] = null;
-		$_SESSION["errores"] = null;
+		
 	}
 	else
-		Header("Location: formularioContratos.php");
+		Header("Location: formularioContrato.php");
 	$conexion = crearConexionBD();
 	if(alta_contrato($conexion, $nuevoContrato)){
+		$_SESSION["contrato"] = null;
+		$_SESSION["errores"] = null;
         Header("Location: consulta_contratos.php");
     }else{
         $_SESSION["excepcion"] = "No se ha podido conectar con la base de datos";

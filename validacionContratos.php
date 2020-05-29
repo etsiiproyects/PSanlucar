@@ -7,8 +7,8 @@
 		$nuevoContrato["inicioAlquiler"] = $_REQUEST["inicioAlquiler"];
 		$nuevoContrato["finalAlquiler"] = $_REQUEST["finalAlquiler"];
 		$nuevoContrato["pagoMensual"] = $_REQUEST["pagoMensual"];
-    $nuevoContrato["fianza"] = $_REQUEST["fianza"];
-		$nuevoContrato["oid_demanda"] = $_REQUEST["oid_Demanda"];
+    	$nuevoContrato["fianza"] = $_REQUEST["fianza"];
+		$nuevoContrato["oid_demanda"] = $_REQUEST["oid_demanda"];
 	}
 	else
 		Header("Location: formularioContrato.php");
