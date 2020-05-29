@@ -23,7 +23,7 @@
 <head>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<title>Promociones Sanlucar: Lista de contratos</title>
+  	<title>Promociones Sanlucar: Lista de demandas</title>
   	<link rel="stylesheet" type="text/css" href="css/contratos.css">
   	<link rel="stylesheet" type="text/css" href="css/menuNav.css">
   	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -42,7 +42,7 @@
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<div class="demanda">
+		<div class="contrato">
         <a href="#" class="btn-toggle"><b> DEMANDA <?php echo $fila["OID_DEMANDA"]; ?></b></a>
             <div class="toggle">
                 <div class="wrap">		
