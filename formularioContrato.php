@@ -58,11 +58,11 @@
 		<form id="contratoAlta" method="get" action="validacionContratos.php">
 
 		  		<label for="inicioAlquiler">Inicio del alquiler: </label>
-				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $contrato['inicioAlquiler'];?>" required />
+				<input class="input-group" type="text" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $contrato['inicioAlquiler'];?>" required />
 				<br />
 
 				<label for="finalAlquiler">Final del alquiler: </label>
-				<input class="input-group" type="date" id="finalAlquiler" name="finalAlquiler" value="<?php echo $contrato['finalAlquiler'];?>" required />
+				<input class="input-group" type="text" id="finalAlquiler" name="finalAlquiler" value="<?php echo $contrato['finalAlquiler'];?>" required />
 				<br />
 
 				<label for="pagoMensual">Pago Mensual: </label>
