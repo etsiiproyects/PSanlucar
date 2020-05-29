@@ -17,14 +17,18 @@ function visibility() {
     console.log(all);
     console.log(free);
     if (all.style.display == "flex") {
-        boton.innerText = "Mostras todos los Inmuebles";
+        boton.innerText = "Mostrar todos los Inmuebles";
+        boton.style.backgroundColor = "white";
+        boton.style.color = "#ff7e34";
         pag.style.display = "none";
         freeP.style.display = "block";
         all.style.display = "none";
         free.style.display = "flex";
         return;
     }
-    boton.innerText = "Mostras inmuebles libres";
+    boton.innerText = "Mostrar inmuebles libres";
+    boton.style.backgroundColor = "#ff7e34";
+    boton.style.color = "white";
     pag.style.display = "block";
     freeP.style.display = "none";
     all.style.display = "flex";
