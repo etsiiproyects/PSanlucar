@@ -77,25 +77,13 @@
                 <br />
 
                 <label>Tipo inmueble:</label>
-                    <select name="tipo">
-                        <option value="" hidden selected disabled>Seleccion el tipo del inmueble</option>
-                        <option value="aislado">Aislado</option>
-                        <option value="plurifamiliar">Plurifamiliar</option>
-                        <option value="comercial">Comercial</option>
-                    </select>
-
-                	<label>
-    					<input name="tipo" type="radio" value="aislado" <?php if($inmueble['tipo']=='aislado') echo ' checked ';?>/>
-    					Aislado</label>
-    				<label>
-    					<input name="tipo" type="radio" value="plurifamiliar" <?php if($inmueble['tipo']=='plurifamiliar') echo ' checked ';?>/>
-    					Plurifamiliar</label>
-    				<label>
-    					<input name="tipo" type="radio" value="comercial" <?php if($inmueble['tipo']=='comercial') echo ' checked ';?>/>
-    					Comercial</label>
-    				<br />
-
-            <input class="boton" type="submit" value="Confirmar" />
+                  <select class="input-group" name="tipo" required>
+                      <option value="" hidden selected disabled>Seleccion el tipo del inmueble</option>
+                      <option value="aislado">Aislado</option>
+                      <option value="plurifamiliar">Plurifamiliar</option>
+                      <option value="comercial">Comercial</option>
+                  </select>
+             <input class="boton" type="submit" value="Confirmar" />
              </form>
 
         </div>
