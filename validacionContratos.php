@@ -11,12 +11,10 @@
 		$nuevoContrato["oid_demanda"] = $_REQUEST["oid_demanda"];
 	}
 	else
-		Header("Location: formularioContrato.php");
+		Header("Location: excepcion.php");
 
 
 	$_SESSION["contrato"] = $nuevoContrato;
-
-
 	$errores = validarDatosContrato($nuevoContrato);
 
 

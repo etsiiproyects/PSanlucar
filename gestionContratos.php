@@ -27,7 +27,7 @@
 		$fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
         $fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
 		try {
-			
+
 			$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid)';
 			$stmt = $conexion->prepare($consulta);
 			$stmt->bindParam(':inicio', $fechaInicio);
@@ -38,7 +38,7 @@
 			$stmt->execute();
 			return true;
 		} catch(PDOException $e) {
-			echo "error: " . $e->GetMessage();
+			return false;
 		}
 	}
 
