@@ -24,14 +24,14 @@
 	}
 
 	function alta_contrato($conexion, $contrato) {
-		$fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
-        $fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
+		// $fechaInicio=date('d/m/Y', strtotime($contrato["inicioAlquiler"]));
+    //     $fechaFin=date('d/m/Y', strtotime($contrato["finalAlquiler"]));
 		try {
 
 			$consulta = 'CALL INSERTA_CONTRATO(:inicio, :final, :pago, :fianza, :oid)';
 			$stmt = $conexion->prepare($consulta);
-			$stmt->bindParam(':inicio', $fechaInicio);
-			$stmt->bindParam(':final', $fechaFin);
+			$stmt->bindParam(':inicio', $contrato["inicioAlquiler"]);
+			$stmt->bindParam(':final', $contrato["finalAlquiler"]);
 			$stmt->bindParam(':pago', $contrato["pagoMensual"]);
 			$stmt->bindParam(':fianza', $contrato["fianza"]);
 			$stmt->bindParam(':oid', $contrato["oid_demanda"]);
