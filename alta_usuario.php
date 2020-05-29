@@ -3,7 +3,7 @@
 
 	require_once("gestionBD.php");
 	require_once("gestionUsuarios.php");
-		
+
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
 	// Se recupera la variable de sesión y se anula
 	if (isset($_SESSION["formulario"])) {
@@ -12,17 +12,17 @@
 		$_SESSION["errores"] = null;
 		// Header("Location: login.php");
 	}
-	else 
-		Header("Location: registroWeb.php");	
-	$conexion = crearConexionBD(); 
-	
+	else
+		Header("Location: registroWeb.php");
+	$conexion = crearConexionBD();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Promociones SanLucar: Alta de Usuario realizada con éxito</title>
+  <title>Promociones Sanlucar: Alta de Usuario realizada con éxito</title>
 </head>
 
 <body>
@@ -36,12 +36,12 @@
 			if(alta_usuario($conexion, $nuevoUsuario)){
 		?>
 			<h1>Hola <?php echo $nuevoUsuario["nombre"]; ?>, gracias por registrarte</h1>
-			<div >	
+			<div >
 				Pulsa <a href="login.php">aquí</a> para acceder al inicio de sesión.
 			</div>
 		<?php } else { ?>
 			<h1>El usuario ya existe en la base de datos.</h1>
-			<div >	
+			<div >
 				Pulsa <a href="registroWeb.php">aquí</a> para volver al formulario.
 			</div>
 		<?php } ?>

@@ -24,7 +24,7 @@ function fechaValidation() {
     var fechaMin = new Date();
     fechaMin.setFullYear(fechaMin.getFullYear - 21);
 
-    if (date > fechaMin) var error = "You must be over 21 years old.";
+    if (date > fechaMin) var error = "Debes tener mas de 21 años";
     if (fecha) var error = "";
 
     fecha.setCustomValidity(error);
@@ -48,7 +48,7 @@ function passwordValidation() {
 
 
     if (!valid) {
-        var error = "Please enter a valid password! Length >= 8, (upper and lower case) letters and digits";
+        var error = "Introduzca una contraseña correxta. Debe tener 8 o mas caracteres, algun letra minuscula, mayuscula y algun dígito";
     } else {
         var error = "";
     }
@@ -65,7 +65,7 @@ function passwordConfirmation() {
     var confirmation = passconfirm.value;
 
     if (pwd != confirmation) {
-        var error = "Fernando eres un subnormal";
+        var error = "Las cotraseñas no coinciden";
     } else {
         var error = "";
     }

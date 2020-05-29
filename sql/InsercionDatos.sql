@@ -4,12 +4,11 @@ insertar_empleado('Admin2','123456Sa');
 insertar_empleado('Admin3','Sa1234As');
 quitar_empleado(3);
 
-Insertar_Usuario('Pablo', 'Gonzalez Rodriguez', 'pablom@gmail.com' ,'AsDf1234','moncalvillo3');
-Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwerty12', 'morales');
-Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', 'romero');
-Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', 'valdes');
-Quitar_Usuario('morales');
-Quitar_Usuario('romero');
+Insertar_Usuario('Pablo', 'Gonzalez Rodriguez', 'pablom@gmail.com' ,'AsDf1234','12345678A');
+Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwerty12', '87654321A');
+Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', '87654321B');
+Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', '12345678B');
+Quitar_Usuario('87654321A');
 
 insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'https://i.imgur.com/sCxrLFG.jpg', 'aislado');
 insertar_inmueble('02.1A','C/ Cristobal Colon',2, 'https://i.imgur.com/UJfas3B.jpg', 'plurifamiliar');
@@ -24,34 +23,22 @@ insertar_inmueble('04.1B','C/ Zambullon',2, 'https://i.imgur.com/XGTkakZ.jpg','p
 modificar_inmueble('04.1B', 'C/ Zambullon', 4, 'https://i.imgur.com/XGTkakZ.jpg', 'plurifamiliar');
 quitar_inmueble('03.1D');
 
-Insertar_oferta(600, sysdate,'01.00');
-Insertar_oferta(375, sysdate,'02.1A');
-Insertar_oferta(375, sysdate,'02.1B');
-Insertar_oferta(500, sysdate,'03.00');
-Insertar_oferta(375, sysdate,'03.0A');
-Insertar_oferta(350, sysdate,'03.1A');
-Insertar_oferta(350, sysdate,'03.1B');
-Insertar_oferta(350, sysdate,'03.1C');
-Insertar_oferta(375, sysdate,'04.1B');
-quitar_oferta(9);
-
-INSERTAR_DEMANDA(650,'02/01/2020','aislado',1,3,'moncalvillo3',1);
-INSERTAR_DEMANDA(400,'02/01/2020','plurifamiliar',0,1,'moncalvillo3',2);
-INSERTAR_DEMANDA(375,'02/01/2020','plurifamiliar',1,2,'moncalvillo3',3);
-INSERTAR_DEMANDA(450,'02/01/2020','plurifamiliar',0,3,'moncalvillo3',4);
-INSERTAR_DEMANDA(475,'02/01/2020','plurifamiliar',1,1,'moncalvillo3',5);
-INSERTAR_DEMANDA(400,'02/01/2020','plurifamiliar',0,1,'moncalvillo3',6);
-INSERTAR_DEMANDA(375,'02/01/2020','plurifamiliar',1,2,'moncalvillo3',7);
+INSERTAR_DEMANDA(650,'02/01/2020',1,'12345678A','01.00');
+INSERTAR_DEMANDA(400,'02/01/2020',1,'87654321B','02.1A');
+INSERTAR_DEMANDA(375,'02/01/2020',2,'12345678B','02.1B');
+INSERTAR_DEMANDA(450,'02/01/2020',3,'12345678A','03.00');
+INSERTAR_DEMANDA(475,'02/01/2020',1,'87654321B','03.0A');
+INSERTAR_DEMANDA(400,'02/01/2020',1,'12345678B','03.1B');
+INSERTAR_DEMANDA(375,'02/01/2020',2,'12345678A','03.1C');
 QUITAR_DEMANDA(7);
 
-INSERTAR_CONTRATO('03/01/2020','01/03/2021',650,650,1,'12345678A');
-INSERTAR_CONTRATO('03/01/2020','02/03/2021',375,375,2,'12345678A');
-INSERTAR_CONTRATO('03/01/2020','01/03/2021',375,375,3,'12345678A');
-INSERTAR_CONTRATO('03/01/2020','01/03/2021',500,500,4,'12345678A');
-INSERTAR_CONTRATO('03/01/2020','01/03/2021',375,375,5,'12345678A');
-INSERTAR_CONTRATO('03/01/2020','01/03/2021',350,350,6,'12345678A');
-MODIFICAR_CONTRATO(1, '03/06/2020','01/03/2021',1000, '12345678A');
-
+INSERTAR_CONTRATO('03/01/2020','01/03/2021',650,650,1);
+INSERTAR_CONTRATO('03/01/2020','02/03/2021',375,375,2);
+INSERTAR_CONTRATO('03/01/2020','01/03/2021',375,375,3);
+INSERTAR_CONTRATO('03/01/2020','01/03/2021',500,500,4);
+INSERTAR_CONTRATO('03/01/2020','01/03/2021',375,375,5);
+INSERTAR_CONTRATO('03/01/2020','01/03/2021',350,350,6);
+MODIFICAR_CONTRATO(1, '03/06/2020','01/03/2021',1000);
 QUITAR_CONTRATO(6);
 
 

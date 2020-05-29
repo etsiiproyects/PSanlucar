@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["contrato"])){
+    if(isset($_REQUEST["oid"])){
         $nuevoContrato["oid"]=$_REQUEST["oid"];
         $nuevoContrato["inicioAlquiler"] = $_REQUEST["inicioAlquiler"];
     	$nuevoContrato["finalAlquiler"] = $_REQUEST["finalAlquiler"];
