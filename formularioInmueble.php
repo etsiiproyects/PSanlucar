@@ -75,9 +75,16 @@
                 <label for="img">URL de la imagen: </label>
     			<input class="input-group" type="text" id="img" name="img" value="<?php echo $inmueble['img'];?>" required />
                 <br />
-                
+
                 <label>Tipo inmueble:</label>
-    				<label>
+                    <select name="tipo">
+                        <option value="" hidden selected disabled>Seleccion el tipo del inmueble</option>
+                        <option value="aislado">Aislado</option>
+                        <option value="plurifamiliar">Plurifamiliar</option>
+                        <option value="comercial">Comercial</option>
+                    </select>
+
+                	<label>
     					<input name="tipo" type="radio" value="aislado" <?php if($inmueble['tipo']=='aislado') echo ' checked ';?>/>
     					Aislado</label>
     				<label>
