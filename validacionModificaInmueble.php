@@ -2,7 +2,7 @@
 
 	session_start();
 	
-	if(isset($_SESSION["inmueble"])) {
+	if(isset($_REQUEST["id_inmueble"])) {
 		$nuevoInmueble["id_inmueble"] = $_REQUEST["ID_INMUEBLE"];
 		$nuevoInmueble["direccion"] = $_REQUEST["DIRECCION"];
 		$nuevoInmueble["habitaciones"] = $_REQUEST["HABITACIONES"];
