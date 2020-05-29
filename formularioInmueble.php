@@ -75,20 +75,15 @@
                 <label for="img">URL de la imagen: </label>
     			<input class="input-group" type="text" id="img" name="img" value="<?php echo $inmueble['img'];?>" required />
                 <br />
-                
-                <label>Tipo inmueble:</label>
-    				<label>
-    					<input name="tipo" type="radio" value="aislado" <?php if($inmueble['tipo']=='aislado') echo ' checked ';?>/>
-    					Aislado</label>
-    				<label>
-    					<input name="tipo" type="radio" value="plurifamiliar" <?php if($inmueble['tipo']=='plurifamiliar') echo ' checked ';?>/>
-    					Plurifamiliar</label>
-    				<label>
-    					<input name="tipo" type="radio" value="comercial" <?php if($inmueble['tipo']=='comercial') echo ' checked ';?>/>
-    					Comercial</label>
-    				<br />
 
-            <input class="boton" type="submit" value="Confirmar" />
+                <label>Tipo inmueble:</label>
+                  <select class="input-group" name="tipo" required>
+                      <option value="" hidden selected disabled>Seleccion el tipo del inmueble</option>
+                      <option value="aislado">Aislado</option>
+                      <option value="plurifamiliar">Plurifamiliar</option>
+                      <option value="comercial">Comercial</option>
+                  </select>
+             <input class="boton" type="submit" value="Confirmar" />
              </form>
 
         </div>
