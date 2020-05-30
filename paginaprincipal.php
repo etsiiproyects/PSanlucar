@@ -1,12 +1,12 @@
 <?php
 	session_start();
 
-	
+
 	require_once("gestionarInmuebles.php");
-	
-	
+
+
 	require_once("paginacion_consulta.php");
-	
+
 
 
 ?>
@@ -31,18 +31,23 @@
   	<script src="js/inmuebles.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
+
      	$(document).ready(function() {
      		var trigger =$('#nav ul li a'),
      			container=$('#content');
 
      		trigger.on('click', function() {
      			var $this=$(this)
-     				target=$this.data('target');
-     		container.load(target + '.php');
-
-     		return false;
-		});
+     					target=$this.data('target');
+     			container.load(target + '.php');
+					lastTarget=target;
+     			return false;
+				});
      });
+
+
+
+
       </script>
 </head>
 
