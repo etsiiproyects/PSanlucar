@@ -40,8 +40,7 @@
 			var lastTarget=target;
 
      		return false;
-
-     	});
+		});
      });
 
 	 $(document).ready(funtion() {
