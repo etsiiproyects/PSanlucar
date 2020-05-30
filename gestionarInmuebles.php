@@ -13,7 +13,10 @@
     	return $conexion->query($consulta);
 	}
 
-	
+	function consultarTodosInmueblesLibres($conexion) {
+		$consulta = "SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER)";
+    	return $conexion->query($consulta);
+	}
 
 	function alta_inmueble($conexion, $inmueble) {
 		try {
@@ -42,7 +45,7 @@
 			return $e->getMessage();
 		}
 	}
-	
+
 	function modificar_inmueble($conexion, $inmueble) {
 		try {
 			$stmt = $conexion->prepare('CALL MODIFICAR_INMUEBLE(:id, :direccion, :hab, :img, :tipo)');

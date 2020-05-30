@@ -1,4 +1,4 @@
-php
+<?php
 	session_start();
 
 	require_once("gestionBD.php");
@@ -14,143 +14,14 @@ php
 		}
 	}
 
-	if (isset($_SESSION["paginacion"]))
-		$paginacion = $_SESSION["paginacion"];
-
-	$pagina_seleccionada = isset($_GET["PAG_NUM"]) ? (int)$_GET["PAG_NUM"] : (isset($paginacion) ? (int)$paginacion["PAG_NUM"] : 1);
-	$pag_tam = isset($_GET["PAG_TAM"]) ? (int)$_GET["PAG_TAM"] : (isset($paginacion) ? (int)$paginacion["PAG_TAM"] : 5);
-
-	if ($pagina_seleccionada < 1) 		$pagina_seleccionada = 1;
-	if ($pag_tam < 1) 		$pag_tam = 5;
-
-	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
-	unset($_SESSION["paginacion"]);
-
-
-	if (isset($_SESSION["paginacionC"]))
-		$paginacionC = $_SESSION["paginacionC"];
-
-	$pagina_seleccionadaC = isset($_GET["PAG_NUMC"]) ? (int)$_GET["PAG_NUMC"] : (isset($paginacionC) ? (int)$paginacionC["PAG_NUMC"] : 1);
-	$pag_tamC = isset($_GET["PAG_TAMC"]) ? (int)$_GET["PAG_TAMC"] : (isset($paginacionC) ? (int)$paginacionC["PAG_TAMC"] : 5);
-
-	if ($pagina_seleccionadaC < 1) 		$pagina_seleccionadaC = 1;
-	if ($pag_tamC < 1) 		$pag_tamC = 5;
-
-	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
-	unset($_SESSION["paginacionC"]);
-
-
-
-
 	$conexion = crearConexionBD();
-
-	$query = 'SELECT * FROM INMUEBLES';
-
-
-	// Se comprueba que el tamaño de página, página seleccionada y total de registros son conformes.
-	// En caso de que no, se asume el tamaño de página propuesto, pero desde la página 1
-	$total_registros = total_consulta($conexion, $query);
-	$total_paginas = (int)($total_registros / $pag_tam);
-
-	if ($total_registros % $pag_tam > 0)		$total_paginas++;
-
-	if ($pagina_seleccionada > $total_paginas)		$pagina_seleccionada = $total_paginas;
-
-	// Generamos los valores de sesión para página e intervalo para volver a ella después de una operación
-	$paginacion["PAG_NUM"] = $pagina_seleccionada;
-	$paginacion["PAG_TAM"] = $pag_tam;
-	$_SESSION["paginacion"] = $paginacion;
-
-	$filas = consulta_paginada($conexion, $query, $pagina_seleccionada, $pag_tam);
-
-	$queryC= 'SELECT * FROM INMUEBLES WHERE ID_INMUEBLE NOT IN (SELECT ID_INMUEBLE FROM DEMANDAS NATURAL JOIN CONTRATOS WHERE SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER)';
-
-	$total_registrosC = total_consulta($conexion, $queryC);
-	$total_paginasC = (int)($total_registrosC / $pag_tamC);
-
-	if ($total_registrosC % $pag_tamC > 0)		$total_paginasC++;
-
-	if ($pagina_seleccionadaC > $total_paginasC)		$pagina_seleccionadaC = $total_paginasC;
-
-	// Generamos los valores de sesión para página e intervalo para volver a ella después de una operación
-	$paginacionC["PAG_NUMC"] = $pagina_seleccionadaC;
-	$paginacionC["PAG_TAMC"] = $pag_tamC;
-	$_SESSION["paginacionC"] = $paginacionC;
-
-	$filasC = consulta_paginada($conexion, $queryC, $pagina_seleccionadaC, $pag_tamC);
-
-	//$filas = consultarTodosInmuebles($conexion);
+	$filasC = consultarTodosInmueblesLibres($conexion);
+	$filas = consultarTodosInmuebles($conexion);
 	cerrarConexionBD($conexion);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promociones Sanlucar: Lista de inmuebles</title>
-  <link rel="stylesheet" type="text/css" href="css/inmuebles.css">
-  <link rel="stylesheet" type="text/css" href="css/paginacion.css">
-  <link rel="stylesheet" type="text/css" href="css/menuNav.css">
-  <link rel="stylesheet" type="text/css" href="css/responsive.css">
-  <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-  <script src="js/inmuebles.js" type="text/javascript"></script>
-  <script src="js/responsive.js" type="text/javascript"></script>
-</head>
 
-<body>
-
-
-<?php
-	include_once("cabecera.php");
-?>
-
-	<nav class="pag" id="paginacion">
-		<div id="enlaces">
-			<?php
-				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
-					if ( $pagina == $pagina_seleccionada) { 	?>
-						<span class="current"><?php echo $pagina; ?></span>
-			<?php }	else { ?>
-						<a href="consulta_inmuebles.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
-			<?php } ?>
-		</div>
-
-		<form method="get" action="consulta_inmuebles.php">
-			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
-			Mostrando
-			<input id="PAG_TAM" name="PAG_TAM" type="number"
-				min="1" max="<?php echo $total_registros; ?>"
-				value="<?php echo $pag_tam?>" autofocus="autofocus" />
-			entradas de <?php echo $total_registros?>
-			<input type="submit" value="Cambiar">
-		</form>
-
-	</nav>
-
-	<nav class="pag" id="freePaginacion">
-		<div id="enlaces">
-			<?php
-				for( $paginaC = 1; $paginaC <= $total_paginasC; $paginaC++ )
-					if ( $paginaC == $pagina_seleccionadaC) { 	?>
-						<span class="current"><?php echo $paginaC; ?></span>
-			<?php }	else { ?>
-						<a href="consulta_inmuebles.php?PAG_NUM=<?php echo $paginaC; ?>&PAG_TAMC=<?php echo $pag_tamC; ?>"><?php echo $paginaC; ?></a>
-			<?php } ?>
-		</div>
-
-		<form method="get" action="consulta_inmuebles.php">
-			<input id="PAG_NUMC" name="PAG_NUMC" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
-			Mostrando
-			<input id="PAG_TAMC" name="PAG_TAMC" type="number"
-				min="1" max="<?php echo $total_registrosC; ?>"
-				value="<?php echo $pag_tamC?>" autofocus="autofocus" />
-			entradas de <?php echo $total_registrosC?>
-			<input type="submit" value="Cambiar">
-		</form>
-
-	</nav>
 
 <section class="contenido">
 	<?php if(isset($_SESSION['loginEmpleado'])){ ?>
