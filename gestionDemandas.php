@@ -43,7 +43,7 @@
 		}
 	}
 
-	function quitar_contrato($conexion, $oidDemanda){
+	function quitar_demanda($conexion, $oidDemanda){
 		try{
 			$stmt=$conexion -> prepare('CALL QUITAR_CONTRATO(:OID_DEMANDA)');
 			$stmt->bindParam(':OID_DEMANDA', $oidDemanda);
