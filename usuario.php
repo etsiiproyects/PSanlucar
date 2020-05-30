@@ -14,55 +14,42 @@
 
     $conexion = crearConexionBD();
     $datos = consultarDatosUsuario($conexion, $login['usuario'], $login['pass']);
-    $contratos = consultarTodosContratos($conexion);
 	cerrarConexionBD($conexion);
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Promociones Sanlucar Web</title>
-<link rel="stylesheet" type="text/css" href="css/usuario.css">
-</head>
-<body>
 
-<?php include_once("cabecera.php"); ?>
-
-    <div class="contenido">
-        <div class="bloque">
+    <div class="contenidoU">
+        <div class="bloqueU">
             <div class="mC">
                 <h1> Mis contratos </h1>
             </div>  
-            <div class="contratos">
-                <?php
-                    foreach($contratos as $fila) {
-                ?>
-                <div class="contrato">
-                <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $fila["OID_CONTRATO"]; ?></b></a>
+            <div class="contratosU">
+                <div class="contratoU">
+                <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $datos["OID_CONTRATO"]; ?></b></a>
                     <div class="toggle">
                         <div class="wrap">
-                            <p>Inicio del contrato: <b><?php echo $fila["INICIOALQUILER"]; ?></b></p>
-                            <p>Fin del contrato: <b><?php echo $fila["FINALQUILER"]; ?></b></p>
-                            <p>Pago mensual: <b><?php echo $fila["PAGOMENSUAL"]; ?></b></p>
-                            <p>NIF cliente: <b><?php echo $fila["NIF"]; ?></b></p>
+                            <p>Inicio del contrato: <b><?php echo $datos["INICIOALQUILER"]; ?></b></p>
+                            <p>Fin del contrato: <b><?php echo $datos["FINALQUILER"]; ?></b></p>
+                            <p>Pago mensual: <b><?php echo $datos["PAGOMENSUAL"]; ?></b></p>
+                            <p>NIF cliente: <b><?php echo $datos["NIF"]; ?></b></p>
+                            <p>Mascotas: <b><?php echo $datos["NUM_MASCOTA"]; ?></b></p>
+                            <p>Pago mensual: <b><?php echo $datos["PAGOMENSUAL"]; ?></b></p>
+                            <p>Fianza: <b><?php echo $datos["FIANZA"]; ?></b></p>
                         </div>
                     </div>
                 </div>
-                <?php } ?>
             </div>
         </div>
-        <div class="bloque">
+        <div class="bloqueU">
         
             <h1> Mis datos </h1>
-            <div class="contratos">
-                <div class="contrato">
+            <div class="contratosU">
+                <div class="contratoU">
                             <p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
                             <p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
                             <p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
-                            <p>Nick: <b><?php echo $datos["NICK"]; ?></b></p>
+                            <p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
             
                 </div>
             </div>
@@ -75,22 +62,20 @@
 <?php include_once("footer.php") ?>
 
 <script>
-    let botones = document.querySelectorAll('.btn-toggle');
-    let toggles = document.querySelectorAll('.toggle');
-    for (var i = 0; i < botones.length; i++) {
+    let botonesU = document.querySelectorAll('.btn-toggle');
+    let togglesU = document.querySelectorAll('.toggle');
+    for (var i = 0; i < botonesU.length; i++) {
 
-    let boton = botones[i];
-    let toggle = toggles[i];
-    console.log(typeof(boton));
-    boton.addEventListener('click', (e) => {
+    let botonU = botonesU[i];
+    let toggleU = togglesU[i];
+    console.log(typeof(botonU));
+    botonU.addEventListener('click', (e) => {
 
-        console.log(toggle);
-        toggle.classList.toggle("active");
+        console.log(toggleU);
+        toggleU.classList.toggle("active");
     });
 
 
     console.log("funciona");
 };
 </script>
-</body>
-</html>

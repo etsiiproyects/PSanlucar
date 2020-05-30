@@ -37,7 +37,7 @@ function consultarUsuario($conexion,$email, $pass) {
 }
 
 function consultarDatosUsuario($conexion,$email, $pass){
-	$consulta = "SELECT NOMBRE, APELLIDOS, EMAIL, NICK FROM USUARIOS WHERE EMAIL=:email AND PASS=:pass";
+	$consulta = "SELECT * FROM USUARIOS NATURAL JOIN DEMANDAS NATURAL JOIN CONTRATOS WHERE EMAIL=:email AND PASS=:pass";
 	$stmt = $conexion->prepare($consulta);
 	$stmt->bindParam(':email',$email);
 	$stmt->bindParam(':pass',$pass);

@@ -22,8 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="css/menuNav.css">
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
+	
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
+	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
 	<script src="js/toggle.js"></script>
   	<script src="js/inmuebles.js"></script>
@@ -66,7 +68,7 @@
 	</nav>
 
 	<div id="content">
-		<div class="bloque">
+		<div class="bloqueI">
 			<h2> Descripcion: </h2>
 			<p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
 		</div>
