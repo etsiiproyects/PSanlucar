@@ -39,8 +39,7 @@
      		container.load(target + '.php');
 
      		return false;
-
-     	});
+		});
      });
       </script>
 </head>
