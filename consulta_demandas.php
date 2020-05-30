@@ -17,15 +17,15 @@
 	cerrarConexionBD($conexion);
 ?>
 
-<section class="bloque">
+<section class="bloqueC">
 	<h1>Lista de Demandas: </h1>
-	<div class="contratos">
+	<div class="contratosC">
 		<?php
 			foreach($filas as $fila) {
 		?>
-		<div class="contrato">
-        <a href="#" class="btn-toggle"><b> DEMANDA <?php echo $fila["OID_DEMANDA"]; ?></b></a>
-            <div class="toggle">
+		<div class="contratoC">
+        <a href="#" class="btn-toggleD"><b> DEMANDA <?php echo $fila["ID_INMUEBLE"]; ?></b></a>
+            <div class="toggleD">
                 <div class="wrap">
 					<p>Precio maximo: <b><?php echo $fila["PRECIOMAX"]; ?></b></p>
                     <p>Fecha de la demanda: <b><?php echo $fila["FECHADEMANDA"]; ?></b></p>
@@ -62,17 +62,17 @@
 
 
 <script>
-let botones = document.querySelectorAll('.btn-toggle');
-let toggles = document.querySelectorAll('.toggle');
-for(var i = 0; i<botones.length; i++){
+let botonesD = document.querySelectorAll('.btn-toggleD');
+let togglesD = document.querySelectorAll('.toggleD');
+for(var i = 0; i<botonesD.length; i++){
 
-	let boton = botones[i];
-	let toggle = toggles[i];
-	console.log(typeof(boton));
-	boton.addEventListener('click', (e) => {
+	let botonD = botonesD[i];
+	let toggleD = togglesD[i];
+	console.log(typeof(botonD));
+	botonD.addEventListener('click', (e) => {
 
-		console.log(toggle);
-		toggle.classList.toggle("active");
+		console.log(toggleD);
+		toggleD.classList.toggle("active");
 	});
 
 

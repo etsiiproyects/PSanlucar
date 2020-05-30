@@ -13,7 +13,7 @@ div.error {
     border: 2px solid red;
 }
 
-.bloque {
+.bloqueI {
     height: max-content;
     width: 92vw;
     margin: 0 3vw;
@@ -47,7 +47,7 @@ div.error {
     color: black;
 }
 
-#boton {
+#botonI {
     background-color: #ff7e34;
     color: black;
     border: 0;
