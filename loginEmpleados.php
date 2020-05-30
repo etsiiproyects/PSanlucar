@@ -14,7 +14,7 @@
 		cerrarConexionBD($conexion);
 		if($funct>0) {
 			$_SESSION["loginEmpleado"] = $nombre;
-			Header("Location: consulta_inmuebles.php");
+			Header("Location: paginaprincipal.php");
 		}
 		else {
 			$login["usuario"] = $nombre;

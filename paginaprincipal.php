@@ -47,25 +47,27 @@
 	<nav id="nav" class="menuNav">
 		<div class="logo"> <a href="index.php"> <img width="100px" src="images/logo.png"> </a> </div>
 		<ul class="nav-links">
-			<li><a href="#" data-target="prueba">Prueba</a></li>
 			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
-				<li class="nav"> <a href="formularioUsuario.php"> Registrate </a></li>
-				<li class="nav"> <a href="login.php"> Iniciar Sesion </a> </li>
+				<a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>
+				<a href="login.php"><li class="nav"> Iniciar Sesion </li></a>
 			<?php } else{ ?>
 				<li class="navL"><a href="#" data-target="consulta_inmuebles"> Inmuebles </a></li>
 				<?php if(isset($_SESSION["loginEmpleado"])){ ?>
 					<li class="navL"><a href="#" data-target="consulta_demandas"> Demandas </a></li>
 					<li class="navL"><a href="#" data-target="consulta_contratos"> Contratos </a></li>
-				<?php} else if(isset($_SESSION["login"])){  ?>
+				<?php}if(isset($_SESSION["login"])) {  ?>
 			    <li class="navL"><a href="#" data-target="usuario"> Usuario </a></li>
 				<?php } ?>
-		 		<li class="navL"><a href="desconectar.php"> Cerrar Sesion </a> </li>
+		 		<a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>
 			<?php } ?>
 		</ul>
 	</nav>
 
 	<div id="content">
-		<?php include('consulta_contratos.php'); ?>
+		<div class="bloque">
+			<h2> Descripcion: </h2>
+			<p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
+		</div>
 	</div>
 
 </body>
