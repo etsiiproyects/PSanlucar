@@ -18,25 +18,25 @@ function volver() {
 }
 
 $(function() {
-    $"btn-demandas".click() ->
+    $"#btn-demandas".click(() ->
     {
         navigate("consulta_demandas.php");
-    }
+    });
 
-    $"btn-inmuebles".click() ->
+    $"#btn-inmuebles".click(() ->
     {
         navigate("consulta_inmuebles.php");
-    }
+    });
 
-    $"btn-contratos".click() ->
+    $"#btn-contratos".click(() ->
     {
         navigate("consulta_contratos.php");
-    }
+    });
 
-    $"btn-usuarios".click() ->
+    $"#btn-usuarios".click(() ->
     {
         navigate("consulta_usuarios.php");
-    }
+    });
 
     $.get("consulta_inmuebles.php", function(data) {
         $("contenido").html(data);
