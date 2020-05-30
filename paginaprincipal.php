@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="css/menuNav.css">
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
-	
+
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
@@ -31,7 +31,7 @@
   	<script src="js/inmuebles.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
-
+	 	var lastTarget;
      	$(document).ready(function() {
      		var trigger =$('#nav ul li a'),
      			container=$('#content');
@@ -40,10 +40,15 @@
      			var $this=$(this)
      					target=$this.data('target');
      			container.load(target + '.php');
-					lastTarget=target;
+				lastTarget=target;
      			return false;
-				});
+			});
      });
+	 function inicio(){
+		 var container=$('#content');
+		 container.load(lastTarget + '.php');
+		 return false;
+	 }
 
 
 
@@ -51,7 +56,7 @@
       </script>
 </head>
 
-<body>
+<body onload="inicio();">
 
 	<nav id="nav" class="menuNav">
 		<div class="logo"> <a href="index.php"> <img width="100px" src="images/logo.png"> </a> </div>
