@@ -18,25 +18,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promociones Sanlucar: Lista de inmuebles</title>
 
-	<link rel="stylesheet" href="/css/menuNav.css">
-	<link rel="stylesheet" href="/css/contratos.css">
-	<link rel="stylesheet" href="/css/demandas.css">
-	<link rel="stylesheet" href="/css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/menuNav.css">
+	<link rel="stylesheet" type="text/css" href="css/contratos.css">
+	<link rel="stylesheet" type="text/css" href="css/demandas.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/toggle.js"></script>
-  <script>
-		$(document).ready(function() {
-			var trigger =$('#nav ul li a'),
-				container=$('#content');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>
+     	$(document).ready(function() {
+     		var trigger =$('#nav ul li a'),
+     			container=$('#content');
 
-			trigger.on('click', function() {
-				var $this=$(this) target=$this.data('target');
-			    container.load(target + '.php');
-				return false;
-			});
-		});
-	</script>
+     		trigger.on('click', function() {
+     			var $this=$(this)
+     				target=$this.data('target');
+     		container.load(target + '.php');
+
+     		return false;
+
+     	});
+     });
+      </script>
 </head>
 
 <body>
