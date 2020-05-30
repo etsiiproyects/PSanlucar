@@ -62,6 +62,7 @@
 <?php include_once("footer.php") ?>
 
 <script>
+    
     let botonesU = document.querySelectorAll('.btn-toggle');
     let togglesU = document.querySelectorAll('.toggle');
     for (var i = 0; i < botonesU.length; i++) {

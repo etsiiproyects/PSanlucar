@@ -14,7 +14,7 @@
 
 		if ($excepcion<>"") {
 			$_SESSION["excepcion"] = $excepcion;
-			$_SESSION["destino"] = "consulta_contratos.php";
+			$_SESSION["destino"] = "paginaprincipal.php";
 			Header("Location: excepcion.php");
 		}
 		else
