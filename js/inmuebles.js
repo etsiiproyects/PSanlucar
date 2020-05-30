@@ -10,27 +10,21 @@ function visibility() {
 
     let all = document.getElementById("inmuebles");
     let free = document.getElementById("freeInmuebles");
-    let pag = document.getElementById("paginacion");
-    let freeP = document.getElementById("freePaginacion");
-    let boton = document.getElementById("boton");
+    let botonI = document.getElementById("botonI");
 
     console.log(all);
     console.log(free);
     if (all.style.display == "flex") {
-        boton.innerText = "Mostrar todos los Inmuebles";
-        boton.style.backgroundColor = "white";
-        boton.style.color = "#ff7e34";
-        pag.style.display = "none";
-        freeP.style.display = "block";
+        botonI.innerText = "Mostrar todos los Inmuebles";
+        botonI.style.backgroundColor = "white";
+        botonI.style.color = "#ff7e34";
         all.style.display = "none";
         free.style.display = "flex";
         return;
     }
-    boton.innerText = "Mostrar inmuebles libres";
-    boton.style.backgroundColor = "#ff7e34";
-    boton.style.color = "white";
-    pag.style.display = "block";
-    freeP.style.display = "none";
+    botonI.innerText = "Mostrar inmuebles libres";
+    botonI.style.backgroundColor = "#ff7e34";
+    botonI.style.color = "white";
     all.style.display = "flex";
     free.style.display = "none";
     return;

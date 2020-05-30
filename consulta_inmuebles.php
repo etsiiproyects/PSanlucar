@@ -23,14 +23,14 @@
 
 
 
-<section class="contenido">
+<section class="bloqueI">
 	<?php if(isset($_SESSION['loginEmpleado'])){ ?>
 		<a href="formularioInmueble.php"><div class="inserta">
 			<h2> INSERTAR INMUEBLE </h2>
 		</div></a>
 	<?php } ?>
 
-	<button  id="boton" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
+	<button  id="botonI" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
 
 	<h1>Lista de Inmuebles: </h1>
 
