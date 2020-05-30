@@ -30,7 +30,8 @@
   <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script src="js/inmuebles.js" type="text/javascript"></script>
   <script src="js/responsive.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/toggle.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
 		var trigger =$('#nav ul li a'),
@@ -50,14 +51,27 @@
 
 <body>
 
+	<nav id="nav">
+		<div class="logo"> <a href="index.php"> <img width="100px" src="images/logo.png"> </a> </div>
+		<ul class="nav-links">
+			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
+				<li class="nav"> <a href="formularioUsuario.php"> Registrate </a></li>
+				<li class="nav"> <a href="login.php"> Iniciar Sesion </a> </li>
+			<?php } else{ ?>
+				<li class="navL"><a href="#" data-target="consulta_inmuebles"> Inmuebles </a></li>
+				<?php if(isset($_SESSION["loginEmpleado"])){ ?>
+					<li class="navL"><a href="#" data-target="consulta_demandas"> Demandas </a></li>
+					<li class="navL"><a href="#" data-target="consulta_contratos"> Contratos </a></li>
+				<?php} if(isset($_SESSION["login"])){  ?>
+			         <li class="navL"><a href="#" data-target="usuario"> Usuario </a></li>
+				<?php } ?>
+		 		<li class="navL"><a href="desconectar.php"> Cerrar Sesion </a> </li>
+		</ul>
+	</nav>
 
-<?php
-	include_once("cabeceraNew.php");
-?>
-
-<div id="#content">
-	<?php include('consulta_inmuebles.php'); ?>
-</div>
+	<div id="#content">
+		<?php include('consulta_inmuebles.php'); ?>
+	</div>
 
 
 

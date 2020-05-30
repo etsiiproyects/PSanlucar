@@ -39,11 +39,11 @@
                     	<input id="PAGOMENSUAL" name="PAGOMENSUAL" type="hidden" value="<?php echo $fila["PAGOMENSUAL"]; ?>" />
                     	<input id="NIF" name="NIF" type="hidden" value="<?php echo $fila["NIF"]; ?>" />
                     	<input id="OID_CONTRATO" name="OID_CONTRATO" type="hidden" value="<?php echo $fila["OID_CONTRATO"]; ?>" />
-                    	
+
 						<button class="botonInm" id="editar" name="editar" type="submit" >
 							Modificar
 						</button>
-						
+
 						<input  id="borrar" name="borrar" type="hidden" value=""/>
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Borrar
@@ -86,8 +86,6 @@ for(var i = 0; i<botones.length; i++){
 		}
 
 	}
-
-  navSlide();
 </script>
 
 </body>
