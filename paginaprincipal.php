@@ -29,25 +29,23 @@
   	<script src="js/inmuebles.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
+
      	$(document).ready(function() {
      		var trigger =$('#nav ul li a'),
      			container=$('#content');
 
      		trigger.on('click', function() {
      			var $this=$(this)
-     				target=$this.data('target');
-     		container.load(target + '.php');
-			var lastTarget=target;
-
-     		return false;
-		});
+     					target=$this.data('target');
+     			container.load(target + '.php');
+					lastTarget=target;
+     			return false;
+				});
      });
 
-	 $(document).ready(funtion() {
-		 var container=$('#content');
-		 if(lastTarget!=null) container.load(lastTarget + '.php');
-		 return false;
-	 })
+
+
+
       </script>
 </head>
 
