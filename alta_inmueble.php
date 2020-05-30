@@ -13,13 +13,12 @@
     $conexion=crearConexionBD();
 
     if(alta_inmueble($conexion, $nuevoInmueble)){
-        Header("Location: consulta_inmuebles.php");
+        Header("Location: paginaprincipal.php");
     }else{
         $_SESSION["excepcion"] = "El inmueble ya existe en la base de datos.";
         $_SESSION["destino"] = "formularioInmueble.php";
         Header("Location: excepcion.php");
     }
-    
+
 
  ?>
-
