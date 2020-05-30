@@ -49,9 +49,9 @@
 							Borrar
 						</button>
                     </form>
-					<form action="formularioContrato.php" method="post">
+					<form action="formularioDemandas.php" method="post">
 						<input id="oid_demanda" name="oid_demanda" type="hidden" value="<?php echo $fila["OID_DEMANDA"]; ?>" hidden />
-						<button type="submit" name="submit">Crear Contrato</button>
+						<button type="submit" name="submit">Crear Demanda </button>
 					</form>
                 </div>
             </div>
