@@ -31,22 +31,22 @@ if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
         <?php if(isset($_SESSION["loginEmpleado"])){ ?>
         
             <li id="btn-demandas" class="navL">
-                <a href="#"> Demandas </a>
+                <a href="#" data-target="consulta_demandas"> Demandas </a>
             </li>
             <li class="navL">
-                <a href="#"> Contratos </a>
+                <a href="#" data-target="consulta_contratos"> Contratos </a>
             </li>
 
         <?php } ?>
 
             <li id="btn-inmuebles" class="navL">
-                <a href="#"> Inmuebles </a>
+                <a href="#" data-target="consulta_inmuebles"> Inmuebles </a>
             </li>
 
         <?php if(isset($_SESSION["login"])){  ?>
 
             <li class="navL">
-                <a href="#"> Contratos </a>
+                <a href="#" data-target="usuario"> Usuario </a>
             </li>
 
         <?php } ?>
