@@ -16,10 +16,10 @@
 		
 		if($excepcion<>"") {
 			$_SESSION["excepcion"] = $excepcion;
-			$_SESSION["destino"] = "consulta_demandas.php";
+			$_SESSION["destino"] = "paginaprincipal.php";
 			Header("Location: excepcion.php");
 		}
-		else Header("Location: consulta_demandas.php");
+		else Header("Location: paginaprincipal.php");
 	} 
-	else header("Location: consulta_demandas.php");
+	else header("Location: paginaprincipal.php");
 ?>

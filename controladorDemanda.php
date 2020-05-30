@@ -3,11 +3,11 @@
 	session_start();
 	
 	if (isset($_REQUEST["demanda"])){
-		$inmueble["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
-		$inmueble["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
-		$inmueble["NUM_MASCOTA"] = $_REQUEST["NUM_MASCOTA"];
-		$inmueble["NIF"] = $_REQUEST["NIF"];
-		$inmueble["ID_INMUEBLE"] = $_REQUEST["ID_INMUEBLE"];
+		$demanda["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
+		$demanda["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
+		$demanda["NUM_MASCOTA"] = $_REQUEST["NUM_MASCOTA"];
+		$demanda["NIF"] = $_REQUEST["NIF"];
+		$demanda["ID_INMUEBLE"] = $_REQUEST["ID_INMUEBLE"];
 		
 		$_SESSION["demanda"] = $demanda;
 			
