@@ -18,7 +18,7 @@
 			Header("Location: excepcion.php");
 		}
 		else
-			Header("Location: consulta_contratos.php");
+			Header("Location: paginaprincipal.php");
 	}
-	else Header("Location: consulta_contratos.php");
+	else Header("Location: paginaprincipal.php");
  ?>

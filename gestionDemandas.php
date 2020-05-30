@@ -1,7 +1,6 @@
 <?php
 	
 	function consultarDemanda($conexion, $demanda)  {
-		$nif = $demanda["nif"];
 		$consulta = "SELECT COUNT(*) AS TOTAL FROM DEMANDAS WHERE NIF=:nif";
 		$stmt = $conexion->prepare($consulta);
 		$stmt->bindParam(':nif', $nif);
@@ -45,7 +44,7 @@
 
 	function quitar_demanda($conexion, $oidDemanda){
 		try{
-			$stmt=$conexion -> prepare('CALL QUITAR_CONTRATO(:OID_DEMANDA)');
+			$stmt=$conexion -> prepare('CALL QUITAR_DEMANDA(:OID_DEMANDA)');
 			$stmt->bindParam(':OID_DEMANDA', $oidDemanda);
 			$stmt->execute();
 			return "";
