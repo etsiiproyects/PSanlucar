@@ -1,9 +1,9 @@
-const toggle = () => {
-    let botones = document.querySelectorAll('.btn-toggle');
-    let toggles = document.querySelectorAll('.toggle');
+const navSlide = () => {
+    const botones = document.querySelectorAll('.btn-toggle');
+    const toggles = document.querySelectorAll('.toggle');
     for (var i = 0; i < botones.length; i++) {
-        let boton = botones[i];
-        let toggle = toggles[i];
+        const boton = botones[i];
+        const toggle = toggles[i];
         console.log(typeof(boton));
         boton.addEventListener('click', (e) => {
 
@@ -12,13 +12,12 @@ const toggle = () => {
         });
         console.log("funciona");
     };
-}
-const toggleD = () => {
-    let botonesD = document.querySelectorAll('.btn-toggleD');
-    let togglesD = document.querySelectorAll('.toggleD');
+
+    const botonesD = document.querySelectorAll('.btn-toggleD');
+    const togglesD = document.querySelectorAll('.toggleD');
     for (var i = 0; i < botonesD.length; i++) {
-        let botonD = botonesD[i];
-        let toggleD = togglesD[i];
+        const botonD = botonesD[i];
+        const toggleD = togglesD[i];
         console.log(typeof(botonD));
         botonD.addEventListener('click', (e) => {
 
@@ -27,8 +26,6 @@ const toggleD = () => {
         });
         console.log("funciona");
     };
-}
-const toggleU = () => {
     const botonesU = document.querySelectorAll('.btn-toggle');
     const togglesU = document.querySelectorAll('.toggle');
     for (var i = 0; i < botonesU.length; i++) {
@@ -45,9 +42,7 @@ const toggleU = () => {
 
         console.log("funciona");
     };
-}
 
-const navSlide = () => {
     const burguer = document.querySelector('.burguer');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');

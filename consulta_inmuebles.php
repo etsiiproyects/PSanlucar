@@ -125,6 +125,3 @@
 
 </section>
 
-
-</body>
-</html>

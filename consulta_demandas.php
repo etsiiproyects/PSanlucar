@@ -32,6 +32,7 @@
                     <p>Numero de mascotas: <b><?php echo $fila["NUM_MASCOTA"]; ?></b></p>
                     <p>NIF demandante: <b><?php echo $fila["NIF"]; ?></b></p>
 					<p>ID del inmueble: <b><?php echo $fila["ID_INMUEBLE"]; ?></b></p>
+					<p>OID de la demanda: <b><?php echo $fila["OID_DEMANDA"]; ?></b></p>
                     <form id="formDemanda" method="post" action="controladorDemanda.php">
                     	<input id="PRECIOMAX" name="PRECIOMAX" type="hidden" value="<?php echo $fila["PRECIOMAX"]; ?>" />
                     	<input id="FECHADEMANDA" name="FECHADEMANDA" type="hidden" value="<?php echo $fila["FECHADEMANDA"]; ?>" />
@@ -87,5 +88,4 @@ for(var i = 0; i<botonesD.length; i++){
 
 	}
 
-  navSlide();
 </script>
