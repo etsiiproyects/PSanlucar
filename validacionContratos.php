@@ -2,7 +2,7 @@
     session_start();
 
 
-	if (isset($_SESSION["contrato"])) {
+	if(isset($_SESSION["contrato"])) {
 
 		$nuevoContrato["inicioAlquiler"] = $_REQUEST["inicioAlquiler"];
 		$nuevoContrato["finalAlquiler"] = $_REQUEST["finalAlquiler"];

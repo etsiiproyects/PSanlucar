@@ -62,20 +62,6 @@
 <?php include_once("footer.php") ?>
 
 <script>
-    let botonesU = document.querySelectorAll('.btn-toggle');
-    let togglesU = document.querySelectorAll('.toggle');
-    for (var i = 0; i < botonesU.length; i++) {
 
-    let botonU = botonesU[i];
-    let toggleU = togglesU[i];
-    console.log(typeof(botonU));
-    botonU.addEventListener('click', (e) => {
-
-        console.log(toggleU);
-        toggleU.classList.toggle("active");
-    });
-
-
-    console.log("funciona");
-};
+    
 </script>

@@ -2,9 +2,9 @@
 
 	session_start();
 	
-	if(isset($_SESSION["inmueble"])) {
-		$inmueble = $_SESSION["inmueble"];
-		unset($_SESSION["inmueble"]);
+	if(isset($_SESSION["inmuebleActualizado"])) {
+		$inmueble = $_SESSION["inmuebleActualizado"];
+		unset($_SESSION["inmuebleActualizado"]);
 		
 		require_once("gestionBD.php");
 		require_once("gestionarInmuebles.php");
@@ -15,7 +15,7 @@
 		
 		if ($excepcion<>"") {
 			$_SESSION["excepcion"] = $excepcion;
-			$_SESSION["destino"] = "consulta_inmuebles.php";
+			$_SESSION["destino"] = "paginaprincipal.php";
 			Header("Location: excepcion.php");
 		}
 		else

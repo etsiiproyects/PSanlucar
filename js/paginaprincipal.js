@@ -1,18 +1,58 @@
-function navigate(url) {
-    url0 = url1;
-    $.get(url, function(data) {
-        $("#contenido").scrollTop(0);
-        $("#contenido").html(data);
-        url1 = url;
-    }).fail((err) => {
-        alert("No se ha podido redirigir");
-        navigate("consulta_inmuebles.php");
-    })
+const toggle = () => {
+    let botones = document.querySelectorAll('.btn-toggle');
+    let toggles = document.querySelectorAll('.toggle');
+    for (var i = 0; i < botones.length; i++) {
+        let boton = botones[i];
+        let toggle = toggles[i];
+        console.log(typeof(boton));
+        boton.addEventListener('click', (e) => {
+
+            console.log(toggle);
+            toggle.classList.toggle("active");
+        });
+        console.log("funciona");
+    };
+}
+const toggleD = () => {
+    let botonesD = document.querySelectorAll('.btn-toggleD');
+    let togglesD = document.querySelectorAll('.toggleD');
+    for (var i = 0; i < botonesD.length; i++) {
+        let botonD = botonesD[i];
+        let toggleD = togglesD[i];
+        console.log(typeof(botonD));
+        botonD.addEventListener('click', (e) => {
+
+            console.log(toggleD);
+            toggleD.classList.toggle("active");
+        });
+        console.log("funciona");
+    };
+}
+const toggleU = () => {
+    const botonesU = document.querySelectorAll('.btn-toggle');
+    const togglesU = document.querySelectorAll('.toggle');
+    for (var i = 0; i < botonesU.length; i++) {
+
+        const botonU = botonesU[i];
+        const toggleU = togglesU[i];
+        console.log(typeof(botonU));
+        botonU.addEventListener('click', (e) => {
+
+            console.log(toggleU);
+            toggleU.classList.toggle("active");
+        });
+
+
+        console.log("funciona");
+    };
 }
 
-var url1 = "consulta_inmuebles.php";
-var url0 = url1;
+const navSlide = () => {
+    const burguer = document.querySelector('.burguer');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-function volver() {
-    navigate(url0);
+    burguer.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+    });
 }

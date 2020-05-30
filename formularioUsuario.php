@@ -10,7 +10,7 @@
 		$formulario['email'] = "";
 		$formulario['pass'] = "";
 		$formulario['confirmar'] = "";
-		$formulario['nick'] = "";
+		$formulario['nif'] = "";
 
 		$_SESSION['formulario'] = $formulario;
 	}else
@@ -88,8 +88,8 @@
 				<input class="input-group" type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $formulario['fechaNacimiento'];?>" required />
 				<br />
 
-				<label for="nick">Nombre de usuario: </label>
-				<input class="input-group" id="nick" name="nick" type="text" size="30" required value="<?php echo $formulario['nick'];?>" />
+				<label for="nick">NIF: </label>
+				<input class="input-group" id="nif" name="nif" type="text" size="30" required value="<?php echo $formulario['nif'];?>" />
 				<br />
 
 				<label for="pass">Contraseña: </label>
