@@ -13,7 +13,7 @@
 			unset($_SESSION["inmueble"]);
 		}
     }
-    
+
 ?>
 
 
@@ -30,7 +30,22 @@
   <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script src="js/inmuebles.js" type="text/javascript"></script>
   <script src="js/responsive.js" type="text/javascript"></script>
-  <script src="js/paginaprincipal.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var trigger =$('#nav ul li a'),
+			container=$('#content');
+
+		trigger.on('click', function() {
+			var $this=$(this),
+				target=$this.data('target');
+		container.load(target + '.php');
+
+		return false;
+
+	});
+});
+ </script>
 </head>
 
 <body>
@@ -40,9 +55,11 @@
 	include_once("cabeceraNew.php");
 ?>
 
-<div id="contenido">
-
+<div id="#content">
+	<?php include('consulta_inmuebles.php'); ?>
 </div>
+
+
 
 <?php
 	include_once("footer.php");
@@ -50,28 +67,6 @@
 
 <script type="text/javascript">
 
-    $(function() {
-
-        $("#btn-demandas").click(() => {
-            navigate("consulta_demandas.php");
-        });
-
-        $("#btn-inmuebles").click(() => {
-            navigate("consulta_inmuebles.php");
-        });
-
-        $("#btn-contratos").click(() => {
-            navigate("consulta_contratos.php");
-        });
-
-        $("#btn-usuarios").click(() => {
-            navigate("consulta_usuarios.php");
-        });
-
-        $.get("consulta_inmuebles.php", function(data) {
-            $("contenido").html(data);
-        });
-    });
 	navSlide();
 
 </script>
