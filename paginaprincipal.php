@@ -28,7 +28,8 @@
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
 	<script src="js/toggle.js"></script>
-  	<script src="js/inmuebles.js"></script>
+	  <script src="js/inmuebles.js"></script>
+	  <script src="js/responsive.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
 		 		$(document).ready(function() {
@@ -67,6 +68,8 @@
 	 // }
 
 
+	
+
 
 
       </script>
@@ -90,7 +93,13 @@
 				<?php } ?>
 		 		<a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>
 			<?php } ?>
+			
 		</ul>
+		<div class="burguer">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+        </div>
 	</nav>
 
 	<div id="content">
@@ -100,5 +109,8 @@
 		</div> -->
 	</div>
 
+	<script>
+		navSlide();
+	</script>
 </body>
 </html>
