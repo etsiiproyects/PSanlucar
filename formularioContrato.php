@@ -59,7 +59,10 @@
 		<form id="contratoAlta" method="get" action="validacionContratos.php">
 
 		  		<label for="inicioAlquiler">Inicio del alquiler: </label>
-				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $contrato['inicioAlquiler'];?>" required />
+				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" />
+				<?php
+					$inicio= $contrato['inicioAlquiler'];
+			 	?>
 				<br />
 
 				<label for="finalAlquiler">Final del alquiler: </label>
@@ -84,6 +87,16 @@
 	</div>
 
 	<?php include_once("footer.php") ?>
+	
+	<script>
+		window.onload= function() {
+			var ia1 = '<?php echo $inicio; ?>';
+			var array=ia1.split("/");
+			let ia = document.getElementById("inicioAlquiler");
+			let fecha="20" + array[2] + "-" + array[1] + "-" + array[0];
+			ia.value = fecha;
+		};
+	</script>
 
 </body>
 </html>

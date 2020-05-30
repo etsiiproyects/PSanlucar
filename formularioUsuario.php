@@ -26,7 +26,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Registro</title>
+	<title>Promociones Sanlucar: Registro</title>
 	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

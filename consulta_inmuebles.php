@@ -31,7 +31,7 @@
 		</div></a>
 	<?php } ?>
 
-	<button  id="botonI" type="button" name="button" onclick="visibility();"> Mostras inmuebles libres</button>
+	<button  id="botonI" type="button" name="button" onclick="visibility();"> Mostrar inmuebles libres</button>
 
 	<h1>Lista de Inmuebles: </h1>
 

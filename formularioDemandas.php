@@ -17,7 +17,6 @@
 
     if (isset($_SESSION["errores"])){
         $errores=$_SESSION["errores"];
-        unset($_SESSION["errores"]);
     }
 
     $conexion=crearConexionBD();
@@ -61,9 +60,9 @@
 
      	    <a href="index.php"><img class="img-registro" src="images/logo.png" alt="Promociones Sanlúcar" /></a>
 
-            <form id="altaDemanda" action="validacion_demanda.php" method="post">
+            <form id="altaDemanda" action="validacion_demanda.php" method="get">
                  <label for="precio_max">Precio Maximo: </label>
-    			 <input class="input-group" id="precio_max" name="precio_max" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
+    			 <input class="input-group" id="precio_max" name="precio_max" min="0" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>
@@ -71,7 +70,7 @@
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
-    			<input class="input-group" type="number" id="numMascotas" name="numMascotas" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
+    			<input class="input-group" type="number" id="numMascotas" min="0" name="numMascotas" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
                 <br />
 
                 <label for="img">NIF: </label>
