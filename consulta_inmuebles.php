@@ -125,15 +125,5 @@
 </section>
 
 
-<?php
-	include_once("footer.php");
-?>
-
-<script type="text/javascript">
-
-	navSlide();
-
-</script>
-
 </body>
 </html>
