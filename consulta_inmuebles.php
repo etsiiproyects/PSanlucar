@@ -1,6 +1,7 @@
 <?php
 	session_start();
 
+	unset($_SESSION["errores"]);
 	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
 	require_once("paginacion_consulta.php");
