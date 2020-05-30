@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	
+	unset($_SESSION["errores"]);
 	require_once("gestionBD.php");
 	require_once("gestionDemandas.php");
 
@@ -44,10 +46,9 @@
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Cancelar demanda
 						</button>
-                    </form>
-					<form action="formularioDemandas.php" method="post">
+						<input  id="contratar" name="contratar" type="hidden" value=""/>
 						<button type="submit" name="submit">Crear contrato </button>
-					</form>
+                    </form>
                 </div>
             </div>
         </div>

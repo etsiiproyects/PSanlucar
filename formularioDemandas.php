@@ -3,12 +3,14 @@
 
     require_once("gestionBD.php");
 
-    if(!isset($_SESSION["demanda"])) {
+    if(!isset($_SESSION["demanda"]) && isset($_SESSION["inmueble"])) {
         $demanda['PRECIOMAX']="";
-        $demanda['FECHADEMANDA']="";
+		$fechaActual = date('d-m-Y');
+        $demanda['FECHADEMANDA']= "";
         $demanda['NUM_MASCOTA']="";
         $demanda['NIF']="";
-        $demanda['ID_INMUEBLE']="";
+		$inmueble = $_SESSION["inmueble"];
+        $demanda['ID_INMUEBLE']= $inmueble["ID_INMUEBLE"];
 
         $_SESSION['demanda']=$demanda;
     }else $demanda=$_SESSION["demanda"];
@@ -65,7 +67,7 @@
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>
-                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo $demanda['FECHADEMANDA'];?>" required />
+                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo $fechaActual;?>" required />
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
@@ -76,15 +78,12 @@
     			<input class="input-group" id="nif" name="nif" type="text" placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $demanda['NIF'];?>" required />
                 <br />
 
-                <label for="id_inmueble">ID del inmueble: </label>
-    			<input class="input-group" type="text" id="id_inmueble" name="id_inmueble" placeholder="00.0A" title="Dos digitos, seguido de un punto un digito y otro digito o una letra" size="5" value="<?php echo $demanda['ID_INMUEBLE'];?>" required />
-                <br />
+				<label for="id_inmueble">ID del inmueble: </label>
+				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" readonly/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 
         </div>
-
-
 
      </body>
  </html>   

@@ -2,12 +2,14 @@
 	session_start();
 
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
-	if (!isset($_SESSION['contrato'])) {
-		$contrato['inicioAlquiler'] = "";
+	if (!isset($_SESSION['contrato']) && isset($_SESSION["demanda"])) {
+		$demanda = $_SESSION["demanda"];
+		echo $demanda["PRECIOMAX"];
+		$contrato['inicioAlquiler'] = $demanda["FECHADEMANDA"];
 		$contrato['finalAlquiler'] = "";
-		$contrato['pagoMensual'] = "";
-		$contrato['fianza'] = "";
-		$contrato['oid_demanda'] = $_REQUEST["oid_demanda"];
+		$contrato['pagoMensual'] = $demanda["PRECIOMAX"];
+		$contrato['fianza'] = $demanda["PRECIOMAX"];
+		$contrato['oid_demanda'] = $demanda["OID_DEMANDA"];
 
 		$_SESSION['contrato'] = $contrato;
 	}
@@ -22,20 +24,19 @@
 		unset($_SESSION["errores"]);
 ?>
 
-<!DOCTYPE hmtl>
-<html lang="es">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+        <meta charset="utf-8">
+        <title>Gestion Promociones Sanlucar: Alta Inmueble</title>
+        <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Registro contrato</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
-	<script src="js/validacionContrato.js" type="text/javascript"></script>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
-</head>
-
-<body>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="js/validacionInmueble.js" type="text/javascript"></script>
+     </head>
+     <body>
 	<script>
 	$(document).ready(function() {
 			$("#contratoAlta").on("submit", function() {
@@ -58,23 +59,23 @@
 		<form id="contratoAlta" method="get" action="validacionContratos.php">
 
 		  		<label for="inicioAlquiler">Inicio del alquiler: </label>
-				<input class="input-group" type="text" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $contrato['inicioAlquiler'];?>" required />
+				<input class="input-group" type="date" id="inicioAlquiler" name="inicioAlquiler" value="<?php echo $contrato['inicioAlquiler'];?>" required />
 				<br />
 
 				<label for="finalAlquiler">Final del alquiler: </label>
-				<input class="input-group" type="text" id="finalAlquiler" name="finalAlquiler" value="<?php echo $contrato['finalAlquiler'];?>" required />
+				<input class="input-group" type="date" id="finalAlquiler" name="finalAlquiler" value="<?php echo $contrato['finalAlquiler'];?>" required />
 				<br />
 
 				<label for="pagoMensual">Pago Mensual: </label>
-				<input class="input-group" id="pagoMensual" name="pagoMensual" type="number" size="5" value="<?php echo $contrato['pagoMensual'];?>" required />
+				<input class="input-group" id="pagoMensual" name="pagoMensual" type="number" size="5" value="<?php echo $contrato['pagoMensual'];?>" readonly />
 				<br />
 
 				<label for="fianza">Importe de la fianza: </label>
-				<input class="input-group" id="fianza" name="fianza" type="number" size="5" value="<?php echo $contrato['fianza'];?>" required />
+				<input class="input-group" id="fianza" name="fianza" type="number" size="5" value="<?php echo $contrato['fianza'];?>" readonly />
 				<br />
 
 				<label for="oid">OID: </label>
-				<input class="input-group" id="oid" name="oid_demanda" type="text" size="5" value="<?php echo $contrato['oid_demanda'];?>"  required />
+				<input class="input-group" id="oid" name="oid_demanda" type="text" size="5" value="<?php echo $contrato['oid_demanda'];?>"  readonly />
 				<br />
 
 			<br>

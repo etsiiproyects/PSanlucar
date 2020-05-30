@@ -21,17 +21,17 @@
 		return $stmt->fetch();
 	}
 	
-		function alta_demanda($conexion, $demanda) {
+	function alta_demanda($conexion, $demanda) {
 		try {
 			$resultado = true;
 			if(!consultarContrato($conexion, $demanda)) {
 				$consulta = 'CALL INSERTA_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)';
 				$stmt = $conexion->prepare($consulta);
-				$stmt->bindParam(':preciomax', $demanda["precioMax"]);
-				$stmt->bindParam(':fechademanda', $demanda["fechaDemanda"]);
-				$stmt->bindParam(':num_mascota', $demanda["numMascotas"]);
-				$stmt->bindParam(':nif', $demanda["nif"]);
-				$stmt->bindParam(':id_inmueble', $demanda["idInmueble"]);
+				$stmt->bindParam(':preciomax', $demanda["PRECIOMAX"]);
+				$stmt->bindParam(':fechademanda', $demanda["FECHADEMANDA"]);
+				$stmt->bindParam(':num_mascota', $demanda["NUM_MASCOTA"]);
+				$stmt->bindParam(':nif', $demanda["NIF"]);
+				$stmt->bindParam(':id_inmueble', $demanda["ID_INMUEBLE"]);
 				$stmt->execute();
 			} else {
 				$resultado = false;

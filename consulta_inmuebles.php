@@ -68,7 +68,12 @@
 							Borrar
 						</button>
 
-					<?php } ?>
+					<?php } else { ?>
+						<input  id="demandar" name="demandar" type="hidden" value=""/>
+						<button class="botonInm" id="demandar" name="demandar" type="submit">
+							Demandar
+						</button>
+					<?php } ?>	
 
 				</form>
 			</div>
@@ -114,7 +119,13 @@
 							Borrar
 						</button>
 
-					<?php } ?>
+					<?php } else { ?>
+						<input  id="demandar" name="demandar" type="hidden" value=""/>
+						<button class="botonInm" id="demandar" name="demandar" type="submit">
+							Demandar
+						</button>
+					<?php } ?>	
+
 					</form>
 			</div>
 		</div>

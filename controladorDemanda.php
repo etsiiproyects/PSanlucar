@@ -2,7 +2,7 @@
 
 	session_start();
 	
-	if (isset($_REQUEST["OID_DEMANDA"])){
+	if (isset($_REQUEST["ID_INMUEBLE"])){
 		$demanda["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
 		$demanda["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
 		$demanda["NUM_MASCOTA"] = $_REQUEST["NUM_MASCOTA"];
@@ -12,7 +12,7 @@
 		
 		$_SESSION["demanda"] = $demanda;
 			
-		if (isset($_REQUEST["editar"])) Header("Location: modificaDemanda.php"); 
+		if (isset($_REQUEST["contratar"])) Header("Location: formularioContrato.php"); 
 		else  if (isset($_REQUEST["borrar"]))  Header("Location: accion_borrar_demanda.php"); 
 	}else {
 		Header("Location: consulta_demandas.php");	
