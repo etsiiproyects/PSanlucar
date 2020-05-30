@@ -12,7 +12,12 @@
 	function consultarTodosContratos($conexion) {
 		$consulta = "SELECT * FROM CONTRATOS";
 		return $conexion->query($consulta);
-  	}
+	  }
+	  
+	function consultarContratosDemandaUsuario($conexion){
+		$consulta = "SELECT * FROM CONTRATOS NATURAL JOIN DEMANDAS";
+    	return $conexion->query($consulta);
+	}
 
 
 	function consultarContratosUsuario($conexion, $nif){

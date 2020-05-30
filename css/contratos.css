@@ -15,7 +15,7 @@ div.error {
     border: 2px solid red;
 }
 
-.bloque {
+.bloqueC {
     height: max-content;
     width: 70vw;
     margin: 3vh 15vw;
@@ -32,10 +32,11 @@ a:hover {
     text-decoration: underline;
 }
 
-.contrato a {
+.contratoC a {
     margin: 10px 10px 0px 10px;
 }
 
+.toggleD,
 .toggle {
     margin: 0px 10px 0px 10px;
     display: none;
@@ -53,12 +54,14 @@ a:hover {
     margin: auto;
 }
 
-.toggle p {
+.toggle p,
+.toggleD p {
     font-size: 20px;
     margin-bottom: 50px;
 }
 
-.toggle button {
+.toggle button,
+.toggleD button {
     background: none;
     font-size: 20px;
     font-weight: bold;
@@ -68,12 +71,14 @@ a:hover {
     transition: 0.3s all ease;
 }
 
-.toggle button:hover {
+.toggle button:hover,
+.toggleD button:hover {
     border: 5px solid #0074D9;
     color: #0074D9;
 }
 
-.btn-toggle {
+.btn-toggle,
+.btn-toggleD {
     height: 50px;
     line-height: 50px;
     font-size: 24px;
@@ -84,7 +89,8 @@ a:hover {
     text-align: center;
 }
 
-.btn-toggle:hover {
+.btn-toggle:hover,
+.btn-toggleD:hover {
     text-decoration: none;
 }
 

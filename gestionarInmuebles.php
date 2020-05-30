@@ -13,6 +13,8 @@
     	return $conexion->query($consulta);
 	}
 
+	
+
 	function alta_inmueble($conexion, $inmueble) {
 		try {
 			$consulta='CALL insertar_inmueble(:id_inmueble, :direccion, :habitaciones, :img, :tipo)';
