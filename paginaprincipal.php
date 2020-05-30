@@ -1,12 +1,12 @@
 <?php
 	session_start();
 
-	
+
 	require_once("gestionarInmuebles.php");
-	
-	
+
+
 	require_once("paginacion_consulta.php");
-	
+
 
 
 ?>
@@ -37,11 +37,18 @@
      			var $this=$(this)
      				target=$this.data('target');
      		container.load(target + '.php');
+			var lastTarget=target;
 
      		return false;
 
      	});
      });
+
+	 $(document).ready(funtion() {
+		 var container=$('#content');
+		 if(lastTarget!=null) container.load(lastTarget + '.php');
+		 return false;
+	 })
       </script>
 </head>
 
@@ -67,6 +74,7 @@
 	</nav>
 
 	<div id="content">
+
 		<div class="bloque">
 			<h2> Descripcion: </h2>
 			<p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
