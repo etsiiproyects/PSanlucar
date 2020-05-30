@@ -1,6 +1,6 @@
 <?php
 
-	
+
 
 	if(!isset($_SESSION['loginEmpleado'])) {
 		header("Location: loginEmpleados.php");
@@ -53,12 +53,6 @@
 		<?php } ?>
 	</div>
 </section>
-
-
-<?php
-	include_once("footer.php");
-?>
-
 <script>
 let botones = document.querySelectorAll('.btn-toggle');
 let toggles = document.querySelectorAll('.toggle');

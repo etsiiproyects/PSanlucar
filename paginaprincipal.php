@@ -62,7 +62,7 @@
 	</nav>
 
 	<div id="content">
-		<p>hola</p>
+		<?php include('consulta_contratos.php'); ?>
 	</div>
 
 </body>
