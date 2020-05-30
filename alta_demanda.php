@@ -2,7 +2,7 @@
     session_start();
 
     require_once("gestionBD.php");
-    require_once("gestionarDemandas.php");
+    require_once("gestionDemandas.php");
 
     if(isset($_SESSION["demanda"])) {
         $nuevaDemanda=$_SESSION["demanda"];
@@ -12,7 +12,7 @@
 
     $conexion=crearConexionBD();
 
-    if(alta_inmueble($conexion, $nuevaDemanda)){
+    if(alta_demanda($conexion, $nuevaDemanda)){
         Header("Location: consulta_demandas.php");
     }else{
         $_SESSION["excepcion"] = "La demanda ya existe en la base de datos.";
