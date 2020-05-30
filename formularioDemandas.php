@@ -69,7 +69,7 @@
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
-    			<input class="input-group" type="number" id="numMascotas" name="numMascotas" min="0" max="3" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
+    			<input class="input-group" type="number" id="numMascotas" name="numMascotas" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
                 <br />
 
                 <label for="img">NIF: </label>
