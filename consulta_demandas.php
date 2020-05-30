@@ -36,23 +36,18 @@
                     <form id="formDemanda" method="post" action="controladorDemanda.php">
                     	<input id="PRECIOMAX" name="PRECIOMAX" type="hidden" value="<?php echo $fila["PRECIOMAX"]; ?>" />
                     	<input id="FECHADEMANDA" name="FECHADEMANDA" type="hidden" value="<?php echo $fila["FECHADEMANDA"]; ?>" />
-                    	<input id="NUM_MASCOTA" name="NUM_MASCOTA" type="NUM_MASCOTA" value="<?php echo $fila["NUM_MASCOTA"]; ?>" />
+                    	<input id="NUM_MASCOTA" name="NUM_MASCOTA" type="hidden" value="<?php echo $fila["NUM_MASCOTA"]; ?>" />
                     	<input id="NIF" name="NIF" type="hidden" value="<?php echo $fila["NIF"]; ?>" />
                     	<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>" />
                     	<input id="OID_DEMANDA" name="OID_DEMANDA" type="hidden" value="<?php echo $fila["OID_DEMANDA"]; ?>" />
 
-						<button class="botonInm" id="editar" name="editar" type="submit" >
-							Modificar
-						</button>
-
 						<input  id="borrar" name="borrar" type="hidden" value=""/>
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
-							Borrar
+							Cancelar demanda
 						</button>
                     </form>
 					<form action="formularioDemandas.php" method="post">
-						<input id="oid_demanda" name="oid_demanda" type="hidden" value="<?php echo $fila["OID_DEMANDA"]; ?>" hidden />
-						<button type="submit" name="submit">Crear Demanda </button>
+						<button type="submit" name="submit">Crear contrato </button>
 					</form>
                 </div>
             </div>
