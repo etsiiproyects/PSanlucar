@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
 	require_once("gestionBD.php");
 	require_once("gestionDemandas.php");
 

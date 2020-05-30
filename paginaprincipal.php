@@ -1,11 +1,12 @@
 <?php
 	session_start();
 
-	require_once("gestionBD.php");
+	
 	require_once("gestionarInmuebles.php");
-	require_once("gestionDemandas.php");
-	require_once("gestionContratos.php");
+	
+	
 	require_once("paginacion_consulta.php");
+	
 
 
 ?>
@@ -22,9 +23,11 @@
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-
-  <script src="js/toggle.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
+	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
+	<script src="js/toggle.js"></script>
+  	<script src="js/inmuebles.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
      	$(document).ready(function() {
      		var trigger =$('#nav ul li a'),
@@ -55,7 +58,7 @@
 				<?php if(isset($_SESSION["loginEmpleado"])){ ?>
 					<li class="navL"><a href="#" data-target="consulta_demandas"> Demandas </a></li>
 					<li class="navL"><a href="#" data-target="consulta_contratos"> Contratos </a></li>
-				<?php}if(isset($_SESSION["login"])) {  ?>
+				<?php } if(isset($_SESSION["login"])) {  ?>
 			    <li class="navL"><a href="#" data-target="usuario"> Usuario </a></li>
 				<?php } ?>
 		 		<a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>

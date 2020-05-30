@@ -7,12 +7,7 @@ if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
             <a href="index.php"> <img width="100px" src="images/logo.png"> </a>
         </div>
         <ul class="nav-links">
-            <li class="nav">
-                <a href="formularioUsuario.php"> Registrate </a>
-            </li>
-            <li class="nav">
-                <a href="login.php"> Iniciar Sesion </a>
-            </li>
+            
         </ul>
         <div class="burguer">
             <div class="line1"></div>
@@ -23,11 +18,19 @@ if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
 	<?php
 	} else{
     ?>
-        <nav class="menuNav">
+    
+        <nav id="" class="menuNav">
         <div class="logo">
             <a href="index.php"> <img width="100px" src="images/logo.png"> </a>
         </div>
         <ul class="nav-links">
+        <?php if()
+            <li class="nav">
+                <a href="formularioUsuario.php"> Registrate </a>
+            </li>
+            <li class="nav">
+                <a href="login.php"> Iniciar Sesion </a>
+            </li>
         <?php if(isset($_SESSION["loginEmpleado"])){ ?>
         
             <li id="btn-demandas" class="navL">

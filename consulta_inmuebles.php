@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+	
 	require_once("gestionBD.php");
 	require_once("gestionarInmuebles.php");
 	require_once("paginacion_consulta.php");
@@ -92,11 +94,11 @@
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
-						<a href="consulta_inmuebles.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
+						<a href="paginaprincipal.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
 			<?php } ?>
 		</div>
 
-		<form method="get" action="consulta_inmuebles.php">
+		<form method="get" action="paginaprincipal.php">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
