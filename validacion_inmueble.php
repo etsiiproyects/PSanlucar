@@ -16,7 +16,7 @@
 	
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
-		Header('Location: registroInmueble.php');
+		Header('Location: formularioInmueble.php');
 	} else {
 		Header('Location: alta_inmueble.php');
 	}
