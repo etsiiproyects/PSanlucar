@@ -28,8 +28,8 @@
   <div class="logo"> <a href="index.php" onclick="sessionStorage.clear();"> <img width="100px" src="images/logo.png"> </a> </div>
   <ul class="nav-links">
     <?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
-      <a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>
-      <a href="login.php"><li class="nav"> Iniciar Sesion </li></a>
+      <a href="formularioUsuario.php"><li class="navL">  Registrate </li></a>
+      <a href="login.php"><li class="navL"> Iniciar Sesion </li></a>
     <?php } else{ ?>
       <li class="navL"><a href="paginaprincipal.php" onclick="sessionStorage.setItem('path', 'consulta_inmuebles');"> Inmuebles </a></li>
       <?php if(isset($_SESSION["loginEmpleado"])){ ?>
@@ -49,7 +49,7 @@
       </div>
 </nav>
 
-<div class="bloque">
+<div class="bloqueI">
 	<div>
 		<h2>Ups!</h2>
 		<?php if ($destino<>"") { ?>

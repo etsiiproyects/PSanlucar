@@ -38,27 +38,24 @@
 
 <body>
 <script>
-		// Inicialización de elementos y eventos cuando el documento se carga completamente
-		$(document).ready(function() {
+		
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
 
-			// EJERCICIO 2: Manejador de evento para copiar automáticamente el email como nick del usuario
+			
 			$("#email").on("input", function(){
 				$("#nick").val($(this).val());
 			});
 
-			// EJERCICIO 3: Manejador de evento del color de la contraseña
+			
 			$("#pass").on("keyup", function() {
-				// Calculo el color
 				passwordColor();
 			});
 		});
 	</script>
 
 		<?php
-		// Mostrar los erroes de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) {
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
