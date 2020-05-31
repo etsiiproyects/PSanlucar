@@ -33,7 +33,7 @@
 
   <link rel="stylesheet" type="text/css" href="css/formularios.css" />
   <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <title>Promociones SanLucar: Login</title>
 </head>
 

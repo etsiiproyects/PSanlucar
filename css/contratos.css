@@ -68,15 +68,15 @@ a:hover {
     font-weight: bold;
     padding: 20px 40px;
     display: inline-block;
-    border: 5px solid #001F3F;
+    border: 5px solid black;
     transition: 0.3s all ease;
 }
 
 .toggle button:hover,
 .toggleD button:hover,
-.botonU {
-    border: 5px solid #0074D9;
-    color: #0074D9;
+.botonU:hover {
+    border: 5px solid #ff7e34;
+    color: #ff7e34;
 }
 
 .btn-toggle,
@@ -96,7 +96,7 @@ a:hover {
 }
 
 .botonU {
-    background-color: white;
+    background-color: #C0C0C0;
     padding: 10px 30px;
     width: 40%;
     margin: 5% 30%;
