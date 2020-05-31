@@ -11,7 +11,7 @@
 		$actuUsuario["confirmPass"] = $_REQUEST["confirmPassA"];
 	} else Header("Location: paginaprincipal.php");
 	
-	$_SESSION["usuario"] = $actuUsuario;
+	$_SESSION["UsuarioModificado"] = $actuUsuario;
 	
 	$errores = validarDatosUsuarioAct($conexion, $actuUsuario);
 	

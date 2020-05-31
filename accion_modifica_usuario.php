@@ -2,9 +2,9 @@
 
 	session_start();
 	
-	if(isset($_SESSION["usuario"])) {
-		$usuario = $_SESSION["usuario"];
-		unset($_SESSION["usuario"]);
+	if(isset($_SESSION["UsuarioModificado"])) {
+		$usuario = $_SESSION["UsuarioModificado"];
+		unset($_SESSION["UsuarioModificado"]);
 		
 		require_once("gestionBD.php");
 		require_once("gestionUsuarios.php");
