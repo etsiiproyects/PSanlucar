@@ -12,7 +12,7 @@
         $demanda['id']= $_SESSION["inmueble"]["ID_INMUEBLE"];
 
         $_SESSION["demanda"] = $demanda;
-    }else if($_SESSION["demanda"]["ID_INMUEBLE"]!=$_SESSION["inmueble"]["ID_INMUEBLE"]){
+    }else if($_SESSION["demanda"]["id"]!=$_SESSION["inmueble"]["ID_INMUEBLE"]){
         $demanda = $_SESSION["demanda"];
         $demanda['ID_INMUEBLE']= $_SESSION["inmueble"]["ID_INMUEBLE"];
 
@@ -75,8 +75,8 @@
     			<br/>
 
                 <label for="fecha">Fecha de la demanda: </label>
-                <!--<strong> <?php echo date('Y-m-d');?> </strong>-->
-                <input class="input-group" id="fecha" name="fecha" type="date" required />
+                <strong> <?php echo date('Y-m-d');?> </strong>
+                <input class="input-group" id="fecha" name="fecha" type="date" hidden value="<?php echo date('Y-m-d') ?>"required />
                 <br />
 
                 <label for="mascota">Número de mascotas: </label>
@@ -84,13 +84,13 @@
                 <br />
 
                 <label for="img">NIF: </label>
-                <!-- <strong> <?php echo $datos['NIF'];?> </strong> -->
-    			<input class="input-group" id="nif" name="nif" type="text"  placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $datos['NIF'];?>" required />
+                <strong> <?php echo $datos['NIF'];?> </strong>
+    			<input class="input-group" id="nif" name="nif" type="text" hidden placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $datos['NIF'];?>" required />
                 <br />
 
 				<label for="id">ID del inmueble: </label>
-                <!-- <strong> <?php echo $demanda['id'];?> </strong> -->
-				<input class="input-group" id="id" name="id" type="text"  value="<?php echo $demanda['id'];?>"/>
+                <strong> <?php echo $demanda['id'];?> </strong>
+				<input class="input-group" id="id" name="id" type="text"   hidden value="<?php echo $demanda['id'];?>"/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 
