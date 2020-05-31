@@ -31,14 +31,14 @@
 		return $stmt->fetchColumn();
 	}
 	function alta_demanda($conexion, $demanda) {
-		
 		try {
 			$resultado = true;
+			$fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["FECHADEMANDA"]));
 			 if(!consultarContratoExistente($conexion, $demanda["ID_INMUEBLE"])) {
-				$consulta = "CALL INSERTA_DEMANDA(:preciomax, to_date(:fechademanda, 'YYYY-MM-DD'), :num_mascota, :nif, :id_inmueble)";
+				$consulta = "CALL INSERTA_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)";
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':preciomax', $demanda["PRECIOMAX"]);
-				$stmt->bindParam(':fechademanda', $demanda["FECHADEMANDA"]);
+				$stmt->bindParam(':fechademanda', $fechaConFormatoOracle);
 				$stmt->bindParam(':num_mascota', $demanda["NUM_MASCOTA"]);
 				$stmt->bindParam(':nif', $demanda["NIF"]);
 				$stmt->bindParam(':id_inmueble', $demanda["ID_INMUEBLE"]);

@@ -4,10 +4,10 @@ insertar_empleado('Admin2','123456Sa');
 insertar_empleado('Admin3','Sa1234As');
 quitar_empleado(3);
 
-Insertar_Usuario('Pablo', 'Gonzalez Rodriguez', 'pablom@gmail.com' ,'AsDf1234','12345678A');
-Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwerty12', '87654321A');
-Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', '87654321B');
-Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', '12345678B');
+Insertar_Usuario('Pablo', 'Gonzalez Rodriguez', 'pablom@gmail.com' ,'AsDf1234','12345678A','01/01/2000' );
+Insertar_Usuario('Jose Carlos', 'Morales Borreguero', 'josecb@gmail.com', 'Qwerty12', '87654321A','01/01/2000' );
+Insertar_Usuario('Jose Carlos', 'Romero Pozo', 'josecr@gmail.com', 'Qwerty12', '87654321B','01/01/2000' );
+Insertar_Usuario('Fernando', 'Valdes Navarro', 'fernandov@gmail.com', 'Qwerty12', '12345678B','01/01/2000' );
 Quitar_Usuario('87654321A');
 
 insertar_inmueble('01.00','C/ San Juan de la Cruz',4, 'https://i.imgur.com/sCxrLFG.jpg', 'aislado');
