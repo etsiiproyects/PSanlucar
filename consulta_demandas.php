@@ -26,8 +26,8 @@
 			foreach($filas as $fila) {
 		?>
 		<div class="contratoC">
-        <a href="#" class="btn-toggle"><b> DEMANDA <?php echo $fila["ID_INMUEBLE"]; ?></b></a>
-            <div class="toggle">
+        <a href="#" class="btn-toggleD"><b> DEMANDA <?php echo $fila["ID_INMUEBLE"]; ?></b></a>
+            <div class="toggleD">
                 <div class="wrap">
 					<p>Precio maximo: <b><?php echo $fila["PRECIOMAX"]; ?></b></p>
                     <p>Fecha de la demanda: <b><?php echo $fila["FECHADEMANDA"]; ?></b></p>
@@ -47,7 +47,7 @@
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Cancelar demanda
 						</button>
-						<button type="submit" name="contratar">Crear contrato </button>
+						<button class="botonInm" type="submit" name="contratar">Crear contrato </button>
                     </form>
                 </div>
             </div>
@@ -59,8 +59,8 @@
 
 <script>
 		$(document).ready(function(){
-			let botones = document.querySelectorAll('.btn-toggle');
-			let toggles = document.querySelectorAll('.toggle');
+			let botones = document.querySelectorAll('.btn-toggleD');
+			let toggles = document.querySelectorAll('.toggleD');
 			for(var i = 0; i<botones.length; i++){
 
 				let boton = botones[i];

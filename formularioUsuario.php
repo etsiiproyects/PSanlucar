@@ -31,7 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>
 </head>

@@ -61,20 +61,22 @@ a:hover {
 }
 
 .toggle button,
-.toggleD button {
+.toggleD button,
+.botonU {
     background: none;
     font-size: 20px;
     font-weight: bold;
     padding: 20px 40px;
     display: inline-block;
-    border: 5px solid #001F3F;
+    border: 5px solid black;
     transition: 0.3s all ease;
 }
 
 .toggle button:hover,
-.toggleD button:hover {
-    border: 5px solid #0074D9;
-    color: #0074D9;
+.toggleD button:hover,
+.botonU:hover {
+    border: 5px solid #ff7e34;
+    color: #ff7e34;
 }
 
 .btn-toggle,
@@ -87,6 +89,17 @@ a:hover {
     display: block;
     background: #ff7e34;
     text-align: center;
+}
+
+#datosU {
+    overflow-y: unset;
+}
+
+.botonU {
+    background-color: #C0C0C0;
+    padding: 10px 30px;
+    width: 40%;
+    margin: 5% 30%;
 }
 
 .btn-toggle:hover,
