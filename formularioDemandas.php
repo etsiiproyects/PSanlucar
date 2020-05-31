@@ -62,11 +62,11 @@
 
             <form id="altaDemanda" action="validacion_demanda.php" method="get">
                  <label for="precio_max">Precio Maximo: </label>
-    			 <input class="input-group" id="precio_max" name="precio_max" min="0" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
+    			 <input class="input-group" id="precio_max" name="precio_max" min="100" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>
-                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo date('Y-m-d');?>" required />
+                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo date('Y-m-d');?>" readonly />
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
@@ -78,7 +78,7 @@
                 <br />
 
 				<label for="id_inmueble">ID del inmueble: </label>
-				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>"/>
+				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" readonly/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 
