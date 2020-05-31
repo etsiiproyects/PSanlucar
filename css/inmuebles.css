@@ -31,7 +31,7 @@ div.error {
     color: black;
 }
 
-.bloque a {
+.bloqueI a {
     text-decoration: none;
     color: black;
 }
@@ -40,11 +40,6 @@ div.error {
     background-color: white;
     color: #ff7e34;
     border: 2px solid #ff7e34;
-}
-
-.inserta a {
-    text-decoration: none;
-    color: black;
 }
 
 #botonI {
@@ -58,8 +53,8 @@ div.error {
     float: right;
 }
 
-.inserta:hover a {
-    color: #ff7e34;
+.inserta:hover {
+    opacity: 0.85;
 }
 
 .inmuebles {

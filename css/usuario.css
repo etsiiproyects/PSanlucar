@@ -35,7 +35,7 @@ div.error {
     margin: 10px 10px 0px 10px;
 }
 
-.toggle {
+.toggleU {
     margin: 0px 10px 0px 10px;
     display: none;
     height: auto;
@@ -52,12 +52,12 @@ div.error {
     margin: auto;
 }
 
-.toggle p {
+.toggleU p {
     font-size: 20px;
     margin-bottom: 50px;
 }
 
-.toggle button {
+.toggleU button {
     background: none;
     font-size: 20px;
     font-weight: bold;
@@ -67,12 +67,12 @@ div.error {
     transition: 0.3s all ease;
 }
 
-.toggle button:hover {
+.toggleU button:hover {
     border: 5px solid #0074D9;
     color: #0074D9;
 }
 
-.btn-toggle {
+.btn-toggleU {
     height: 50px;
     line-height: 50px;
     font-size: 24px;
@@ -83,7 +83,7 @@ div.error {
     text-align: center;
 }
 
-.btn-toggle:hover {
+.btn-toggleU:hover {
     text-decoration: none;
 }
 
