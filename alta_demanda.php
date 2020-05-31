@@ -13,12 +13,12 @@
     $conexion=crearConexionBD();
 
     if(alta_demanda($conexion, $nuevaDemanda)){
-        Header("Location: consulta_demandas.php");
+        Header("Location: paginaprincipal.php");
     }else{
-        $_SESSION["excepcion"] = "La demanda ya existe en la base de datos.";
-        $_SESSION["destino"] = "formularioDemandas.php";
+        $_SESSION["excepcion"] = "Tenemos un contrato activo para este inmueble.";
+        $_SESSION["destino"] = "paginaprincipal.php";
         Header("Location: excepcion.php");
     }
-    
+
 
  ?>

@@ -8,8 +8,8 @@
 
 	if(!isset($_SESSION['login'])) {
 		header("Location: login.php");
-    } 
-    
+    }
+
     $login = $_SESSION['login'];
 
     $conexion = crearConexionBD();
@@ -23,7 +23,7 @@
         <div class="bloqueU">
             <div class="mC">
                 <h1> Mis contratos </h1>
-            </div>  
+            </div>
             <div class="contratosU">
                 <div class="contratoU">
                 <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $datos["OID_CONTRATO"]; ?></b></a>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="bloqueU">
-        
+
             <h1> Mis datos </h1>
             <div class="contratosU">
                 <div class="contratoU">
@@ -50,33 +50,33 @@
                             <p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
                             <p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
                             <p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
-            
+
                 </div>
             </div>
         </div>
-        
-        
-    </div>            
+
+
+    </div>
 
 
 <?php include_once("footer.php") ?>
 
 <script>
-    
-    let botonesU = document.querySelectorAll('.btn-toggle');
-    let togglesU = document.querySelectorAll('.toggle');
-    for (var i = 0; i < botonesU.length; i++) {
 
-    let botonU = botonesU[i];
-    let toggleU = togglesU[i];
-    console.log(typeof(botonU));
-    botonU.addEventListener('click', (e) => {
+	$(document).ready(function(){
+				let botones = document.querySelectorAll('.btn-toggle');
+				let toggles = document.querySelectorAll('.toggle');
+				for(var i = 0; i<botones.length; i++){
 
-        console.log(toggleU);
-        toggleU.classList.toggle("active");
-    });
+					let boton = botones[i];
+					let toggle = toggles[i];
+					console.log(typeof(boton));
+					boton.addEventListener('click', (e) => {
 
-
-    console.log("funciona");
-};
+						console.log(toggle);
+						toggle.classList.toggle("active");
+					});
+					console.log("funciona");
+					};
+			});
 </script>

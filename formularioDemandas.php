@@ -3,13 +3,13 @@
 
     require_once("gestionBD.php");
 
-    if(!isset($_SESSION["demanda"]) && isset($_SESSION["inmueble"])) {
+  if(!isset($_SESSION["demanda"]) && isset($_SESSION["inmueble"])) {
         $demanda['PRECIOMAX']="";
-		$fechaActual = date('Y-m-d');
-        $demanda['FECHADEMANDA']= "";
+        $demanda['FECHADEMANDA']= date('Y-m-d');
         $demanda['NUM_MASCOTA']="";
         $demanda['NIF']="";
-        $demanda['ID_INMUEBLE']= $_SESSION["inmueble"];
+        $inmueble = $_SESSION["inmueble"];
+        $demanda['ID_INMUEBLE']= $inmueble["ID_INMUEBLE"];
 
         $_SESSION['demanda']=$demanda;
     }else $demanda=$_SESSION["demanda"];
@@ -62,11 +62,11 @@
 
             <form id="altaDemanda" action="validacion_demanda.php" method="get">
                  <label for="precio_max">Precio Maximo: </label>
-    			 <input class="input-group" id="precio_max" name="precio_max" min="0" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
+    			 <input class="input-group" id="precio_max" name="precio_max" min="100" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>
-                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo $fechaActual;?>" required />
+                <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo date('Y-m-d');?>" readonly />
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
@@ -78,7 +78,7 @@
                 <br />
 
 				<label for="id_inmueble">ID del inmueble: </label>
-				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" disabled/>
+				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" readonly/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 

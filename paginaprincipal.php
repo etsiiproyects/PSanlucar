@@ -27,7 +27,6 @@
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
-	<script src="js/toggle.js"></script>
 	  <script src="js/inmuebles.js"></script>
 	  <script src="js/responsive.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -43,6 +42,7 @@
 							return false;
 					});
 				});
+
 
 	 // 	var lastTarget;
    //   	$(document).ready(function() {
@@ -68,7 +68,7 @@
 <body onload="inicio();">
 
 	<nav id="nav" class="menuNav">
-		<div class="logo"> <a href="index.php"> <img width="100px" src="images/logo.png"> </a> </div>
+		<div class="logo"> <a href="index.php" onclick="sessionStorage.clear();"> <img width="100px" src="images/logo.png"> </a> </div>
 		<ul class="nav-links">
 			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
 				<a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>

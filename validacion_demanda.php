@@ -13,7 +13,7 @@
 
 	$_SESSION["demanda"] = $nuevaDemanda;
 	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
-
+	
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
 		Header('Location: formularioDemandas.php');
@@ -32,11 +32,10 @@
             $errores[] = "<p>ID no válido: debe tener 5 caracteres</p>";
         }
 
-		//'/^[0-9]{8}[A-Z]{1}$/',
-        if(!preg_match("/[0-9]+/", $nuevaDemanda["NIF"]) || !preg_match("/[A-Z]/", $nuevaDemanda["NIF"])){
-        $errores[] = "<p>NIF no válido</p>";
-		}else if(!isset($nuevaDemanda["NIF"]) || strlen($nuevaDemanda["NIF"])<9){
-		$errores[] = "<p>NIF no válido</p>";
+		if($nuevaDemanda["NIF"]=="") 
+			$errores[] = "<p>El NIF no puede estar vacío</p>";
+		else if(!preg_match("/^[0-9]{8}[A-Z]$/", $nuevaDemanda["NIF"])){
+			$errores[] = "<p>El NIF debe contener 8 números y una letra mayúscula: " . $nuevaDemanda["NIF"]. "</p>";
 		}
 
 		if($nuevaDemanda["NUM_MASCOTA"]=="")
@@ -48,7 +47,5 @@
         return $errores;
 
     }
-
-
 
 ?>
