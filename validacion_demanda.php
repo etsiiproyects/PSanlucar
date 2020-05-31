@@ -2,16 +2,16 @@
 	session_start();
 
 	if(isset($_SESSION["demanda"])) {
-		$nuevaDemanda["PRECIOMAX"] = $_REQUEST["precio_max"];
-		$nuevaDemanda["FECHADEMANDA"] = $_REQUEST["fecha_demanda"];
-		$nuevaDemanda["NUM_MASCOTA"] = $_REQUEST["numMascotas"];
-		$nuevaDemanda["NIF"] = $_REQUEST["nif"];
-		$nuevaDemanda["ID_INMUEBLE"] = $_REQUEST["id_inmueble"];
+		$nuevaDemanda["precio"] = $_REQUEST["precio"];
+		$nuevaDemanda["fecha"] = $_REQUEST["fecha"];
+		$nuevaDemanda["mascota"] = $_REQUEST["mascota"];
+		$nuevaDemanda["nif"] = $_REQUEST["nif"];
+		$nuevaDemanda["id"] = $_REQUEST["id"];
 	} else {
 		Header("Location: excepcion.php");
 	}
 
-	
+
 	$_SESSION["demanda"] = $nuevaDemanda;
 	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
 	if(count($errores)>0) {
@@ -26,22 +26,22 @@
 
         $errores=array();
         //validadion del id
-        if($nuevaDemanda["ID_INMUEBLE"]=="") {
+        if($nuevaDemanda["id"]=="") {
             $errores[] = "<p>El ID del inmueble no puede estar vacío</p>";
-        } else if(strlen($nuevaDemanda["ID_INMUEBLE"])!=5) {
+        } else if(strlen($nuevaDemanda["id"])!=5) {
             $errores[] = "<p>ID no válido: debe tener 5 caracteres</p>";
         }
 
-		if($nuevaDemanda["NIF"]=="") 
+		if($nuevaDemanda["nif"]=="")
 			$errores[] = "<p>El NIF no puede estar vacío</p>";
-		else if(!preg_match("/^[0-9]{8}[A-Z]$/", $nuevaDemanda["NIF"])){
-			$errores[] = "<p>El NIF debe contener 8 números y una letra mayúscula: " . $nuevaDemanda["NIF"]. "</p>";
+		else if(!preg_match("/^[0-9]{8}[A-Z]$/", $nuevaDemanda["nif"])){
+			$errores[] = "<p>El NIF debe contener 8 números y una letra mayúscula: " . $nuevaDemanda["nif"]. "</p>";
 		}
 
-		if($nuevaDemanda["NUM_MASCOTA"]=="")
+		if($nuevaDemanda["mascota"]=="")
 			$errores[] = "<p>El numero de mascotas debe indicarlo</p>";
 
-		if($nuevaDemanda["PRECIOMAX"]=="")
+		if($nuevaDemanda["precio"]=="")
 			$errores[] = "<p>El precio maximo debe indicarlo</p>";
 
         return $errores;

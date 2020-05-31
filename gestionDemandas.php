@@ -33,22 +33,22 @@
 	function alta_demanda($conexion, $demanda) {
 		try {
 			$resultado = true;
-			$fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["FECHADEMANDA"]));
+			$fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["fecha"]));
 			 if(!consultarContratoExistente($conexion, $demanda["ID_INMUEBLE"])) {
-				$consulta = "CALL INSERTA_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)";
+				$consulta = "CALL INSERTAR_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)";
 				$stmt = $conexion->prepare($consulta);
-				$stmt->bindParam(':preciomax', $demanda["PRECIOMAX"]);
+				$stmt->bindParam(':preciomax', $demanda["precio"]);
 				$stmt->bindParam(':fechademanda', $fechaConFormatoOracle);
-				$stmt->bindParam(':num_mascota', $demanda["NUM_MASCOTA"]);
-				$stmt->bindParam(':nif', $demanda["NIF"]);
-				$stmt->bindParam(':id_inmueble', $demanda["ID_INMUEBLE"]);
+				$stmt->bindParam(':num_mascota', $demanda["mascota"]);
+				$stmt->bindParam(':nif', $demanda["nif"]);
+				$stmt->bindParam(':id_inmueble', $demanda["id"]);
 				$stmt->execute();
 			 } else {
 			 	$resultado = true;
 			 }
 			return $resultado;
 		} catch(PDOException $e) {
-			echo "error: " . $e->GetMessage();
+			return false;;
 		}
 	}
 
