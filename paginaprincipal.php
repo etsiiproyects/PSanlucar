@@ -23,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
 
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
