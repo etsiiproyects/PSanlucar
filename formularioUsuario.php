@@ -2,7 +2,7 @@
 	session_start();
 
 	include_once("gestionBD.php");
- 
+
 	if (!isset($_SESSION['formulario'])) {
 		$formulario['nombre'] = "";
 		$formulario['apellidos'] = "";
@@ -15,7 +15,7 @@
 		$_SESSION['formulario'] = $formulario;
 	}else
 		$formulario = $_SESSION['formulario'];
-		
+
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
 
@@ -38,17 +38,11 @@
 
 <body>
 <script>
-		
+
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
 
-			
-			$("#email").on("input", function(){
-				$("#nick").val($(this).val());
-			});
-
-			
 			$("#pass").on("keyup", function() {
 				passwordColor();
 			});
@@ -70,11 +64,11 @@
 		<form class="formLR" id="registro" method="get" action="validacion_formulario.php">
 
 				<label for="nombre">Nombre: </label>
-				<input class="input-group" id="nombre" name="nombre" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
+				<input class="input-group" id="nombre" name="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð '-]+" type="text" size="30" value="<?php echo $formulario['nombre'];?>" required />
 				<br />
 
 				<label for="apellidos">Apellidos: </label>
-				<input class="input-group" id="apellidos" name="apellidos" type="text" size="60" value="<?php echo $formulario['apellidos'];?>" required />
+				<input class="input-group" id="apellidos" name="apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð '-]+" type="text" size="60" value="<?php echo $formulario['apellidos'];?>" required />
 				<br />
 
 				<label for="email">Email: </label>

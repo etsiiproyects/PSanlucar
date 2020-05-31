@@ -11,7 +11,7 @@
 		$_SESSION["errores"] = null;
 	}
 	else
-		Header("Location: registroWeb.php");
+		Header("Location: formularioUsuario.php");
 	$conexion = crearConexionBD();
 
 
