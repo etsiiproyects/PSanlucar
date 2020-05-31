@@ -59,11 +59,11 @@
 			<label for="email">Email: </label>
 			<input class="input-group" id="email" name="emailA" type="email" value="<?php echo $usuario["EMAIL"] ?>" required/>
 			<br />
-			<label for="email">Contraseña: </label>
-			<input class="input-group" id="pass" name="passA" type="password" value="<?php echo $usuario["PASS"] ?>" required/>
+			<label for="pass">Contraseña: </label>
+			<input class="input-group" id="pass" name="passA" type="password" value="<?php echo $usuario["PASS"] ?>" oninput="passwordValidation();" required/>
 			<br />
-			<label for="email">Confirma contraseña: </label>
-			<input class="input-group" id="confirmar" name="confirmPassA" type="password" value="<?php echo $usuario["CONFIRMPASS"] ?>" required/>
+			<label for="confirmar">Confirma contraseña: </label>
+			<input class="input-group" id="confirmar" name="confirmPassA" type="password" value="<?php echo $usuario["CONFIRMPASS"] ?>" oninput="passwordConfirmation();" required/>
 			<br />
 			<label for="nif">NIF: </label>
 			<input class="input-group" id="nif" name="nifA" type="text" size="30" value="<?php echo $usuario["NIF"] ?>" readonly/>

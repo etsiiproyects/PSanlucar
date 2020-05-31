@@ -80,11 +80,11 @@
 			<?php } else{  if(isset($_SESSION["loginEmpleado"])){ ?>
 				<p>Aquí dejamos un poco de información de cómo navegar por la web estando con una cuenta de empleado:</p>
 				<p>Desde la barra de navegación se puede acceder a la información de nuestros inmuebles, contratos y demandas, además de un enlace para desconectarse de la sesión como empleado.</p>
-				<p>En el apartado de inmueble arriba tenemos un botón que nos redirige a una página para insertar un inmueble, justo abajo de este botón a la derecha hay otro botón con el que podemos filtrar los inmuebles para ver solo los que no tienen un contrato activo ahora mismo.Para ver la información de los inmuebles debes pinchar en la imagen del inmueble correspondiente, ademas tendremos botón para borrar el inmueble de la base de datos, y otro para modificar la información sobre el inmueble correspondiente. </p>
-				<p>En el apartado de contratos, podemos ver botones con los contratos con el id del inmueble correspondiente, si pinchamos podremos ver su información, además tenemos un botón para borrarlo</p>
+				<p>En el apartado de inmueble arriba tenemos un botón que nos redirige a una página para insertar un inmueble, justo abajo de este botón a la derecha hay otro botón con el que podemos filtrar los inmuebles para ver solo los que no tienen un contrato activo ahora mismo. Para ver la información de los inmuebles debe pinchar en la imagen del inmueble correspondiente, además tendrá un botón para borrar el inmueble de la base de datos, y otro para modificar la información sobre el inmueble correspondiente. </p>
+				<p>En el apartado de contratos, se pueden ver botones con los contratos con el id del inmueble correspondiente, si pinchamos podremos ver su información, además tenemos un botón para borrarlo</p>
 				<p>El apartado de demandas funciona de manera similar al apartado de contratos, pero además poseemos un botón para realizar un contrato de la demanda correspondiente.</p>
 			<?php } if(isset($_SESSION["login"])) { ?>
-				<p>Os dejamos un poco de información de cómo navegar por nuestra web: </p>
+				<p>Le dejamos un poco de información de cómo navegar por nuestra web: </p>
 				<p>Desde la barra de navegación que tiene en la parte superior de la página, puede pinchar en inmuebles o usuario para ver su contenido o pinchar en desconectar para salir de su cuenta</p>
 				<p>En el apartado inmueble podrá ver imágenes de ellos que si pincha puede ver su información y un botón que os redirige a otra página para realizar un demanda por el correspondiente inmueble. Además arriba a la derecha tiene un botón para filtrar los inmuebles y solo ver los que tenemos libres en este momento.</p>
 				<p>En el apartado de usuario tiene la información relacionada a su cuenta y sus contratos y/o demandas. También hay un botón con el que podrá modificar información de su cuenta.</p>

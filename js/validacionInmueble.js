@@ -27,7 +27,7 @@ function nameValidation() {
 
 
     if (!valid) {
-        var error = "ID no valido.";
+        var error = "ID no válido. Debe tener el formato 00.0X";
     } else {
         var error = "";
     }
@@ -46,7 +46,7 @@ function URLValidation() {
     valid = valid && (isValid.test(nombre));
 
     if (!valid) {
-        var error = "URL no validá.";
+        var error = "URL no válida.";
     } else {
         var error = "";
     }

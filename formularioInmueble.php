@@ -65,7 +65,7 @@
                 <br />
 
                 <label for="img">URL de la imagen: </label>
-    			<input class="input-group" type="text" id="img"  oninput="URLValidation();"name="img" value="<?php echo $inmueble['img'];?>" required />
+    			<input class="input-group" type="url" id="img"  oninput="URLValidation();"name="img" value="<?php echo $inmueble['img'];?>" required />
                 <br />
 
                 <label>Tipo inmueble:</label>
