@@ -35,14 +35,6 @@
      </head>
      <body>
 
-         <script type="text/javascript">
-             $(document).ready(function() {
-                 $("#altaInmueble").on("submit", function() {
-                     return validateForm();
-                 });
-             });
-         </script>
-
          <?php
 
  		if (isset($errores) && count($errores)>0) {
@@ -59,9 +51,9 @@
 
      	    <a href="index.php"><img class="img-registro" src="images/logo.png" alt="Promociones Sanlúcar" /></a>
 
-            <form id="altaInmueble" action="validacion_inmueble.php" method="post">
+            <form id="altaInmueble" action="validacion_inmueble.php" method="post" >
                  <label for="id_inmueble">Identificador: </label>
-    			 <input class="input-group" id="id_inmueble" name="id_inmueble" type="text" placeholder="00.0A" title="Dos digitos, seguido de un punto un digito y otro digito o una letra" size="5" value="<?php echo $inmueble['id_inmueble'];?>" required />
+    			 <input class="input-group" id="id_inmueble" oninput="nameValidation();"name="id_inmueble" type="text" placeholder="00.0A" title="Dos digitos, seguido de un punto un digito y otro digito o una letra" size="5" value="<?php echo $inmueble['id_inmueble'];?>" required />
     			<br/>
 
                 <label for="direccion">Direccion: </label>
@@ -73,7 +65,7 @@
                 <br />
 
                 <label for="img">URL de la imagen: </label>
-    			<input class="input-group" type="text" id="img" name="img" value="<?php echo $inmueble['img'];?>" required />
+    			<input class="input-group" type="text" id="img"  oninput="URLValidation();"name="img" value="<?php echo $inmueble['img'];?>" required />
                 <br />
 
                 <label>Tipo inmueble:</label>

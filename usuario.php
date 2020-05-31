@@ -6,13 +6,14 @@
   
 
 
-	if(!isset($_SESSION['login'])) {
+	if(!isset($_SESSION["login"])) {
 		header("Location: login.php");
     }
 
-    $login = $_SESSION['login'];
+    $login = $_SESSION["login"];
 
     $conexion = crearConexionBD();
+    $datos = consultarDatosUsuario($conexion, $login["usuario"], $login["pass"]);
 
     $contratos = consultarContratosUsuario($conexion, $login['usuario'], $login['pass']);
     $datos = consultarDatosUsuario($conexion, $login['usuario'], $login['pass']);
