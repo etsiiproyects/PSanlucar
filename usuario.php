@@ -50,7 +50,7 @@
                 	<p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
                 	<p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
                 	<p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
-                	<form method="post" action="modificaUsuario.php">
+                	<form method="post" action="controladorUsuario.php">
                 		<input id="NOMBRE" name="NOMBRE" type="hidden" value="<?php echo $datos["NOMBRE"]; ?>"/>
                 		<input id="APELLIDOS" name="APELLIDOS" type="hidden" value="<?php echo $datos["APELLIDOS"]; ?>"/>
                 		<input id="EMAIL" name="EMAIL" type="hidden" value="<?php echo $datos["EMAIL"]; ?>"/>

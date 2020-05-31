@@ -56,4 +56,20 @@ function quitar_usuario($conexion, $nick){
 		}
 }
 
+function modificar_usuario($conexion, $usuario) {
+	try{
+			$stmt = $conexion->prepare('CALL MODIFICAR_USUARIO(:nif, :nombre, :apellidos, :email, :pass)');
+			$stmt->bindParam(':nif', $usuario["nif"]);
+			$stmt->bindParam(':nombre', $inmueble["nombre"]);
+			$stmt->bindParam(':apellidos', $inmueble["apellidos"]);
+			$stmt->bindParam(':email', $inmueble["email"]);
+			$stmt->bindParam(':pass',$inmueble["pass"]);
+			$stmt->execute();
+			return "";
+		} catch(PDOException $e) {
+			return $e->getMessage();
+		}
+	}
+
+
 ?>
