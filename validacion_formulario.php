@@ -37,6 +37,12 @@
 		
 		if($nuevoUsuario["nombre"]=="")
 			$errores[] = "<p>El nombre no puede estar vacío</p>";
+		
+		if($nuevoUsuario["nif"]=="") 
+			$errores[] = "<p>El NIF no puede estar vacío</p>";
+		else if(!preg_match("/^[0-9]{8}[A-Z]$/", $nuevoUsuario["nif"])){
+			$errores[] = "<p>El NIF debe contener 8 números y una letra mayúscula: " . $nuevoUsuario["nif"]. "</p>";
+		}
 
 		
 		if($nuevoUsuario["email"]==""){
