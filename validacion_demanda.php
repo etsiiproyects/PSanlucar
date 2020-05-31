@@ -11,6 +11,7 @@
 		Header("Location: excepcion.php");
 	}
 
+	
 	$_SESSION["demanda"] = $nuevaDemanda;
 	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
 	if(count($errores)>0) {

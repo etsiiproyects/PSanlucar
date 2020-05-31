@@ -33,13 +33,12 @@
 	function alta_demanda($conexion, $demanda) {
 		
 		try {
-			$fechaConFormatoOracle = date();
 			$resultado = true;
 			 if(!consultarContratoExistente($conexion, $demanda["ID_INMUEBLE"])) {
-				$consulta = "CALL INSERTA_DEMANDA(:preciomax, to_date('d/m/Y', '03/03/2020'), :num_mascota, :nif, :id_inmueble)";
+				$consulta = "CALL INSERTA_DEMANDA(:preciomax, to_date(:fechademanda, 'YYYY-MM-DD'), :num_mascota, :nif, :id_inmueble)";
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':preciomax', $demanda["PRECIOMAX"]);
-				$stmt->bindParam(':fechademanda', $fechaConFormatoOracle);
+				$stmt->bindParam(':fechademanda', $demanda["FECHADEMANDA"]);
 				$stmt->bindParam(':num_mascota', $demanda["NUM_MASCOTA"]);
 				$stmt->bindParam(':nif', $demanda["NIF"]);
 				$stmt->bindParam(':id_inmueble', $demanda["ID_INMUEBLE"]);

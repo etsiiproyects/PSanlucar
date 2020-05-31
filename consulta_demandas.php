@@ -47,8 +47,7 @@
 						<button class="botonInm" type="button" onclick="alertaBorrar()" >
 							Cancelar demanda
 						</button>
-						<input  id="contratar" name="contratar" type="hidden" value=""/>
-						<button type="submit" name="submit">Crear contrato </button>
+						<button type="submit" name="contratar">Crear contrato </button>
                     </form>
                 </div>
             </div>
