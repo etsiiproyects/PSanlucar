@@ -1,5 +1,5 @@
 function validateForm() {
-    var noValidation = document.getElementById("altaInmueble").novalidate;
+    var noValidation = document.getElementById("#altaInmueble").novalidate;
 
     if (!noValidation) {
 
