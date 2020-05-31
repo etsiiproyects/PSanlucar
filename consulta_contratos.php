@@ -56,23 +56,24 @@
 	</div>
 </section>
 <script>
-let botones = document.querySelectorAll('.btn-toggle');
-let toggles = document.querySelectorAll('.toggle');
-for(var i = 0; i<botones.length; i++){
+	$(document).ready(function(){
+				let botones = document.querySelectorAll('.btn-toggle');
+				let toggles = document.querySelectorAll('.toggle');
+				for(var i = 0; i<botones.length; i++){
 
-	let boton = botones[i];
-	let toggle = toggles[i];
-	console.log(typeof(boton));
-	boton.addEventListener('click', (e) => {
+					let boton = botones[i];
+					let toggle = toggles[i];
+					console.log(typeof(boton));
+					boton.addEventListener('click', (e) => {
 
-		console.log(toggle);
-		toggle.classList.toggle("active");
-	});
+						console.log(toggle);
+						toggle.classList.toggle("active");
+					});
 
 
-	console.log("funciona");
-  };
-
+					console.log("funciona");
+				  };
+			});
 	function alertaBorrar() {
 
 		if (confirm('¿Estas seguro de borrar?')) {
