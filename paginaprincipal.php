@@ -27,7 +27,6 @@
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
-	<script src="js/toggle.js"></script>
 	  <script src="js/inmuebles.js"></script>
 	  <script src="js/responsive.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
