@@ -43,26 +43,6 @@
 							return false;
 					});
 				});
-
-
-	 // 	var lastTarget;
-   //   	$(document).ready(function() {
-   //   		var trigger =$('#nav ul li a'),
-   //   			container=$('#content');
-	 //
-   //   		trigger.on('click', function() {
-   //   			var $this=$(this)
-   //   					target=$this.data('target');
-   //   			container.load(target + '.php');
-		// 		lastTarget=target;
-   //   			return false;
-		// 	});
-   //   });
-	 // function inicio(){
-		//  var container=$('#content');
-		//  container.load(lastTarget + '.php');
-		//  return false;
-	 // }
       </script>
 </head>
 
@@ -95,8 +75,22 @@
 
 	<div id="content">
 		<div class="bloqueI">
-			<h2> Descripcion: </h2>
-			<p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
+			<h2> Bienvenidos a la web de Promociones Sanlucar. </h2>
+			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
+				<p>En la barra de navegacion de la parte superior podeis ir a iniciar sesion o registrarse para poder acceder a la informacion de nuestra pagina.</p>
+			<?php } else{  if(isset($_SESSION["loginEmpleado"])){ ?>
+				<p>Aqui dejamos un poco de informacion de como navegar por la web estando con una cuenta de empleado:</p>
+				<p>Desde la barra de navegación se puede acceder a la informacion de nuestros inmuebles, contratos y demandas, ademas de un enlace para desconectarse de la sesion como empleado.</p>
+				<p>En el apartado de inmueble arriba tenemos un boton que nos redirige a una pagina para insertar un inmueble, justo abajo de este boton a la derecha hay otro boton con el que podemos filtrar los inmuebles para ver solo los que no tienen un contrato activo ahora mismo.Para ver la informacion de los inmuebles debes pinchar en la imagen del inmueble correspondiente, ademas tendremos boton para borrar el inmueble de la base de datos, y otro para modificar la informacion sobre el inmueble correspondiente. </p>
+				<p>En el apartado de contratos, podemos ver botones con los contratos con el id del inmueble correspondiente, si pinchamos podremos ver su informacion, ademas tenemos un boton para borrarlo</p>
+				<p>El apartado de demandas funciona de manera similar al apartado de contratos, pero ademas poseemos un boton para realizar un contrato de la demanda correspondiente.</p>
+			<?php } if(isset($_SESSION["login"])) { ?>
+				<p>Os dejamos un poco de informacion de como navegar por nuestra web.: </p>
+				<p>Desde la barra de navegacion que teneis en la parte superior de la pagina, podeis pinchar en inmuebles o usuario para ver su contenido o pinchar en desconectar para salir de vuestra cuenta</p>
+				<p>En el apartado inmueble podreis ver imagenes de ellos que si pinchais podeis ver su informacion y un boton que os redirige a otra pagina para realizar un demanda por el correspondiente inmueble. Ademas arriba a la derecha teneis un boton para filtrar los inmuebles y solo ver los que tenemos libres en este momento.</p>
+				<p>En el apartado de usuario teneis la informacion relacionada a vuestra cuenta y vuestros contratos y/o demandas. Tambien hay un boton con el que podreis modificar informacion ed vuestra cuenta.</p>
+				<?php } ?>
+			<?php } ?>
 		</div>
 	</div>
 

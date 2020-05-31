@@ -33,7 +33,7 @@
 	function alta_demanda($conexion, $demanda) {
 		try {
 			$resultado = true;
-			$fechaConFormatoOracle = date('d/m/Y', strtotime($usuario["fecha"]));
+			$fechaConFormatoOracle = date('d/m/Y', strtotime($demanda["fecha"]));
 			 if(!consultarContratoExistente($conexion, $demanda["ID_INMUEBLE"])) {
 				$consulta = "CALL INSERTAR_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)";
 				$stmt = $conexion->prepare($consulta);
