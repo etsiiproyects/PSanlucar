@@ -4,7 +4,6 @@
 }
 
 .pag .enlaces {
-    display: block;
     letter-spacing: 2px;
     width: 100%;
     margin-bottom: 50px;
@@ -29,4 +28,8 @@ span {
 
 #freePaginacion {
     display: none;
+}
+
+#paginacion{
+    display: block;
 }

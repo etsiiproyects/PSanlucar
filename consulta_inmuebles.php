@@ -108,7 +108,7 @@
 			<?php } ?>
 		</div>
 
-		<form method="get" action="consulta_inmuebles.php">
+		<form method="get" action="paginaprincipal.php">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
@@ -131,7 +131,7 @@
 			<?php } ?>
 		</div>
 
-		<form method="get" action="consulta_inmuebles.php">
+		<form method="get" action="paginaprincipal.php">
 			<input id="PAG_NUMC" name="PAG_NUMC" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAMC" name="PAG_TAMC" type="number"
