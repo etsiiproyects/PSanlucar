@@ -5,23 +5,23 @@
 
     if(!isset($_SESSION["demanda"]) && isset($_SESSION["inmueble"])) {
         $demanda['PRECIOMAX']="";
-		$fechaActual = date('d-m-Y');
+		$fechaActual = date('Y-m-d');
         $demanda['FECHADEMANDA']= "";
         $demanda['NUM_MASCOTA']="";
         $demanda['NIF']="";
-		$inmueble = $_SESSION["inmueble"];
-        $demanda['ID_INMUEBLE']= $inmueble["ID_INMUEBLE"];
+        $demanda['ID_INMUEBLE']= $_SESSION["inmueble"];
 
         $_SESSION['demanda']=$demanda;
     }else $demanda=$_SESSION["demanda"];
 
     if (isset($_SESSION["errores"])){
         $errores=$_SESSION["errores"];
+        unset($_SESSION["errores"]);
     }
 
     $conexion=crearConexionBD();
  ?>
- 
+
  <!DOCTYPE html>
  <html lang="en">
      <head>
@@ -43,7 +43,7 @@
                  });
              });
          </script>
-         
+
          <?php
 
  		if (isset($errores) && count($errores)>0) {
@@ -70,7 +70,7 @@
                 <br />
 
                 <label for="numMascotas">Número de mascotas: </label>
-    			<input class="input-group" type="number" id="numMascotas" min="0" name="numMascotas" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
+    			<input class="input-group" type="number" id="numMascotas" min="0" max="4" name="numMascotas" value="<?php echo $demanda['NUM_MASCOTA'];?>" required />
                 <br />
 
                 <label for="img">NIF: </label>
@@ -78,12 +78,11 @@
                 <br />
 
 				<label for="id_inmueble">ID del inmueble: </label>
-				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" readonly/>
+				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>" disabled/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 
         </div>
 
      </body>
- </html>   
-		
+ </html>

@@ -44,10 +44,6 @@
 					});
 				});
 
-
-
-
-
 	 // 	var lastTarget;
    //   	$(document).ready(function() {
    //   		var trigger =$('#nav ul li a'),
@@ -66,12 +62,6 @@
 		//  container.load(lastTarget + '.php');
 		//  return false;
 	 // }
-
-
-	
-
-
-
       </script>
 </head>
 
@@ -93,7 +83,7 @@
 				<?php } ?>
 		 		<a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>
 			<?php } ?>
-			
+
 		</ul>
 		<div class="burguer">
 			<div class="line1"></div>

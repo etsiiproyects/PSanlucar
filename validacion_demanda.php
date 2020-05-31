@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	if(isset($_SESSION["demanda"])) {
 		$nuevaDemanda["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
 		$nuevaDemanda["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
@@ -10,18 +10,18 @@
 	} else {
 		Header("Location: excepcion.php");
 	}
-	
+
 	$_SESSION["demanda"] = $nuevaDemanda;
 	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
-	
+
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
 		Header('Location: formularioDemandas.php');
 	} else {
 		Header('Location: alta_demanda.php');
 	}
-	
-	
+
+
 	function validarDatosDemanda($conexion, $nuevaDemanda) {
 
         $errores=array();
@@ -32,23 +32,23 @@
             $errores[] = "<p>ID no válido: debe tener 5 caracteres</p>";
         }
 
-
+		//'/^[0-9]{8}[A-Z]{1}$/',
         if(!preg_match("/[0-9]+/", $nuevaDemanda["NIF"]) || !preg_match("/[A-Z]/", $nuevaDemanda["NIF"])){
         $errores[] = "<p>NIF no válido</p>";
 		}else if(!isset($nuevaDemanda["NIF"]) || strlen($nuevaDemanda["NIF"])<9){
-		$errores[] = "<p>NIF no válido</p>";	
+		$errores[] = "<p>NIF no válido</p>";
 		}
-		
+
 		if($nuevaDemanda["NUM_MASCOTA"]=="")
 			$errores[] = "<p>El numero de mascotas debe indicarlo</p>";
-		
+
 		if($nuevaDemanda["PRECIOMAX"]=="")
 			$errores[] = "<p>El precio maximo debe indicarlo</p>";
-		
+
         return $errores;
-		
+
     }
-    
+
 
 
 ?>
