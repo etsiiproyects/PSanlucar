@@ -7,8 +7,8 @@
 	}
 	else Header("Location: paginaprincipal.php");
 	
-	if(isset($_SESSION["errores"])) $errores = $_SESSION["errores"];
-
+	if(isset($_SESSION["errores"])) $errores = $_SESSION["errores"]; unset ($_SESSION["errores"]);
+		
 ?>
 
 <!DOCTYPE hmtl>
