@@ -4,6 +4,7 @@
 	
 	if(isset($_SESSION["usuario"])) {
         $usuario = $_SESSION["usuario"];
+		$usuario["CONFIRMPASS"] = "";
 	}
 	else Header("Location: paginaprincipal.php");
 	
@@ -33,26 +34,26 @@
   		}
 	?>
 	
-	<div class="modificaU">
+	<div class="iniciosesion">
 		<a href="index.php"><img class="img-registro" src="images/logo1.png" alt="Promociones Sanlúcar" /></a>
 		<form id="registro" method="get" action="validacionModificaUsuario.php">
 			<label for="nombre">Nombre: </label>
-			<input class="input-group" id="nombre" name="nombreA" type="text" value="<?php echo $usuario["nombre"] ?>" />
+			<input class="input-group" id="nombre" name="nombreA" type="text" value="<?php echo $usuario["NOMBRE"] ?>" />
 			<br />
 			<label for="apellidos">Apellidos: </label>
-			<input class="input-group" id="apellidos" name="apellidosA" type="text" value="<?php echo $usuario["apellidos"] ?>" />
+			<input class="input-group" id="apellidos" name="apellidosA" type="text" value="<?php echo $usuario["APELLIDOS"] ?>" />
 			<br />
 			<label for="email">Email: </label>
-			<input class="input-group" id="email" name="emailA" type="email" value="<?php echo $usuario["email"] ?>" />
+			<input class="input-group" id="email" name="emailA" type="email" value="<?php echo $usuario["EMAIL"] ?>" />
 			<br />
 			<label for="email">Contraseña: </label>
-			<input class="input-group" id="email" name="passA" type="pass" value="<?php echo $usuario["pass"] ?>" />
+			<input class="input-group" id="email" name="passA" type="password" value="<?php echo $usuario["PASS"] ?>" />
 			<br />
 			<label for="email">Confirma contraseña: </label>
-			<input class="input-group" id="email" name="confirmPassA" type="pass" value="<?php echo $usuario["confirmPass"] ?>" />
+			<input class="input-group" id="email" name="confirmPassA" type="password" value="<?php echo $usuario["CONFIRMPASS"] ?>" />
 			<br />
 			<label for="nif">NIF: </label>
-			<input class="input-group" id="nif" name="nifA" type="text" size="30" value="<?php echo $usuario["nif"] ?>" readonly/>
+			<input class="input-group" id="nif" name="nifA" type="text" size="30" value="<?php echo $usuario["NIF"] ?>" readonly/>
 			<br />
 			<input class="boton" type="submit" value="Confirmar cambios" />
 		</form>
