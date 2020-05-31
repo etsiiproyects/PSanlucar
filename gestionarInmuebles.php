@@ -46,14 +46,14 @@
 		}
 	}
 
-	function modificar_inmueble($conexion, $Id, $Direccion, $Habitaciones, $Img, $Tipo) {
+	function modificar_inmueble($conexion, $inmueble) {
 		try {
 			$stmt = $conexion->prepare('CALL MODIFICAR_INMUEBLE(:id, :direccion, :hab, :img, :tipo)');
-			$stmt->bindParam(':id', $Id);
-			$stmt->bindParam(':direccion', $Direccion);
-			$stmt->bindParam(':hab', $Habitaciones);
-			$stmt->bindParam(':img', $Img);
-			$stmt->bindParam(':tipo',$Tipo);
+			$stmt->bindParam(':id', $inmueble["id_inmueble"]);
+			$stmt->bindParam(':direccion', $inmueble["direccion"]);
+			$stmt->bindParam(':hab', $inmueble["habitaciones"]);
+			$stmt->bindParam(':img', $inmueble["img"]);
+			$stmt->bindParam(':tipo',$inmueble["tipo"]);
 			$stmt->execute();
 			return "";
 		} catch(PDOException $e) {

@@ -71,7 +71,7 @@
 
             <form id="altaDemanda" action="validacion_demanda.php" method="get">
                  <label for="precio_max">Precio Maximo: </label>
-    			 <input class="input-group" id="precio_max" name="precio_max" min="0" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
+    			 <input class="input-group" id="precio_max" name="precio_max" min="100" type="number" value="<?php echo $demanda['PRECIOMAX'];?>" required />
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>

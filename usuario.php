@@ -46,10 +46,20 @@
             <h1> Mis datos </h1>
             <div class="contratosU">
                 <div class="contratoU">
-                            <p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
-                            <p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
-                            <p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
-                            <p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
+                	<p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
+                	<p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
+                	<p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
+                	<p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
+                	<form method="post" action="controladorUsuario.php">
+                		<input id="NOMBRE" name="NOMBRE" type="hidden" value="<?php echo $datos["NOMBRE"]; ?>"/>
+                		<input id="APELLIDOS" name="APELLIDOS" type="hidden" value="<?php echo $datos["APELLIDOS"]; ?>"/>
+                		<input id="EMAIL" name="EMAIL" type="hidden" value="<?php echo $datos["EMAIL"]; ?>"/>
+                		<input id="NIF" name="NIF" type="hidden" value="<?php echo $datos["NIF"]; ?>"/>
+                		<input id="PASS" name="PASS" type="hidden" value="<?php echo $datos["PASS"]; ?>"/>
+                		<button id="editar" name="editar" type="submit">
+                			Editar perfil
+                		</button>
+                	</form>
 
                 </div>
             </div>

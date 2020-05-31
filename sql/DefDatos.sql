@@ -25,13 +25,13 @@ create table INMUEBLES (
     TIPO VARCHAR2(13) CHECK (TIPO in ('aislado','plurifamiliar','comercial'))   NOT NULL,
     PRIMARY key (ID_INMUEBLE));
 
-create table usuarios (
-    nif char(9) not null,
-    nombre varchar2(30) not null,
-    apellidos varchar2(100)  not null,
-    email varchar2(50) not null,
-    pass varchar2(50) not null,
-    primary key (nif));
+create table USUARIOS (
+    NIF char(9) not null,
+    NOMBRE varchar2(30) not null,
+    APELLIDOS varchar2(100)  not null,
+    EMAIL varchar2(50) not null,
+    PASS varchar2(50) not null,
+    primary key (NIF));
 
 CREATE TABLE DEMANDAS (
     OID_DEMANDA INTEGER NOT NULL,
@@ -204,6 +204,20 @@ BEGIN
 	WHERE ID_INMUEBLE=W_ID;
 END;
 /
+
+CREATE OR REPLACE PROCEDURE MODIFICAR_USUARIO
+(W_NIF IN USUARIOS.NIF%TYPE,
+W_NOMBRE IN USUARIOS.NOMBRE%TYPE,
+W_APELLIDOS IN USUARIOS.APELLIDOS%TYPE,
+W_EMAIL IN USUARIOS.EMAIL%TYPE,
+W_PASS IN USUARIOS.PASS%TYPE) IS
+BEGIN
+    UPDATE USUARIOS
+	SET NIF=W_NIF, NOMBRE=W_NOMBRE, APELLIDOS=W_APELLIDOS, EMAIL=W_EMAIL, PASS=W_PASS
+	WHERE NIF=W_NIF;
+END;
+/
+
 
 SELECT * FROM CONTRATOS NATURAL JOIN DEMANDAS;
 SELECT * FROM USUARIOS NATURAL JOIN DEMANDAS NATURAL JOIN CONTRATOS WHERE EMAIL='pablom@gmail.com' AND PASS='AsDf1234';
