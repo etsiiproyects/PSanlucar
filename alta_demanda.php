@@ -15,7 +15,7 @@
     if(alta_demanda($conexion, $nuevaDemanda)){
         Header("Location: paginaprincipal.php");
     }else{
-        $_SESSION["excepcion"] = "Tenemos un contrato activo para este inmueble.";
+        $_SESSION["excepcion"] = "Tenemos un contrato activo para este inmueble.".$nuevaDemanda["FECHADEMANDA"];
         $_SESSION["destino"] = "paginaprincipal.php";
         Header("Location: excepcion.php");
     }
