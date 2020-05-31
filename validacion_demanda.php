@@ -12,8 +12,8 @@
 	}
 
 	$_SESSION["demanda"] = $nuevaDemanda;
-	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
-
+	// $errores = validarDatosDemanda($conexion, $nuevaDemanda);
+ $errores=array();
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
 		Header('Location: formularioDemandas.php');
