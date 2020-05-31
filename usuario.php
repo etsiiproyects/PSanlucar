@@ -13,7 +13,6 @@
     $login = $_SESSION["login"];
 
     $conexion = crearConexionBD();
-    $datos = consultarDatosUsuario($conexion, $login["usuario"], $login["pass"]);
 
     $contratos = consultarContratosUsuario($conexion, $login['usuario'], $login['pass']);
     $datos = consultarDatosUsuario($conexion, $login['usuario'], $login['pass']);
@@ -28,22 +27,27 @@
                 <h1> Mis contratos </h1>
             </div>
             <div class="contratosU">
-            <?php foreach($contratos as $contrato) { ?>
-                <div class="contratoU">
-                <a href="#" class="btn-toggleU"><b> CONTRATO <?php echo $contrato["OID_CONTRATO"]; ?></b></a>
-                    <div class="toggleU">
-                        <div class="wrap">
-                            <p>Inicio del contrato: <b><?php echo $contrato["INICIOALQUILER"]; ?></b></p>
-                            <p>Fin del contrato: <b><?php echo $contrato["FINALQUILER"]; ?></b></p>
-                            <p>Pago mensual: <b><?php echo $contrato["PAGOMENSUAL"]; ?></b></p>
-                            <p>NIF cliente: <b><?php echo $contrato["NIF"]; ?></b></p>
-                            <p>Mascotas: <b><?php echo $contrato["NUM_MASCOTA"]; ?></b></p>
-                            <p>Pago mensual: <b><?php echo $contrato["PAGOMENSUAL"]; ?></b></p>
-                            <p>Fianza: <b><?php echo $contrato["FIANZA"]; ?></b></p>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
+            	<?php if(!$contratos) { ?>
+                		<div class="contratoU">
+                			<h3>No tiene ningún contrato</h3>
+	                	</div>         		
+            		<?php } foreach($contratos as $contrato) { ?>
+                		<div class="contratoU">
+                		<a href="#" class="btn-toggleU"><b> CONTRATO <?php echo $contrato["OID_CONTRATO"]; ?></b></a>
+                    		<div class="toggleU">
+	                        <div class="wrap">
+	                            <p>Inicio del contrato: <b><?php echo $contrato["INICIOALQUILER"]; ?></b></p>
+	                            <p>Fin del contrato: <b><?php echo $contrato["FINALQUILER"]; ?></b></p>
+	                            <p>Pago mensual: <b><?php echo $contrato["PAGOMENSUAL"]; ?></b></p>
+	                            <p>NIF cliente: <b><?php echo $contrato["NIF"]; ?></b></p>
+	                            <p>Mascotas: <b><?php echo $contrato["NUM_MASCOTA"]; ?></b></p>
+	                            <p>Pago mensual: <b><?php echo $contrato["PAGOMENSUAL"]; ?></b></p>
+	                            <p>Fianza: <b><?php echo $contrato["FIANZA"]; ?></b></p>
+	                        </div>
+	                    </div>
+	                </div>
+	            <?php } ?>
+	        
             </div>
         </div>
         <div class="bloqueU">
