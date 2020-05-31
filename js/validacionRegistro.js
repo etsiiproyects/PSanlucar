@@ -7,49 +7,49 @@ function validateForm() {
 
         var error2 = passwordConfirmation();
 
-        var error3 = fechaValidation();
+        // var error3 = fechaValidation();
 
-        return (error1.length == 0) && (error2.length == 0) && (error3.length == 0);
+        return (error1.length == 0) && (error2.length == 0);
     } else
         return true;
 }
-
+//
 // function fechaValidation() {
-// 
-// 
-    // var fecha = document.getElementById("fechaNacimiento").value;
-    // var fechaS = fecha.split("-");
-// 
-    // var date = new Date(fechaS[0], fechaS[1] - 1, fechaS[2]);
-    // var fechaMin = new Date();
-    // fechaMin.setFullYear(fechaMin.getFullYear - 21);
-// 
-    // if (date > fechaMin) var error = "Debes tener mas de 21 años";
-    // if (fecha) var error = "";
-// 
-    // fecha.setCustomValidity(error);
-// 
-    // return error;
+//
+//
+//     var fecha = document.getElementById("fechaNacimiento").value;
+//     var fechaS = fecha.split("-");
+//
+//     var date = new Date(fechaS[0], fechaS[1] - 1, fechaS[2]);
+//     var fechaMin = new Date();
+//     fechaMin.setFullYear(fechaMin.getFullYear - 21);
+//
+//     if (date > fechaMin) var error = "Debes tener mas de 21 años";
+//     if (fecha) var error = "";
+//
+//     fecha.setCustomValidity(error);
+//
+//     return error;
 // }
 
-function fechaValidation() {
-	var f = document.getElementById("fechaNacimiento");
-	var array = f.split("/");
-	var fecha= "20" + array[2] + "," + array[1] + "," + array[0];
-	var fechaIntroducida = new Date(fecha);
-	
-	var fechaActual = new Date();
-	var anyoActual = fechaActual.getFullYear();
-	
-	var diff = Math.floor(fechaActual.getTime() - fechaIntroducida.getTime());
-	
-	if(diff < 21) {
-		var error = "Debe tener más de 21 años";
-	} else {
-		var error = "";
-	}
-	return error;
-}
+// function fechaValidation() {
+// 	var f = document.getElementById("fechaNacimiento").value;
+// 	// var array = f.split("/");
+// 	// var fecha= "20" + array[2] + "," + array[1] + "," + array[0];
+// 	// var fechaIntroducida = new Date(fecha);
+//   //
+// 	// var fechaActual = new Date();
+// 	// var anyoActual = fechaActual.getFullYear();
+//   //
+// 	// var diff = Math.floor(fechaActual.getTime() - fechaIntroducida.getTime());
+// 	var edad=moment().diff(f, 'years');
+// 	if(edad < 21) {
+// 		var error = "Debe tener más de 21 años";
+// 	} else {
+// 		var error = "";
+// 	}
+// 	return error;
+// }
 
 function passwordValidation() {
     var password = document.getElementById("pass");

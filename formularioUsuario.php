@@ -2,7 +2,7 @@
 	session_start();
 
 	include_once("gestionBD.php");
- 
+
 	if (!isset($_SESSION['formulario'])) {
 		$formulario['nombre'] = "";
 		$formulario['apellidos'] = "";
@@ -15,7 +15,7 @@
 		$_SESSION['formulario'] = $formulario;
 	}else
 		$formulario = $_SESSION['formulario'];
-		
+
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
 
@@ -38,17 +38,17 @@
 
 <body>
 <script>
-		
+
 			$("#registro").on("submit", function() {
 				return validateForm();
 			});
 
-			
+
 			$("#email").on("input", function(){
 				$("#nick").val($(this).val());
 			});
 
-			
+
 			$("#pass").on("keyup", function() {
 				passwordColor();
 			});
@@ -82,7 +82,7 @@
 				<br />
 
 				<label for="fechaNacimiento">Fecha de nacimiento: </label>
-				<input class="input-group" type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $formulario['fechaNacimiento'];?>" required />
+				<input class="input-group" oninput="fechaValidation();" type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $formulario['fechaNacimiento'];?>" required />
 				<br />
 
 				<label for="nick">NIF: </label>

@@ -7,8 +7,6 @@ function validateForm() {
 
         var error2 = URLValidation();
 
-        //var error3 = fechaValidation();
-
         return (error1.length == 0) && (error2.length == 0);
     } else
         return true;
