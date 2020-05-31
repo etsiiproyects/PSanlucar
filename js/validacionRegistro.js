@@ -14,22 +14,41 @@ function validateForm() {
         return true;
 }
 
+// function fechaValidation() {
+// 
+// 
+    // var fecha = document.getElementById("fechaNacimiento").value;
+    // var fechaS = fecha.split("-");
+// 
+    // var date = new Date(fechaS[0], fechaS[1] - 1, fechaS[2]);
+    // var fechaMin = new Date();
+    // fechaMin.setFullYear(fechaMin.getFullYear - 21);
+// 
+    // if (date > fechaMin) var error = "Debes tener mas de 21 años";
+    // if (fecha) var error = "";
+// 
+    // fecha.setCustomValidity(error);
+// 
+    // return error;
+// }
+
 function fechaValidation() {
-
-
-    var fecha = document.getElementById("fechaNacimiento").value;
-    var fechaS = fecha.split("-");
-
-    var date = new Date(fechaS[0], fechaS[1] - 1, fechaS[2]);
-    var fechaMin = new Date();
-    fechaMin.setFullYear(fechaMin.getFullYear - 21);
-
-    if (date > fechaMin) var error = "Debes tener mas de 21 años";
-    if (fecha) var error = "";
-
-    fecha.setCustomValidity(error);
-
-    return error;
+	var f = document.getElementById("fechaNacimiento");
+	var array = f.split("/");
+	var fecha= "20" + array[2] + "," + array[1] + "," + array[0];
+	var fechaIntroducida = new Date(fecha);
+	
+	var fechaActual = new Date();
+	var anyoActual = fechaActual.getFullYear();
+	
+	var diff = Math.floor(fechaActual.getTime() - fechaIntroducida.getTime());
+	
+	if(diff < 21) {
+		var error = "Debe tener más de 21 años";
+	} else {
+		var error = "";
+	}
+	return error;
 }
 
 function passwordValidation() {
@@ -55,7 +74,6 @@ function passwordValidation() {
     password.setCustomValidity(error);
     return error;
 }
-
 
 function passwordConfirmation() {
 

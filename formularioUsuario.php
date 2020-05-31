@@ -86,7 +86,7 @@
 				<br />
 
 				<label for="nick">NIF: </label>
-				<input class="input-group" id="nif" name="nif" type="text" size="30" required value="<?php echo $formulario['nif'];?>" />
+				<input class="input-group" id="nif" name="nif" type="text" pattern="^[0-9]{8}[A-Z]" required value="<?php echo $formulario['nif'];?>" />
 				<br />
 
 				<label for="pass">Contraseña: </label>

@@ -23,8 +23,12 @@
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
 
+<<<<<<< HEAD
+
+=======
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 	
+>>>>>>> 270b0a26630493e21379aa1f32bd3688bd8b95d5
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
@@ -78,18 +82,18 @@
 		<div class="bloqueI">
 			<h2> Bienvenidos a la web de Promociones Sanlucar. </h2>
 			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
-				<p>En la barra de navegacion de la parte superior podeis ir a iniciar sesion o registrarse para poder acceder a la informacion de nuestra pagina.</p>
+				<p>En la barra de navegación de la parte superior podeis ir a iniciar sesión o registrarse para poder acceder a la información de nuestra página.</p>
 			<?php } else{  if(isset($_SESSION["loginEmpleado"])){ ?>
 				<p>Aquí dejamos un poco de información de como navegar por la web estando con una cuenta de empleado:</p>
 				<p>Desde la barra de navegación se puede acceder a la información de nuestros inmuebles, contratos y demandas, además de un enlace para desconectarse de la sesión como empleado.</p>
-				<p>En el apartado de inmueble arriba tenemos un boton que nos redirige a una página para insertar un inmueble, justo abajo de este botón a la derecha hay otro boton con el que podemos filtrar los inmuebles para ver solo los que no tienen un contrato activo ahora mismo.Para ver la informacion de los inmuebles debes pinchar en la imagen del inmueble correspondiente, ademas tendremos botón para borrar el inmueble de la base de datos, y otro para modificar la información sobre el inmueble correspondiente. </p>
+				<p>En el apartado de inmueble arriba tenemos un botón que nos redirige a una página para insertar un inmueble, justo abajo de este botón a la derecha hay otro botón con el que podemos filtrar los inmuebles para ver solo los que no tienen un contrato activo ahora mismo.Para ver la información de los inmuebles debes pinchar en la imagen del inmueble correspondiente, ademas tendremos botón para borrar el inmueble de la base de datos, y otro para modificar la información sobre el inmueble correspondiente. </p>
 				<p>En el apartado de contratos, podemos ver botones con los contratos con el id del inmueble correspondiente, si pinchamos podremos ver su información, además tenemos un botón para borrarlo</p>
 				<p>El apartado de demandas funciona de manera similar al apartado de contratos, pero además poseemos un botón para realizar un contrato de la demanda correspondiente.</p>
 			<?php } if(isset($_SESSION["login"])) { ?>
 				<p>Os dejamos un poco de información de como navegar por nuestra web: </p>
 				<p>Desde la barra de navegación que teneis en la parte superior de la página, podeis pinchar en inmuebles o usuario para ver su contenido o pinchar en desconectar para salir de vuestra cuenta</p>
-				<p>En el apartado inmueble podréis ver imágenes de ellos que si pincháis podeis ver su información y un boton que os redirige a otra página para realizar un demanda por el correspondiente inmueble. Además arriba a la derecha teneis un boton para filtrar los inmuebles y solo ver los que tenemos libres en este momento.</p>
-				<p>En el apartado de usuario tenéis la información relacionada a vuestra cuenta y vuestros contratos y/o demandas. Tambien hay un boton con el que podréis modificar información de vuestra cuenta.</p>
+				<p>En el apartado inmueble podréis ver imágenes de ellos que si pincháis podeis ver su información y un botón que os redirige a otra página para realizar un demanda por el correspondiente inmueble. Además arriba a la derecha teneis un botón para filtrar los inmuebles y solo ver los que tenemos libres en este momento.</p>
+				<p>En el apartado de usuario tenéis la información relacionada a vuestra cuenta y vuestros contratos y/o demandas. También hay un botón con el que podréis modificar información de vuestra cuenta.</p>
 				<?php } ?>
 			<?php } ?>
 		</div>
