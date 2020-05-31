@@ -1,76 +1,25 @@
-<?php
 
-if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){
-    ?>
-    <nav class="menuNav">
-        <div class="logo">
-            <a href="index.php"> <img width="100px" src="images/logo.png"> </a>
-        </div>
-        <ul class="nav-links">
-            
-        </ul>
-        <div class="burguer">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-	<?php
-	} else{
-    ?>
-    
-        <nav id="" class="menuNav">
-        <div class="logo">
-            <a href="index.php"> <img width="100px" src="images/logo.png"> </a>
-        </div>
-        <ul class="nav-links">
-        <?php if()
-            <li class="nav">
-                <a href="formularioUsuario.php"> Registrate </a>
-            </li>
-            <li class="nav">
-                <a href="login.php"> Iniciar Sesion </a>
-            </li>
-        <?php if(isset($_SESSION["loginEmpleado"])){ ?>
-        
-            <li id="btn-demandas" class="navL">
-                <a href="#" data-target="consulta_demandas"> Demandas </a>
-            </li>
-            <li class="navL">
-                <a href="#" data-target="consulta_contratos"> Contratos </a>
-            </li>
+<nav id="nav" class="menuNav">
+  <div class="logo"> <a href="index.php" onclick="sessionStorage.clear();"> <img width="100px" src="images/logo.png"> </a> </div>
+  <ul class="nav-links">
+    <?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
+      <a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>
+      <a href="login.php"><li class="nav"> Iniciar Sesion </li></a>
+    <?php } else{ ?>
+      <li class="navL"><a href="consulta_inmuebles"> Inmuebles </a></li>
+      <?php if(isset($_SESSION["loginEmpleado"])){ ?>
+        <li class="navL"><a href="consulta_demandas"> Demandas </a></li>
+        <li class="navL"><a href="consulta_contratos" > Contratos </a></li>
+      <?php } if(isset($_SESSION["login"])) {  ?>
+        <li class="navL"><a href="usuario"> Usuario </a></li>
+      <?php } ?>
+      <a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>
+    <?php } ?>
 
-        <?php } ?>
-
-            <li id="btn-inmuebles" class="navL">
-                <a href="#" data-target="consulta_inmuebles"> Inmuebles </a>
-            </li>
-
-        <?php if(isset($_SESSION["login"])){  ?>
-
-            <li class="navL">
-                <a href="#" data-target="usuario"> Usuario </a>
-            </li>
-
-        <?php } ?>
-
-            <li class="navL">
-                <a href="desconectar.php"> Cerrar Sesion </a>
-            </li>
-            
-        </ul>
-        <div class="burguer">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        </nav>
-        
-        
-    
-	<?php }  ?>
-
-
-
-
-   
+  </ul>
+  <div class="burguer">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+      </div>
+</nav>

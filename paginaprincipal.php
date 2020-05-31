@@ -81,7 +81,7 @@
 				<?php } if(isset($_SESSION["login"])) {  ?>
 			    <li class="navL"><a href="usuario"> Usuario </a></li>
 				<?php } ?>
-		 		<a href="desconectar.php"><li class="navL"> Cerrar Sesion</li> </a>
+		 		<a href="desconectar.php" onclick="sessionStorage.clear();"><li class="navL"> Cerrar Sesion</li> </a>
 			<?php } ?>
 
 		</ul>
@@ -93,10 +93,10 @@
 	</nav>
 
 	<div id="content">
-		<!-- <div class="bloqueI">
+		<div class="bloqueI">
 			<h2> Descripcion: </h2>
 			<p> Aquí se mostraria informacion general sobre la empresa, asi como los inmuebles existentes. </p>
-		</div> -->
+		</div>
 	</div>
 
 	<script>
