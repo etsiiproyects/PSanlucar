@@ -19,6 +19,8 @@
 	<meta charset="UTF-8" />
 	<title>Promociones Sanlucar: Modificar usuario</title>
 	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 	<script src="js/validacionRegistro.js" type="text/javascript"></script>
@@ -38,7 +40,6 @@
 	</script>
 	
 	<?php
-		// Mostrar los erroes de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) {
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
@@ -48,7 +49,7 @@
 	?>
 	
 	<div class="iniciosesion">
-		<a href="index.php"><img class="img-registro" src="images/logo1.png" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-login" src="images/logo1.png" alt="Promociones Sanlúcar" /></a>
 		<form id="registro" method="get" action="validacionModificaUsuario.php">
 			<label for="nombre">Nombre: </label>
 			<input class="input-group" id="nombre" name="nombreA" type="text" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð '-]+" value="<?php echo $usuario["NOMBRE"] ?>" required/>
