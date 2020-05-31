@@ -17,6 +17,9 @@
 	<meta charset="UTF-8" />
 	<title>Promociones Sanlucar: Modificar inmueble</title>
 	<link rel="stylesheet" type="text/css" href="css/formularios.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
 </head>
 
@@ -33,7 +36,7 @@
 	?>
 	
 	<div class="iniciosesion">
-		<a href="index.php"><img class="img-registro" src="images/logo1.png" alt="Promociones Sanlúcar" /></a>
+		<a href="index.php"><img class="img-login" src="images/logo1.png" alt="Promociones Sanlúcar" /></a>
 		<form id="registro" method="get" action="validacionModificaInmueble.php">
 			<label for="id_inmueble">ID inmueble: </label>
 			<input class="input-group" id="id_inmueble" name="id_inmuebleA" type="text" value="<?php echo $inmueble["ID_INMUEBLE"] ?>" />
@@ -62,3 +65,4 @@
 		</form>
 	</div>
 </body>
+</html>

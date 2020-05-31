@@ -27,6 +27,7 @@
         <meta charset="utf-8">
         <title>Gestion Promociones Sanlucar: Alta Inmueble</title>
         <link rel="stylesheet" type="text/css" href="css/formularios.css" />
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
@@ -49,7 +50,7 @@
 
          <div class="iniciosesion">
 
-     	    <a href="index.php"><img class="img-registro" src="images/logo.png" alt="Promociones Sanlúcar" /></a>
+     	    <a href="index.php"><img class="img-login" src="images/logo.png" alt="Promociones Sanlúcar" /></a>
 
             <form id="altaInmueble" action="validacion_inmueble.php" method="post" >
                  <label for="id_inmueble">Identificador: </label>
