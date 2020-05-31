@@ -51,6 +51,7 @@
                 	<p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
                 	<p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
                 	<form method="post" action="modificaUsuario.php">
+                		<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
                 		<button id="editar" name="editar" type="submit">
                 			Editar perfil
                 		</button>
