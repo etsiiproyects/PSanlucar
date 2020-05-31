@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	
+
 	if (!isset($_SESSION['contrato']) && isset($_SESSION["demanda"])) {
 		$demanda = $_SESSION["demanda"];
 		echo $demanda["PRECIOMAX"];
@@ -13,7 +13,7 @@
 
 		$_SESSION['contrato'] = $contrato;
 	}
-	
+
 	else
 		$contrato = $_SESSION['contrato'];
 
@@ -75,8 +75,9 @@
 				<input class="input-group" id="fianza" name="fianza" type="number" size="5" value="<?php echo $contrato['fianza'];?>" readonly />
 				<br />
 
-				<label for="oid">OID: </label>
-				<input class="input-group" id="oid" name="oid_demanda" type="text" size="5" value="<?php echo $contrato['oid_demanda'];?>"  readonly />
+				<label for="oid">OID de la Demanda: </label>
+				<strong> <?php echo $contrato['oid_demanda'];?> </strong>
+				<input class="input-group" id="oid" name="oid_demanda" hidden type="text" size="5" value="<?php echo $contrato['oid_demanda'];?>"  readonly />
 				<br />
 
 			<br>
@@ -85,7 +86,7 @@
 	</div>
 
 	<?php include_once("footer.php") ?>
-	
+
 	<script>
 		window.onload= function() {
 			var ia1 = '<?php echo $inicio; ?>';
