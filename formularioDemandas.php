@@ -76,7 +76,7 @@
 
                 <label for="fecha">Fecha de la demanda: </label>
                 <!--<strong> <?php echo date('Y-m-d');?> </strong>-->
-                <input class="input-group" id="fecha" name="fecha" type="date"required />
+                <input class="input-group" id="fecha" name="fecha" type="date" required />
                 <br />
 
                 <label for="mascota">Número de mascotas: </label>
