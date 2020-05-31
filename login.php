@@ -38,10 +38,6 @@
 </head>
 
 <body>
-<!--
-<?php
-	include_once("cabecera.php");
-?> -->
 
 <main>
 

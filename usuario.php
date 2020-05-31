@@ -3,8 +3,6 @@
 
   	include_once("gestionBD.php");
  	include_once("gestionUsuarios.php");
-  
-
 
 	if(!isset($_SESSION["login"])) {
 		header("Location: login.php");
@@ -76,9 +74,6 @@
 
 
     </div>
-
-
-<?php include_once("footer.php") ?>
 
 <script>
 

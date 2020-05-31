@@ -17,7 +17,4 @@
 	}else {
 		Header("Location: consulta_demandas.php");	
 	}
-		
-
-
 ?>

@@ -1,14 +1,7 @@
 <?php
 	session_start();
 
-
 	require_once("gestionarInmuebles.php");
-
-
-	require_once("paginacion_consulta.php");
-
-
-
 ?>
 
 
@@ -25,7 +18,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
-	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	  <script src="js/inmuebles.js"></script>
 	  <script src="js/responsive.js"></script>
@@ -92,7 +84,7 @@
 			<?php } ?>
 		</div>
 	</div>
-
+	
 	<script>
 		navSlide();
 	</script>

@@ -17,11 +17,4 @@
 	}else {
 		Header("Location: consulta_inmuebles.php");	
 	}
-		
-
-
-	
-		
-
-
 ?>
