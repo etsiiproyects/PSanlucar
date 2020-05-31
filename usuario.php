@@ -46,10 +46,15 @@
             <h1> Mis datos </h1>
             <div class="contratosU">
                 <div class="contratoU">
-                            <p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
-                            <p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
-                            <p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
-                            <p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
+                	<p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
+                	<p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
+                	<p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
+                	<p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
+                	<form method="post" action="modificaUsuario.php">
+                		<button id="editar" name="editar" type="submit">
+                			Editar perfil
+                		</button>
+                	</form>
 
                 </div>
             </div>
