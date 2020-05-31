@@ -31,6 +31,7 @@ create table USUARIOS (
     APELLIDOS varchar2(100)  not null,
     EMAIL varchar2(50) not null,
     PASS varchar2(50) not null,
+    FECHA DATE not null,
     primary key (NIF));
 
 CREATE TABLE DEMANDAS (
@@ -118,9 +119,10 @@ CREATE OR REPLACE PROCEDURE Insertar_Usuario
 	w_apellidos IN usuarios.apellidos%TYPE,
 	w_email IN usuarios.email%TYPE,
 	w_pass IN usuarios.pass%TYPE,
-	w_nif IN usuarios.nif%TYPE) IS
+	w_nif IN usuarios.nif%TYPE,
+    W_FECHA IN usuarios.fecha%TYPE) IS
 BEGIN
-INSERT INTO usuarios(nombre, apellidos, email, pass, nif) VALUES (w_nombre,w_apellidos,w_email,w_pass,w_nif);
+INSERT INTO usuarios(nombre, apellidos, email, pass, nif, fecha) VALUES (w_nombre,w_apellidos,w_email,w_pass,w_nif, w_fecha);
 END;
 /
 
