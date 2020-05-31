@@ -23,10 +23,11 @@
 	<link rel="stylesheet" type="text/css" href="css/contratos.css">
 	<link rel="stylesheet" type="text/css" href="css/demandas.css">
 
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	
 	<link rel="stylesheet" type="text/css" href="css/inmuebles.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 	<link rel="stylesheet" type="text/css" href="css/paginacion.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	  <script src="js/inmuebles.js"></script>
 	  <script src="js/responsive.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,17 +52,17 @@
 		<div class="logo"> <a href="index.php" onclick="sessionStorage.clear();"> <img width="100px" src="images/logo.png"> </a> </div>
 		<ul class="nav-links">
 			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
-				<a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>
-				<a href="login.php"><li class="nav"> Iniciar Sesion </li></a>
+				<a href="formularioUsuario.php"><li class="navL">  Registrate </li></a>
+				<a href="login.php"><li class="navL"> Iniciar Sesion </li></a>
 			<?php } else{ ?>
-				<li class="navL"><a href="consulta_inmuebles"> Inmuebles </a></li>
+				<li class="navL"><a href="consulta_inmuebles"> INMUEBLES </a></li>
 				<?php if(isset($_SESSION["loginEmpleado"])){ ?>
-					<li class="navL"><a href="consulta_demandas"> Demandas </a></li>
-					<li class="navL"><a href="consulta_contratos" > Contratos </a></li>
+					<li class="navL"><a href="consulta_demandas"> DEMANDAS </a></li>
+					<li class="navL"><a href="consulta_contratos" > CONTRATOS </a></li>
 				<?php } if(isset($_SESSION["login"])) {  ?>
-			    <li class="navL"><a href="usuario"> Usuario </a></li>
+			    <li class="navL"><a href="usuario"> USUARIO </a></li>
 				<?php } ?>
-		 		<a href="desconectar.php" onclick="sessionStorage.clear();"><li class="navL"> Cerrar Sesion</li> </a>
+		 		<a href="desconectar.php" onclick="sessionStorage.clear();"><li class="navL"> <img width="50px" height="40px" src="images/salir.png"></li> </a>
 			<?php } ?>
 
 		</ul>

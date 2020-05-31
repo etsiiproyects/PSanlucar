@@ -26,8 +26,8 @@
             </div>
             <div class="contratosU">
                 <div class="contratoU">
-                <a href="#" class="btn-toggle"><b> CONTRATO <?php echo $datos["OID_CONTRATO"]; ?></b></a>
-                    <div class="toggle">
+                <a href="#" class="btn-toggleU"><b> CONTRATO <?php echo $datos["OID_CONTRATO"]; ?></b></a>
+                    <div class="toggleU">
                         <div class="wrap">
                             <p>Inicio del contrato: <b><?php echo $datos["INICIOALQUILER"]; ?></b></p>
                             <p>Fin del contrato: <b><?php echo $datos["FINALQUILER"]; ?></b></p>
@@ -44,7 +44,7 @@
         <div class="bloqueU">
 
             <h1> Mis datos </h1>
-            <div class="contratosU">
+            <div id="datosU" class="contratosU">
                 <div class="contratoU">
                 	<p>Nombre: <b><?php echo $datos["NOMBRE"]; ?></b></p>
                 	<p>Apellidos: <b><?php echo $datos["APELLIDOS"]; ?></b></p>
@@ -56,7 +56,7 @@
                 		<input id="EMAIL" name="EMAIL" type="hidden" value="<?php echo $datos["EMAIL"]; ?>"/>
                 		<input id="NIF" name="NIF" type="hidden" value="<?php echo $datos["NIF"]; ?>"/>
                 		<input id="PASS" name="PASS" type="hidden" value="<?php echo $datos["PASS"]; ?>"/>
-                		<button id="editar" name="editar" type="submit">
+                		<button class="botonU" id="editar" name="editar" type="submit">
                 			Editar perfil
                 		</button>
                 	</form>
@@ -74,8 +74,8 @@
 <script>
 
 	$(document).ready(function(){
-				let botones = document.querySelectorAll('.btn-toggle');
-				let toggles = document.querySelectorAll('.toggle');
+				let botones = document.querySelectorAll('.btn-toggleU');
+				let toggles = document.querySelectorAll('.toggleU');
 				for(var i = 0; i<botones.length; i++){
 
 					let boton = botones[i];
