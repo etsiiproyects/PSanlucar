@@ -2,15 +2,15 @@
 
 	session_start();
 	
-	if(isset($_SESSION["inmuebleActualizado"])) {
-		$inmueble = $_SESSION["inmuebleActualizado"];
-		unset($_SESSION["inmuebleActualizado"]);
+	if(isset($_SESSION["inmueble"])) {
+		$inmueble = $_SESSION["inmueble"];
+		unset($_SESSION["inmueble"]);
 		
 		require_once("gestionBD.php");
 		require_once("gestionarInmuebles.php");
 		
 		$conexion = crearConexionBD();
-		$excepcion = modificar_inmueble($conexion, $inmueble["ID_INMUEBLE"],$inmueble["DIRECCION"],$inmueble["HABITACIONES"],$inmueble["IMG"],$inmueble["TIPO"]);
+		$excepcion = modificar_inmueble($conexion, $inmueble);
 		cerrarConexionBD($conexion);
 		
 		if ($excepcion<>"") {
