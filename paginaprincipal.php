@@ -44,6 +44,7 @@
 					});
 				});
 
+
 	 // 	var lastTarget;
    //   	$(document).ready(function() {
    //   		var trigger =$('#nav ul li a'),
@@ -68,7 +69,7 @@
 <body onload="inicio();">
 
 	<nav id="nav" class="menuNav">
-		<div class="logo"> <a href="index.php"> <img width="100px" src="images/logo.png"> </a> </div>
+		<div class="logo"> <a href="index.php" onclick="sessionStorage.clear();"> <img width="100px" src="images/logo.png"> </a> </div>
 		<ul class="nav-links">
 			<?php if(!isset($_SESSION["login"]) && !isset($_SESSION["loginEmpleado"])){ ?>
 				<a href="formularioUsuario.php"><li class="nav">  Registrate </li></a>
