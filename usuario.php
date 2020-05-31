@@ -51,7 +51,11 @@
                 	<p>E-mail: <b><?php echo $datos["EMAIL"]; ?></b></p>
                 	<p>NIF: <b><?php echo $datos["NIF"]; ?></b></p>
                 	<form method="post" action="modificaUsuario.php">
-                		<input id="ID_INMUEBLE" name="ID_INMUEBLE" type="hidden" value="<?php echo $fila["ID_INMUEBLE"]; ?>"/>
+                		<input id="NOMBRE" name="NOMBRE" type="hidden" value="<?php echo $datos["NOMBRE"]; ?>"/>
+                		<input id="APELLIDOS" name="APELLIDOS" type="hidden" value="<?php echo $datos["APELLIDOS"]; ?>"/>
+                		<input id="EMAIL" name="EMAIL" type="hidden" value="<?php echo $datos["EMAIL"]; ?>"/>
+                		<input id="NIF" name="NIF" type="hidden" value="<?php echo $datos["NIF"]; ?>"/>
+                		<input id="PASS" name="PASS" type="hidden" value="<?php echo $datos["PASS"]; ?>"/>
                 		<button id="editar" name="editar" type="submit">
                 			Editar perfil
                 		</button>
