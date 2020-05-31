@@ -23,21 +23,30 @@
 		return $stmt->fetch();
 	}
 
+	function consultarContratoExistente($conexion, $id_inmueble){
+		$consulta = "SELECT * FROM CONTRATOS NATURAL JOIN DEMANDAS WHERE ID_INMUEBLE=:id_i AND SYSDATE BETWEEN INICIOALQUILER AND FINALQUILER";
+		$stmt = $conexion->prepare($consulta);
+		$stmt->bindParam(':id_i',$id_inmueble);
+		$stmt->execute();
+		return $stmt->fetchColumn();
+	}
 	function alta_demanda($conexion, $demanda) {
+		
 		try {
+			$fechaConFormatoOracle = date();
 			$resultado = true;
-			// if(!consultarContrato($conexion, $demanda)) {
-				$consulta = 'CALL INSERTA_DEMANDA(:preciomax, :fechademanda, :num_mascota, :nif, :id_inmueble)';
+			 if(!consultarContratoExistente($conexion, $demanda["ID_INMUEBLE"])) {
+				$consulta = "CALL INSERTA_DEMANDA(:preciomax, to_date('d/m/Y', '03/03/2020'), :num_mascota, :nif, :id_inmueble)";
 				$stmt = $conexion->prepare($consulta);
 				$stmt->bindParam(':preciomax', $demanda["PRECIOMAX"]);
-				$stmt->bindParam(':fechademanda', $demanda["FECHADEMANDA"]);
+				$stmt->bindParam(':fechademanda', $fechaConFormatoOracle);
 				$stmt->bindParam(':num_mascota', $demanda["NUM_MASCOTA"]);
 				$stmt->bindParam(':nif', $demanda["NIF"]);
 				$stmt->bindParam(':id_inmueble', $demanda["ID_INMUEBLE"]);
 				$stmt->execute();
-			// } else {
-			// 	$resultado = false;
-			// }
+			 } else {
+			 	$resultado = true;
+			 }
 			return $resultado;
 		} catch(PDOException $e) {
 			echo "error: " . $e->GetMessage();

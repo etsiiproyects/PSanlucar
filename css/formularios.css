@@ -81,3 +81,7 @@ form>input:last-child:hover {
 .nanpass {
     border-color: lightyellow;
 }
+
+#altaDemanda .boton {
+    margin-top: 8%;
+}

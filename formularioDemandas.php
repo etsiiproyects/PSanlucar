@@ -2,16 +2,20 @@
     session_start();
 
     require_once("gestionBD.php");
+    require_once("gestionUsuarios.php");
 
   if(!isset($_SESSION["demanda"]) && isset($_SESSION["inmueble"])) {
         $demanda['PRECIOMAX']="";
         $demanda['FECHADEMANDA']= date('Y-m-d');
         $demanda['NUM_MASCOTA']="";
-        $demanda['NIF']="";
-        $inmueble = $_SESSION["inmueble"];
-        $demanda['ID_INMUEBLE']= $inmueble["ID_INMUEBLE"];
+        $demanda['NIF']= "";
+        $demanda['ID_INMUEBLE']= $_SESSION["inmueble"]["ID_INMUEBLE"];
 
-        $_SESSION['demanda']=$demanda;
+        $_SESSION["demanda"] = $demanda;
+    }else if($_SESSION["demanda"]["ID_INMUEBLE"]!=$_SESSION["inmueble"]["ID_INMUEBLE"]){
+        $demanda = $_SESSION["demanda"];
+        $demanda['ID_INMUEBLE']= $_SESSION["inmueble"]["ID_INMUEBLE"];
+
     }else $demanda=$_SESSION["demanda"];
 
     if (isset($_SESSION["errores"])){
@@ -19,7 +23,12 @@
         unset($_SESSION["errores"]);
     }
 
-    $conexion=crearConexionBD();
+    $login = $_SESSION['login'];
+
+    $conexion = crearConexionBD();
+    $datos = consultarDatosUsuario($conexion, $login['usuario'], $login['pass']);
+    cerrarConexionBD($conexion);
+    
  ?>
 
  <!DOCTYPE html>
@@ -66,6 +75,7 @@
     			<br/>
 
                 <label for="fecha_demanda">Fecha de la damanda: </label>
+                <!--<strong> <?php echo date('Y-m-d');?> </strong>-->
                 <input class="input-group" id="fecha_demanda" name="fecha_demanda" type="date" value="<?php echo date('Y-m-d');?>" required />
                 <br />
 
@@ -74,11 +84,13 @@
                 <br />
 
                 <label for="img">NIF: </label>
-    			<input class="input-group" id="nif" name="nif" type="text" placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $demanda['NIF'];?>" required />
+                <strong> <?php echo $datos['NIF'];?> </strong>
+    			<input class="input-group" id="nif" name="nif" type="text" hidden placeholder="12345678X" pattern="^[0-9]{8}[A-Z]" title="Ocho dígitos y una letra mayúscula" value="<?php echo $datos['NIF'];?>" required />
                 <br />
 
 				<label for="id_inmueble">ID del inmueble: </label>
-				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" value="<?php echo $demanda['ID_INMUEBLE'];?>"/>
+                <strong> <?php echo $demanda['ID_INMUEBLE'];?> </strong>
+				<input class="input-group" id="id_inmueble" name="id_inmueble" type="text" hidden value="<?php echo $demanda['ID_INMUEBLE'];?>"/>
              <input class="boton" type="submit" value="Confirmar" />
              </form>
 

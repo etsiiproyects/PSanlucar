@@ -2,18 +2,18 @@
 	session_start();
 
 	if(isset($_SESSION["demanda"])) {
-		$nuevaDemanda["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
-		$nuevaDemanda["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
-		$nuevaDemanda["NUM_MASCOTA"] = $_REQUEST["NUM_MASCOTA"];
-		$nuevaDemanda["NIF"] = $_REQUEST["NIF"];
-		$nuevaDemanda["ID_INMUEBLE"] = $_REQUEST["ID_INMUEBLE"];
+		$nuevaDemanda["PRECIOMAX"] = $_REQUEST["precio_max"];
+		$nuevaDemanda["FECHADEMANDA"] = $_REQUEST["fecha_demanda"];
+		$nuevaDemanda["NUM_MASCOTA"] = $_REQUEST["numMascotas"];
+		$nuevaDemanda["NIF"] = $_REQUEST["nif"];
+		$nuevaDemanda["ID_INMUEBLE"] = $_REQUEST["id_inmueble"];
 	} else {
 		Header("Location: excepcion.php");
 	}
 
 	$_SESSION["demanda"] = $nuevaDemanda;
-	// $errores = validarDatosDemanda($conexion, $nuevaDemanda);
- $errores=array();
+	$errores = validarDatosDemanda($conexion, $nuevaDemanda);
+
 	if(count($errores)>0) {
 		$_SESSION["errores"] = $errores;
 		Header('Location: formularioDemandas.php');
@@ -34,7 +34,7 @@
 
 		//'/^[0-9]{8}[A-Z]{1}$/',
         if(!preg_match("/[0-9]+/", $nuevaDemanda["NIF"]) || !preg_match("/[A-Z]/", $nuevaDemanda["NIF"])){
-        $errores[] = "<p>NIF no válido</p>";
+        $errores[] = "<p>NIF no válido</p>".$_REQUEST["PRECIOMAX"]."asd";
 		}else if(!isset($nuevaDemanda["NIF"]) || strlen($nuevaDemanda["NIF"])<9){
 		$errores[] = "<p>NIF no válido</p>";
 		}

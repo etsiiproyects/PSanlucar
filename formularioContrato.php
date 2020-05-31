@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
+	
 	if (!isset($_SESSION['contrato']) && isset($_SESSION["demanda"])) {
 		$demanda = $_SESSION["demanda"];
 		echo $demanda["PRECIOMAX"];
@@ -13,12 +13,10 @@
 
 		$_SESSION['contrato'] = $contrato;
 	}
-	// Si ya existían valores, los cogemos para inicializar el formulario
+	
 	else
 		$contrato = $_SESSION['contrato'];
 
-
-	// Si hay errores de validación, hay que mostrarlos y marcar los campos (El estilo viene dado y ya se explicará)
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
 		unset($_SESSION["errores"]);
