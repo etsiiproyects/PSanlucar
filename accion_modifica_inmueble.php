@@ -10,7 +10,7 @@
 		require_once("gestionarInmuebles.php");
 		
 		$conexion = crearConexionBD();
-		$excepcion = modificar_inmueble($conexion, $inmueble);
+		$excepcion = modificar_inmueble($conexion, $inmueble["ID_INMUEBLE"],$inmueble["DIRECCION"],$inmueble["HABITACIONES"],$inmueble["IMG"],$inmueble["TIPO"]);
 		cerrarConexionBD($conexion);
 		
 		if ($excepcion<>"") {

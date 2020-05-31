@@ -2,7 +2,7 @@
 
 	session_start();
 	
-	if (isset($_REQUEST["ID_INMUEBLE"])){
+	if (isset($_REQUEST["OID_DEMANDA"])){
 		$demanda["PRECIOMAX"] = $_REQUEST["PRECIOMAX"];
 		$demanda["FECHADEMANDA"] = $_REQUEST["FECHADEMANDA"];
 		$demanda["NUM_MASCOTA"] = $_REQUEST["NUM_MASCOTA"];

@@ -2,7 +2,7 @@
 
 	session_start();
 	
-	if(isset($_REQUEST["ID_INMUEBLE"])) {
+	if(isset($_SESSION["ID_INMUEBLE"])) {
 		$actuInmueble["id_inmueble"] = $_REQUEST["id_inmuebleA"];
 		$actuInmueble["direccion"] = $_REQUEST["direccionA"];
 		$actuInmueble["habitaciones"] = $_REQUEST["habitacionesA"];
@@ -11,8 +11,8 @@
 	} else Header("Location: paginaprincipal.php");
 	
 	
-	
-	$errores = validarDatosInmuebleAct($actuInmueble);
+	$_SESSION["ID_INMUEBLE"] = $actuInmueble;
+	$errores = validarDatosInmuebleAct($conexion, $actuInmueble);
 	
 	if (count($errores)>0) {
 		$_SESSION["errores"] = $errores;
@@ -24,7 +24,7 @@
 	
 
 	
-	function validarDatosInmuebleAct($inmueble) {
+	function validarDatosInmuebleAct($conexion, $actuInmueble) {
         $errores=array();
 
         if($inmueble["id_inmueble"]=="") {
