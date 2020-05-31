@@ -13,7 +13,7 @@
 		$nuevoUsuario["confirmar"] = $_REQUEST["confirmar"];
 	}
 	else 
-		Header("Location: registroWeb.php");
+		Header("Location: formularioUsuario.php");
 
 	
 	$_SESSION["formulario"] = $nuevoUsuario;
@@ -25,7 +25,7 @@
 	if (count($errores)>0) {
 		
 		$_SESSION["errores"] = $errores;
-		Header('Location: registroWeb.php');
+		Header('Location: formularioUsuario.php');
 	} else
 		
 		Header('Location: alta_usuario.php');
